@@ -30,7 +30,7 @@ To set up the development environment, follow these steps:
 Create a `.env` file in the root directory to configure environment variables. Example:
 
 ```env
-
+NEXT_PUBLIC_BASE_PATH="" # Set the base path for the application
 ```
 
 Ensure the `.env` file is added to `.gitignore` to keep sensitive information private.

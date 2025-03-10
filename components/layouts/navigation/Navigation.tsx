@@ -16,6 +16,7 @@ const Navigation = () => {
             <Navbar onOpenSidebar={() => handleSidebarOpenStatus(true)} />
 
             <Sidebar
+                fullWidth
                 isOpen={isSidebarOpen}
                 onCloseSidebar={() => handleSidebarOpenStatus(false)}
             />

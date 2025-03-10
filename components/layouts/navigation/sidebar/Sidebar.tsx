@@ -3,6 +3,7 @@
 import SHeader from "./SHeader";
 import SLinkGroup from "./SLinksGroup";
 import { useClickOutside } from "@/hooks";
+import { SocialGroup } from "../../social";
 import { AppVersion } from "@/components/ui";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
@@ -62,19 +63,23 @@ const Sidebar = (props: SidebarProps) => {
                         initial="initial"
                         animate="visible"
                         exit="exit"
-                        className={`fixed top-0 
-                        bg-zinc-50
+                        className={`fixed top-0
+                        flex flex-col items-center gap-10
+                        bg-gradient-to-b bg-drd-primary-75
+                        from-drd-primary-75 from-40% to-white
                         px-4 py-5 z-20 h-svh
 
                         ${side === "left" ? "left-0" : "right-0"}  ${
                             props.fullWidth ? "w-full" : "min-w-72 w-[60dvw]"
-                        } flex flex-col items-center gap-8`}>
+                        }`}>
                         <SHeader
                             side={side}
                             onCloseSidebar={props.onCloseSidebar}
                         />
 
-                        <SLinkGroup />
+                        <SLinkGroup onClick={props.onCloseSidebar} />
+
+                        <SocialGroup />
 
                         <AppVersion className="absolute bottom-2" />
                     </motion.aside>

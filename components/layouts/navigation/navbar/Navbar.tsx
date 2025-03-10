@@ -22,7 +22,7 @@ const Navbar = (props: NavbarProps) => {
                 isScrolled
                     ? "bg-drd-primary-75 bg-opacity-90 glass-effect"
                     : "bg-transparent"
-            } flex items-center justify-between app-px pt-8 pb-4`}>
+            } flex items-center justify-between app-px p-4`}>
             {/* Logo */}
             <PouriaLogo />
 

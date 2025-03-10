@@ -1,24 +1,36 @@
+"use client";
+
 import Link from "next/link";
-import { cn } from "@/utils";
 import { motion } from "framer-motion";
 
 interface NavLinkProps {
     href: string;
     isActive: boolean;
     children?: React.ReactNode;
+    onClick?: () => void;
 }
 
 const SLink = (props: NavLinkProps) => {
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+    };
+
     return (
-        <Link
-            href={props.href}
-            className={`text-right ${
-                props.isActive
-                    ? "text-drd-primary-500 border-r-2 bg-drd-neutral-100/50"
-                    : `text-drd-neutral-500 hover:text-drd-neutral-600 hover:bg-drd-neutral-100/50`
-            } rounded-l p-1.5 w-full`}>
-            {props.children}
-        </Link>
+        <motion.div
+            variants={itemVariants}
+            className="flex items-center w-full">
+            <Link
+                href={props.href}
+                onClick={props.onClick}
+                className={`text-right w-full ${
+                    props.isActive
+                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-100"
+                        : `text-drd-neutral-500 hover:bg-drd-primary-100`
+                } rounded-l p-1.5`}>
+                {props.children}
+            </Link>
+        </motion.div>
     );
 };
 
