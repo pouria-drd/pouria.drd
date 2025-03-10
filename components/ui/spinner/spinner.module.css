@@ -1,0 +1,40 @@
+.loader {
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: currentColor;
+
+    /* Vendor-prefixed mask properties */
+    -webkit-mask: repeating-conic-gradient(
+            #0000 0deg,
+            #000 1deg 70deg,
+            #0000 71deg 90deg
+        ),
+        radial-gradient(
+            farthest-side,
+            #0000 calc(100% - var(--b) - 1px),
+            #000 calc(100% - var(--b))
+        );
+    -webkit-mask-composite: destination-in;
+
+    /* Standard mask properties */
+    mask: repeating-conic-gradient(
+            #0000 0deg,
+            #000 1deg 70deg,
+            #0000 71deg 90deg
+        ),
+        radial-gradient(
+            farthest-side,
+            #0000 calc(100% - var(--b) - 1px),
+            #000 calc(100% - var(--b))
+        );
+    mask-composite: intersect;
+
+    animation: l5 1s infinite;
+}
+
+@keyframes l5 {
+    to {
+        transform: rotate(0.5turn);
+    }
+}

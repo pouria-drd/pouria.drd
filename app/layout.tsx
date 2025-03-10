@@ -1,7 +1,7 @@
 import "./assets/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Footer } from "@/components/layouts";
+import { Footer, Navigation } from "@/components/layouts";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -178,7 +178,8 @@ function RootLayout(props: Readonly<RootLayoutProps>) {
             <body
                 className={`${peyda.variable} ${geistSans.variable} ${geistMono.variable}
                 flex flex-col min-h-svh antialiased`}>
-                <main className="grow">{props.children}</main>
+                <Navigation />
+                <main className="grow app-px">{props.children}</main>
                 <Footer />
             </body>
         </html>

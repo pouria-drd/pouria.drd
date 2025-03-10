@@ -13,9 +13,9 @@ const SocialLink = (props: SocialLinkProps) => {
         <Link
             href={props.href}
             className={cn(
-                `text-[var(--color-drd-neutral-500)]
-                hover:text-[var(--color-drd-primary-500)]
-                border-[var(--color-drd-neutral-200)]
+                `text-drd-neutral-500
+                hover:text-drd-primary-500
+                border-drd-neutral-200
                 cursor-pointer transition-colors duration-200`,
                 props.className
             )}
