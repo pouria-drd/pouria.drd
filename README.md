@@ -10,16 +10,18 @@ To set up the development environment, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/pouria-drd/portfolio.git
+    git clone https://github.com/pouria-drd/pouria.drd.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd portfolio
+    cd pouria.drd
     ```
 3. Install dependencies:
     ```bash
     npm install
-    # or
+    ```
+    or
+    ```bash
     yarn install
     ```
 
@@ -28,7 +30,7 @@ To set up the development environment, follow these steps:
 Create a `.env` file in the root directory to configure environment variables. Example:
 
 ```env
-NEXT_PUBLIC_SITE_NAME=Pouria Darnadi
+
 ```
 
 Ensure the `.env` file is added to `.gitignore` to keep sensitive information private.
@@ -39,7 +41,11 @@ Start the development server:
 
 ```bash
 npm run dev
-# or
+```
+
+or
+
+```bash
 yarn dev
 ```
 
