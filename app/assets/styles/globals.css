@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* :root {
+    --background: #ffffff;
+    --foreground: #171717;
+} */
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+@theme {
+    /* --breakpoint-xs: 475px; */
+
+    --color-drd-primary-50: #eef5ff;
+    --color-drd-primary-75: #e2edfa;
+    --color-drd-primary-100: #d9e8ff;
+    --color-drd-primary-200: #bcd8ff;
+    --color-drd-primary-300: #8ec0ff;
+    --color-drd-primary-400: #599dff;
+    --color-drd-primary-500: #256eff;
+    --color-drd-primary-600: #1b55f5;
+    --color-drd-primary-700: #1441e1;
+    --color-drd-primary-800: #1735b6;
+    --color-drd-primary-900: #19328f;
+    --color-drd-primary-950: #142057;
+
+    --color-drd-neutral-50: #f6f7f8;
+    --color-drd-neutral-100: #eaecef;
+    --color-drd-neutral-200: #dbdee2;
+    --color-drd-neutral-300: #c2c9ce;
+    --color-drd-neutral-400: #adb5bd;
+    --color-drd-neutral-500: #8e97a3;
+    --color-drd-neutral-600: #7d8593;
+    --color-drd-neutral-700: #707685;
+    --color-drd-neutral-800: #5e636f;
+    --color-drd-neutral-900: #4e525a;
+    --color-drd-neutral-950: #323439;
+}
+
+body {
+    /* background: var(--background);
+  color: var(--foreground); */
+    font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, var(--color-drd-primary-75), white);
+}
+
+.r2l {
+    direction: rtl;
+}
+
+.l2r {
+    direction: ltr;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Scroll area */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-zinc-200);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--color-zinc-300);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: var(--color-zinc-300);
+}
+
+* {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+.glass-effect {
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+@layer utilities {
+    .glass-effect {
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+    }
+
+    .app-px {
+        @apply px-4 sm:px-16 md:px-28 lg:px-40 xl:px-48;
+    }
+}
+
+@layer components {
+    /* ========================= */
+    /* 🔹 Responsive Headings */
+    /* ========================= */
+
+    .title-extra-large {
+        color: var(--color-drd-neutral-950); /* Set color for the title */
+        font-size: clamp(
+            2.5rem,
+            6vw,
+            3.5rem
+        ); /* Font size adjusts responsively (clamped between 2.5rem and 4rem) */
+        font-weight: bolder; /* Apply extra-bold font weight */
+        line-height: 1.25; /* Set line-height for better readability */
+    }
+
+    .title-large {
+        color: var(--color-drd-neutral-950); /* Set color for the title */
+        font-size: clamp(
+            2rem,
+            5vw,
+            3rem
+        ); /* Font size adjusts responsively (clamped between 2rem and 3.5rem) */
+        font-weight: bold; /* Apply bold font weight */
+        line-height: 1.375; /* Set line-height for readability */
+    }
+
+    .title-medium {
+        color: var(--color-drd-neutral-950); /* Set color for the title */
+        font-size: clamp(
+            1.75rem,
+            4vw,
+            2.5rem
+        ); /* Font size adjusts responsively (clamped between 1.75rem and 3rem) */
+        font-weight: 600; /* Apply semi-bold font weight */
+        line-height: 1.375; /* Set line-height for readability */
+    }
+
+    .title-small {
+        color: var(--color-drd-neutral-950); /* Set color for the title */
+        font-size: clamp(
+            1.5rem,
+            3vw,
+            2rem
+        ); /* Font size adjusts responsively (clamped between 1.5rem and 2.5rem) */
+        font-weight: 500; /* Apply semi-bold font weight */
+        line-height: 1.5; /* Set line-height for readability */
+    }
+
+    /* ========================= */
+    /* 🔹 Responsive Paragraphs */
+    /* ========================= */
+
+    .text-p-extra-large {
+        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
+        font-size: clamp(
+            1.25rem,
+            3.5vw,
+            2rem
+        ); /* Font size adjusts responsively (clamped between 1.25rem and 2.5rem) */
+        font-weight: normal; /* Apply normal font weight */
+        line-height: 1.5; /* Set line-height for better readability */
+    }
+
+    .text-p-large {
+        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
+        font-size: clamp(
+            1.125rem,
+            3vw,
+            1.5rem
+        ); /* Font size adjusts responsively (clamped between 1.125rem and 2rem) */
+        font-weight: normal; /* Apply normal font weight */
+        line-height: 1.75; /* Set line-height for better text readability */
+    }
+
+    .text-p-medium {
+        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
+        font-size: clamp(
+            1rem,
+            2.5vw,
+            1.5rem
+        ); /* Font size adjusts responsively (clamped between 1rem and 1.5rem) */
+        font-weight: normal; /* Apply normal font weight */
+        line-height: 1.75; /* Set line-height for better text readability */
+    }
+
+    .text-p-small {
+        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
+        font-size: clamp(
+            0.875rem,
+            2vw,
+            1.25rem
+        ); /* Font size adjusts responsively (clamped between 0.875rem and 1.25rem) */
+        font-weight: normal; /* Apply normal font weight */
+        line-height: 1.75; /* Set line-height for better text readability */
+    }
+}
