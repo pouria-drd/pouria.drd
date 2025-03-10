@@ -1,6 +1,18 @@
 import "./assets/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Footer } from "@/components/layouts";
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
 const peyda = localFont({
     src: [
@@ -164,9 +176,10 @@ function RootLayout(props: Readonly<RootLayoutProps>) {
     return (
         <html lang="fa-IR">
             <body
-                className={`${peyda.variable}
+                className={`${peyda.variable} ${geistSans.variable} ${geistMono.variable}
                 flex flex-col min-h-svh antialiased`}>
                 <main className="grow">{props.children}</main>
+                <Footer />
             </body>
         </html>
     );

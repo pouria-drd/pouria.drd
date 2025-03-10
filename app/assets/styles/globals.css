@@ -22,6 +22,10 @@
 @theme {
     /* --breakpoint-xs: 475px; */
 
+    --font-peyda: var(--font-peyda);
+    --font-geist-sans: var(--font-geist-sans);
+    --font-geist-mono: var(--font-geist-mono);
+
     --color-drd-primary-50: #eef5ff;
     --color-drd-primary-75: #e2edfa;
     --color-drd-primary-100: #d9e8ff;
@@ -97,7 +101,7 @@ body {
     }
 
     .app-px {
-        @apply px-4 sm:px-16 md:px-28 lg:px-40 xl:px-48;
+        @apply px-4 sm:px-16 md:px-28 lg:px-40 xl:px-52;
     }
 }
 
