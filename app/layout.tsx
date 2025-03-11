@@ -65,54 +65,46 @@ const peyda = localFont({
 });
 
 const keywords: string[] = [
+    // English Keywords
     "Pouria Darandi",
-
     "React",
-    "Unity",
-    "Django",
     "Next.js",
+    "Vue.js",
+    "Django",
     "Django REST",
-
-    "Portfolio",
+    "Unity",
     "Programmer",
-
     "Full-Stack Developer",
     "Full Stack Developer",
-
-    "Developer",
-    "developer",
     "Web Developer",
-    "Back End Developer",
-    "Front End Developer",
-
-    "iran",
-
-    "drd",
-    "pouria",
-    "Darandi",
-    "pouria drd",
-    "pouria darandi",
-
+    "Front-End Developer",
+    "Back-End Developer",
+    "Software Engineer",
     "freelance",
-    "pouria freelance",
+    "Pouria freelance",
+    "portfolio",
+    "developer",
+    "Iran",
+    "drd",
 
+    // Persian Keywords
     "پوریا",
     "دارندی",
     "پوریا دارندی",
-
-    "برنامه‌ نویس فول‌ استک",
-
+    "برنامه‌نویس",
+    "برنامه‌نویس فول استک",
+    "توسعه دهنده",
+    "توسعه دهنده وب",
+    "برنامه نویس جنگو",
+    "برنامه نویس نکست جی اس",
+    "یونیتی",
     "ریکت",
     "جنگو",
-    "یونیتی",
     "جنگو رست",
-    "نکست‌ جی‌اس",
-
-    "پروژه‌ نویس فول‌ استک",
+    "نکست جی اس",
+    "پورتفولیو",
     "فریلنس",
-    "پوریا فریلنس",
 ];
-
 export const metadata: Metadata = {
     applicationName: "Pouria Darandi",
 
@@ -124,7 +116,7 @@ export const metadata: Metadata = {
     },
 
     description:
-        "Pouria Darandi, React, Next js, Vue js, Django, Django REST and Unity Developer",
+        "Pouria Darandi is a skilled Full-Stack Developer specializing in React, Next.js, Vue.js, Django, Django REST, and Unity.",
 
     keywords: keywords,
 
@@ -144,7 +136,7 @@ export const metadata: Metadata = {
         url: "https://pouria-drd.ir",
         title: "Pouria Darandi | Programmer",
         description:
-            "Pouria Darandi, React, Next js, Vue js, Django, Django REST and Unity Developer",
+            "Pouria Darandi is a skilled Full-Stack Developer specializing in React, Next.js, Vue.js, Django, Django REST, and Unity.",
     },
 
     twitter: {
@@ -154,7 +146,7 @@ export const metadata: Metadata = {
         site: "https://pouria-drd.ir",
         title: "Pouria Darandi | Programmer",
         description:
-            "Pouria Darandi, React, Next js, Vue js, Django, Django REST and Unity Developer",
+            "Pouria Darandi is a skilled Full-Stack Developer specializing in React, Next.js, Vue.js, Django, Django REST, and Unity.",
     },
 
     alternates: {
@@ -164,6 +156,23 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
+    },
+
+    // Structured Data (JSON-LD) for SEO
+    other: {
+        "ld+json": JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Pouria Darandi",
+            url: "https://pouria-drd.ir",
+            jobTitle: "Full-Stack Developer",
+            sameAs: [
+                "https://github.com/pouria-drd/",
+                "https://twitter.com/pouria_drd/",
+                "https://t.me/pouria_drd/",
+                "https://www.instagram.com/pouria.drd?igsh=OTdmZndkajBhbzF2&utm_source=qr/",
+            ],
+        }),
     },
 };
 

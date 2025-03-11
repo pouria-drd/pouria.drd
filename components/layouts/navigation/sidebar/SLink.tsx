@@ -25,8 +25,8 @@ const SLink = (props: NavLinkProps) => {
                 onClick={props.onClick}
                 className={`text-right w-full ${
                     props.isActive
-                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-100"
-                        : `text-drd-neutral-500 hover:bg-drd-primary-100`
+                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-75"
+                        : `text-drd-neutral-500 hover:bg-drd-primary-75`
                 } rounded-l p-1.5`}>
                 {props.children}
             </Link>

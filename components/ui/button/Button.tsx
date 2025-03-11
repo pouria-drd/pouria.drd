@@ -32,7 +32,7 @@ const Button = ({
     ...rest
 }: Props) => {
     const baseStyles = `flex items-center justify-center
-    transition-all text-base rounded-md px-6 h-9 min-h-9 min-w-24 cursor-pointer`;
+    transition-all text-base rounded px-6 h-9 min-h-9 min-w-24 cursor-pointer`;
 
     const outlineStyles = {
         primary: `border border-drd-primary-500 hover:border-none

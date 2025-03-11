@@ -65,9 +65,8 @@ const Sidebar = (props: SidebarProps) => {
                         exit="exit"
                         className={`fixed top-0
                         flex flex-col items-center gap-10
-                        bg-gradient-to-b bg-drd-primary-75
-                        from-drd-primary-75 from-40% to-white
-                        px-4 py-5 z-20 h-svh
+                        bg-gradient-to-b bg-drd-primary-50 from-drd-primary-50 from-40% to-white
+                        px-4 py-5 z-50 h-svh
 
                         ${side === "left" ? "left-0" : "right-0"}  ${
                             props.fullWidth ? "w-full" : "min-w-72 w-[60dvw]"
@@ -79,7 +78,12 @@ const Sidebar = (props: SidebarProps) => {
 
                         <SLinkGroup onClick={props.onCloseSidebar} />
 
-                        <SocialGroup />
+                        <div className="text-center absolute bottom-8 space-y-1">
+                            <SocialGroup />
+                            <p className="text-drd-neutral-600 text-x r2l">
+                                در صفحات مجازی همراه من باشید!
+                            </p>
+                        </div>
 
                         <AppVersion className="absolute bottom-2" />
                     </motion.aside>

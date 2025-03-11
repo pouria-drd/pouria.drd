@@ -26,18 +26,18 @@
     --font-geist-sans: var(--font-geist-sans);
     --font-geist-mono: var(--font-geist-mono);
 
-    --color-drd-primary-50: #eef5ff;
+    --color-drd-primary-50: #eff4ff;
     --color-drd-primary-75: #e6f0fc;
-    --color-drd-primary-100: #d9e8ff;
-    --color-drd-primary-200: #bcd8ff;
-    --color-drd-primary-300: #8ec0ff;
-    --color-drd-primary-400: #599dff;
-    --color-drd-primary-500: #256eff;
-    --color-drd-primary-600: #1b55f5;
-    --color-drd-primary-700: #1441e1;
-    --color-drd-primary-800: #1735b6;
-    --color-drd-primary-900: #19328f;
-    --color-drd-primary-950: #142057;
+    --color-drd-primary-100: #dbe6fe;
+    --color-drd-primary-200: #bfd3fe;
+    --color-drd-primary-300: #93b4fd;
+    --color-drd-primary-400: #6090fa;
+    --color-drd-primary-500: #3b76f6;
+    --color-drd-primary-600: #2563eb;
+    --color-drd-primary-700: #1d58d8;
+    --color-drd-primary-800: #1e4baf;
+    --color-drd-primary-900: #1e408a;
+    --color-drd-primary-950: #172a54;
 
     --color-drd-neutral-50: #f6f7f8;
     --color-drd-neutral-100: #eaecef;
@@ -56,8 +56,8 @@ body {
     /* background: var(--background);
   color: var(--foreground); */
     font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    /* background: linear-gradient(to bottom, var(--color-drd-primary-75), white); */
-    @apply bg-gradient-to-b bg-drd-primary-75 from-drd-primary-75 to-white;
+    /* background: linear-gradient(to bottom, var(--color-drd-primary-50), white); */
+    @apply bg-gradient-to-b bg-drd-primary-50 from-drd-primary-50 to-white;
 }
 
 .r2l {
@@ -155,6 +155,10 @@ body {
         line-height: 1.5; /* Set line-height for readability */
     }
 
+    .title-form {
+        @apply text-drd-neutral-950 text-xl sm:text-2xl font-semibold;
+    }
+
     /* ========================= */
     /* 🔹 Responsive Paragraphs */
     /* ========================= */
@@ -201,5 +205,58 @@ body {
         ); /* Font size adjusts responsively (clamped between 0.875rem and 1.25rem) */
         font-weight: normal; /* Apply normal font weight */
         line-height: 1.75; /* Set line-height for better text readability */
+    }
+
+    .text-p-form {
+        @apply text-drd-neutral-600 text-sm sm:text-base;
+    }
+
+    /* ========================= */
+    /* 🔹 Inputs */
+    /* ========================= */
+
+    .drd-input {
+        @apply outline-none transition-all 
+        text-drd-neutral-800 text-sm bg-white
+        placeholder:text-xs placeholder:text-drd-neutral-400
+        border rounded px-2 w-full h-9 min-h-9;
+    }
+
+    .drd-input-normal {
+        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+    }
+
+    .drd-input-error {
+        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+    }
+
+    .drd-float-input {
+        @apply outline-none transition-all
+        text-sm text-drd-neutral-800 bg-white
+        placeholder:text-transparent placeholder:text-xs
+        border rounded px-2 w-full h-9 min-h-9;
+    }
+
+    .drd-float-input-normal {
+        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+    }
+
+    .drd-float-input-error {
+        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+    }
+
+    .drd-textarea {
+        @apply outline-none transition-all 
+        text-drd-neutral-800 text-sm bg-white
+        placeholder:text-xs placeholder:text-drd-neutral-400
+        border rounded p-2 w-full min-h-24;
+    }
+
+    .drd-textarea-normal {
+        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+    }
+
+    .drd-textarea-error {
+        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
     }
 }
