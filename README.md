@@ -30,7 +30,20 @@ To set up the development environment, follow these steps:
 Create a `.env` file in the root directory to configure environment variables. Example:
 
 ```env
-NEXT_PUBLIC_BASE_PATH="" # Set the base path for the application
+# Set the base path for the application
+NEXT_PUBLIC_BASE_PATH=""
+
+# Gmail SMTP credentials
+EMAIL_PORT="587"
+EMAIL_USE_TLS="true"
+
+EMAIL_SERVICE="gmail"
+EMAIL_HOST="smtp.gmail.com"
+
+EMAIL_HOST_USER=""
+EMAIL_HOST_PASSWORD=""
+
+DEFAULT_FROM_EMAIL=""
 ```
 
 Ensure the `.env` file is added to `.gitignore` to keep sensitive information private.

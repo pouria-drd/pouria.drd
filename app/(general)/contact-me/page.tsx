@@ -2,7 +2,7 @@ import { ContactMeForm } from "@/components/features";
 
 function ContactMePage() {
     return (
-        <div className="flex items-center justify-center py-8 sm:py-24">
+        <div className="flex items-center justify-center sm:min-h-[75dvh]">
             <ContactMeForm />
         </div>
     );

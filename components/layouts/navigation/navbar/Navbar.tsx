@@ -20,7 +20,7 @@ const Navbar = (props: NavbarProps) => {
         <nav
             className={`sticky top-0 z-10 ${
                 isScrolled
-                    ? "bg-drd-primary-75 bg-opacity-90 glass-effect"
+                    ? "bg-drd-primary-50 bg-opacity-90 glass-effect"
                     : "bg-transparent"
             } flex items-center justify-between app-px p-4`}>
             {/* Logo */}

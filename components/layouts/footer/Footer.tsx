@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
         <footer
             id="footer"
             className={cn(
-                `font-mono flex flex-col gap-4 app-px`,
+                `font-mono flex flex-col gap-4 app-px mt-4`,
                 props.className
             )}>
             <SocialGroup />

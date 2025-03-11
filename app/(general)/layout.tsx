@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Footer, Navigation } from "@/components/layouts";
+import { ToastProvider } from "@/context/ToastContext";
 
 const keywords: string[] = [
     // English Keywords
@@ -121,9 +122,11 @@ interface RootLayoutProps {
 function GeneralLayout(props: Readonly<RootLayoutProps>) {
     return (
         <div className="flex flex-col min-h-dvh">
-            <Navigation />
-            <main className="grow app-px">{props.children}</main>
-            <Footer />
+            <ToastProvider>
+                <Navigation />
+                <main className="grow app-px">{props.children}</main>
+                <Footer />
+            </ToastProvider>
         </div>
     );
 }

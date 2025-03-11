@@ -5,7 +5,7 @@ import { cn } from "@/utils";
 interface NormalInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label: string;
     uniqueId: string;
-    error?: string;
+    error?: string | string[];
     dir?: "ltr" | "rtl"; // Add 'dir' prop to handle direction
 }
 
@@ -21,7 +21,7 @@ const Input = (props: NormalInputProps) => {
 
     return (
         <div
-            className={`flex flex-col gap-1 w-full relative ${
+            className={`flex flex-col gap-px w-full relative ${
                 dir === "rtl" ? "text-right" : "text-left"
             }`}>
             {label && (

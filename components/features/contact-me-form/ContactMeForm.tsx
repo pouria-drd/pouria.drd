@@ -1,61 +1,106 @@
 "use client";
 
-import { PdIcon } from "@/components/icons";
-import { Button, Input, TextArea } from "@/components/ui";
+import { useActionState, useEffect } from "react";
+import { contactMeAction } from "@/actions";
+import { useToast } from "@/context/ToastContext";
+import {
+    Button,
+    FormBody,
+    FormCard,
+    FormDescription,
+    FormHeader,
+    FormIcon,
+    FormTextContainer,
+    FormTitle,
+    Input,
+    TextArea,
+} from "@/components/ui";
 
 const ContactMeForm = () => {
+    const { addToast } = useToast();
+
+    const [state, formAction, isPending] = useActionState(
+        contactMeAction,
+        undefined
+    );
+
+    const showToast = (message: string, type: "success" | "error" | "info") => {
+        addToast(message, type, {
+            duration: 5000, // Auto-dismiss after 3 seconds
+        });
+    };
+
+    useEffect(() => {
+        if (state?.success) {
+            showToast(state.success, "success");
+        }
+
+        if (state?.serverError) {
+            showToast(state.serverError, "error");
+        }
+    }, [state]);
+
     return (
-        <div className="bg-white rounded-lg shadow px-4 py-6 w-full max-w-full sm:max-w-80 space-y-4">
-            <div className="flex flex-col items-center justify-center w-full gap-4">
-                <PdIcon
-                    className="text-drd-primary-600 w-12"
-                    animation={false}
+        <FormCard>
+            <FormHeader>
+                <FormIcon />
+                <FormTextContainer>
+                    <FormTitle>ارسال پیام</FormTitle>
+                    <FormDescription>
+                        برای برقراری ارتباط، اطلاعات زیر را وارد کنید
+                    </FormDescription>
+                </FormTextContainer>
+            </FormHeader>
+
+            <FormBody action={formAction}>
+                <Input
+                    // required
+                    autoFocus
+                    dir="rtl"
+                    label="نام"
+                    name="fullName"
+                    // minLength={2}
+                    uniqueId="name"
+                    error={state?.errors?.fullName}
+                    placeholder="نام کامل خود را وارد کنید"
+                />
+                <Input
+                    // required
+                    dir="rtl"
+                    name="email"
+                    label="ایمیل"
+                    // minLength={5}
+                    uniqueId="email"
+                    error={state?.errors?.email}
+                    placeholder="ایمیل خود را وارد کنید"
                 />
 
-                <div className="text-center space-y-2">
-                    <h1 className="title-form">ارسال پیام</h1>
-                    <p className="text-p-form">
-                        لطفا برای ارتباط بیشتر، موارد زیر را وارد کنید
-                    </p>
-                </div>
-            </div>
-            <form className="space-y-4">
                 <Input
+                    // required
                     dir="rtl"
-                    autoFocus
-                    label="نام"
-                    name="name"
-                    uniqueId="name"
-                    placeholder="نام کامل خود را وارد کنید"
-                    // value={formState.name}
-                    // onChange={handleChange}
-                    // error={errors.name?.[0]}
+                    name="subject"
+                    label="موضوع"
+                    // minLength={3}
+                    uniqueId="subject"
+                    error={state?.errors?.subject}
+                    placeholder="موضوع خود را وارد کنید"
                 />
-                <Input
-                    dir="rtl"
-                    label="ایمیل"
-                    name="email"
-                    uniqueId="email"
-                    placeholder="ایمیل خود را وارد کنید"
-                    // value={formState.email}
-                    // onChange={handleChange}
-                    // error={errors.email?.[0]}
-                />
+
                 <TextArea
+                    // required
                     dir="rtl"
-                    name="message"
-                    uniqueId="message"
                     label="پیام"
+                    name="message"
+                    // minLength={5}
+                    uniqueId="message"
+                    error={state?.errors?.message}
                     placeholder="پیام خود را وارد کنید"
-                    // value={formState.message}
-                    // onChange={handleChange}
-                    // error={errors.message?.[0]}
                 />
-                <Button type="submit" fullWidth>
+                <Button type="submit" fullWidth isBusy={isPending}>
                     ارسال
                 </Button>
-            </form>
-        </div>
+            </FormBody>
+        </FormCard>
     );
 };
 

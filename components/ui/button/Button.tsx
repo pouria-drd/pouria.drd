@@ -48,9 +48,9 @@ const Button = ({
     };
 
     const filledStyles = {
-        primary: `bg-gradient-to-b from-drd-primary-500 to-drd-primary-700
+        primary: `bg-gradient-to-b from-drd-primary-500 to-drd-primary-800
         disabled:from-drd-primary-400 disabled:to-drd-primary-700
-        hover:from-drd-primary-500 hover:to-drd-primary-800 text-drd-primary-50`,
+        hover:from-drd-primary-600 hover:to-drd-primary-900 text-drd-primary-50`,
 
         dark: `bg-gradient-to-b from-zinc-600 to-zinc-800
         disabled:from-zinc-600 disabled:to-zinc-800

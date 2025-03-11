@@ -212,6 +212,15 @@ body {
     }
 
     /* ========================= */
+    /* 🔹 Cards */
+    /* ========================= */
+
+    .drd-form-card {
+        @apply bg-white flex flex-col items-center gap-4
+        rounded-lg shadow-md w-full max-w-full sm:max-w-80 px-6 py-8;
+    }
+
+    /* ========================= */
     /* 🔹 Inputs */
     /* ========================= */
 
@@ -258,5 +267,71 @@ body {
 
     .drd-textarea-error {
         @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+    }
+
+    /* ========================= */
+    /* 🔹 Toast */
+    /* ========================= */
+
+    .toast {
+        @apply flex fixed justify-between items-start rounded-lg rounded-r-none mx-auto
+        hover:!scale-105 transition-all shadow-lg cursor-default p-4 w-[92dvw] sm:w-80 z-50;
+
+        &.success {
+            @apply bg-green-50 text-green-700 border-r-4 border-green-700;
+
+            &.toast-progress {
+                @apply after:bg-green-700;
+            }
+        }
+
+        &.error {
+            @apply bg-red-50 text-red-600 border-r-4 border-red-600;
+
+            &.toast-progress {
+                @apply after:bg-red-600;
+            }
+        }
+
+        &.info {
+            @apply bg-blue-50 text-blue-700 border-r-4 border-blue-700;
+
+            &.toast-progress {
+                @apply after:bg-blue-700;
+            }
+        }
+
+        &.success button {
+            @apply text-green-700;
+        }
+
+        &.error button {
+            @apply text-red-600;
+        }
+
+        &.info button {
+            @apply text-blue-700;
+        }
+    }
+
+    .toast-progress::after {
+        left: 0;
+        width: 0;
+        bottom: 0;
+        height: 2px;
+        content: "";
+        display: block;
+        position: absolute;
+        animation: toast-progress-animation var(--toastDuration, 4s) linear
+            forwards;
+    }
+}
+
+@keyframes toast-progress-animation {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
     }
 }

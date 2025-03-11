@@ -6,7 +6,7 @@ interface TextAreaProps
     extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     label: string;
     uniqueId: string;
-    error?: string;
+    error?: string | string[];
     dir?: "ltr" | "rtl"; // Add 'dir' prop to handle direction
 }
 
