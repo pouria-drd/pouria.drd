@@ -8,7 +8,7 @@ import {
 
 function ContactMePage() {
     return (
-        <div className="flex flex-col items-center justify-center gap-12 sm:gap-24 py-4 sm:pt-24 sm:pb-16">
+        <div className="flex flex-col items-center justify-center gap-12 sm:gap-24 py-4 sm:py-8 sm:min-h-dvh">
             <div className="flex flex-col-reverse sm:flex-row items-start justify-between gap-12 sm:gap-8 w-full">
                 <div className="flex items-center justify-center w-full">
                     <ContactMeForm className="max-w-full sm:max-w-sm" />
@@ -50,7 +50,7 @@ function ContactMePage() {
                         </ContactInfoLink> */}
                     </div>
 
-                    <div className="w-full">
+                    <div className="hidden sm:block w-full">
                         <Image
                             width={570}
                             height={428}
