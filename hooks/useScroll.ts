@@ -1,42 +1,46 @@
 import { useState, useEffect } from "react";
 
 /**
- * Custom hook to detect the scroll position of the window.
- * It returns a boolean value indicating if the user has scrolled past a given threshold.
+ * Hook to track scroll position and direction.
  *
- * @param threshold - The scroll position (in pixels) at which the background changes (default: 50).
- * @returns [isScrolled] - A boolean indicating whether the scroll position exceeds the threshold.
+ * @param threshold - The scroll position (in pixels) to trigger `isScrolled` (default: 50).
+ * @param directionThreshold - Minimum scroll distance before detecting a direction change (default: 50).
+ * @returns A tuple `[isScrolled, isScrollingDown]` where:
+ *   - `isScrolled`: `true` if the user has scrolled past the threshold.
+ *   - `isScrollingDown`: `true` if the user is scrolling **down**.
  *
  * @example
- * const isScrolled = useScroll(100);
- * if (isScrolled) {
- *   // The user has scrolled past 100px
- * }
+ * const [isScrolled, isScrollingDown] = useScroll(100, 50);
+ * if (isScrolled) { console.log("User scrolled past 100px"); }
+ * if (isScrollingDown) { console.log("User is scrolling down"); }
  */
-function useScroll(threshold: number = 50) {
+function useScroll(
+    threshold: number = 50,
+    directionThreshold: number = 50
+): readonly [boolean, boolean] {
+    const [lastScrollY, setLastScrollY] = useState<number>(0);
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
+    const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false);
 
     useEffect(() => {
-        // Function to handle the scroll event and update the scroll state
         const handleScroll = () => {
-            if (window.scrollY > threshold) {
-                setIsScrolled(true); // Scroll position exceeds threshold
-            } else {
-                setIsScrolled(false); // Scroll position is below threshold
+            const currentScrollY = window.scrollY;
+
+            // Detect if the user has scrolled past the threshold
+            setIsScrolled(currentScrollY > threshold);
+
+            // Detect scroll direction with a threshold
+            if (Math.abs(currentScrollY - lastScrollY) >= directionThreshold) {
+                setIsScrollingDown(currentScrollY > lastScrollY); // True if scrolling down
+                setLastScrollY(currentScrollY);
             }
         };
 
-        // Add the scroll event listener to monitor the window scroll
         window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [threshold, directionThreshold, lastScrollY]);
 
-        // Cleanup the event listener when the component is unmounted
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [threshold]); // The effect runs whenever the threshold changes
-
-    // Return the scroll state as a tuple (with `as const` for type inference)
-    return [isScrolled] as const;
+    return [isScrolled, isScrollingDown] as const;
 }
 
 export default useScroll;

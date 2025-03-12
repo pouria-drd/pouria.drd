@@ -11,7 +11,7 @@ interface NavLinkProps {
 
 const NavLink = (props: NavLinkProps) => {
     return (
-        <div className={cn("", props.className)}>
+        <div className={cn("relative", props.className)}>
             <Link
                 href={props.href}
                 className={`${
@@ -22,11 +22,12 @@ const NavLink = (props: NavLinkProps) => {
                 } font-semibold`}>
                 {props.children}
             </Link>
+
             {props.isActive && (
                 <motion.span
                     layoutId="drd-navlink"
-                    className="bg-drd-primary-500
-                    w-full block rounded-lg h-0.5"
+                    className={`bg-drd-primary-500 absolute 
+                   block rounded-lg h-[2.5px] w-full top-[25px]`}
                 />
             )}
         </div>

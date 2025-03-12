@@ -12,7 +12,7 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
     const pathname = usePathname();
 
     return (
-        <div className={cn("flex gap-4", props.className)}>
+        <div className={cn("flex items-center gap-4", props.className)}>
             <NavLink href="/" isActive={isLinkActive(pathname, "/")}>
                 خانه
             </NavLink>
