@@ -17,6 +17,10 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
                 خانه
             </NavLink>
 
+            <NavLink href="/blog" isActive={isLinkActive(pathname, "/blog")}>
+                بلاگ
+            </NavLink>
+
             <NavLink
                 href="/services"
                 isActive={isLinkActive(pathname, "/services")}>
@@ -26,7 +30,7 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
             <NavLink
                 href="/contact-me"
                 isActive={isLinkActive(pathname, "/contact-me")}>
-                تماس
+                ارتباط‌با‌من
             </NavLink>
         </div>
     );

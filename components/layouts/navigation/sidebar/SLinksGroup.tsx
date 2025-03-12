@@ -39,6 +39,13 @@ const SLinkGroup = (props: NavigationLinksProps) => {
             </SLink>
 
             <SLink
+                href="/blog"
+                onClick={handleClick}
+                isActive={isLinkActive(pathname, "/blog")}>
+                بلاگ
+            </SLink>
+
+            <SLink
                 href="/services"
                 onClick={handleClick}
                 isActive={isLinkActive(pathname, "/services")}>
@@ -49,7 +56,7 @@ const SLinkGroup = (props: NavigationLinksProps) => {
                 href="/contact-me"
                 onClick={handleClick}
                 isActive={isLinkActive(pathname, "/contact-me")}>
-                تماس
+                ارتباط‌با‌من
             </SLink>
         </motion.div>
     );

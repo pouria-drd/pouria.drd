@@ -5,7 +5,7 @@ interface FormTitleProps {
 
 const FormTitle = (props: FormTitleProps) => {
     return (
-        <h1 className={`title-form ${props.className}`}>{props.children}</h1>
+        <h1 className={`form-title ${props.className}`}>{props.children}</h1>
     );
 };
 

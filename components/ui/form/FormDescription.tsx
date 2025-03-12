@@ -7,7 +7,9 @@ interface FormDescriptionProps {
 
 const FormDescription = (props: FormDescriptionProps) => {
     return (
-        <p className={cn(`text-p-form`, props.className)}>{props.children}</p>
+        <p className={cn(`form-description`, props.className)}>
+            {props.children}
+        </p>
     );
 };
 

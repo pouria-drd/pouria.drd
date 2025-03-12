@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
 import { contactMeAction } from "@/actions";
+import { useActionState, useEffect } from "react";
 import { useToast } from "@/context/ToastContext";
 import {
     Button,
@@ -16,7 +16,11 @@ import {
     TextArea,
 } from "@/components/ui";
 
-const ContactMeForm = () => {
+interface ContactMeFormProps {
+    className?: string;
+}
+
+const ContactMeForm = (props: ContactMeFormProps) => {
     const { addToast } = useToast();
 
     const [state, formAction, isPending] = useActionState(
@@ -41,7 +45,7 @@ const ContactMeForm = () => {
     }, [state]);
 
     return (
-        <FormCard>
+        <FormCard className={props.className}>
             <FormHeader>
                 <FormIcon />
                 <FormTextContainer>

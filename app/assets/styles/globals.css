@@ -102,7 +102,8 @@ body {
     }
 
     .app-px {
-        @apply px-4 sm:px-16 md:px-28 lg:px-40 xl:px-52;
+        /* @apply px-4 sm:px-16 md:px-28 lg:px-40 xl:px-52; */
+        @apply px-4 md:px-16 lg:px-24 xl:px-48 2xl:px-80;
     }
 }
 
@@ -111,51 +112,22 @@ body {
     /* 🔹 Responsive Headings */
     /* ========================= */
 
-    .title-extra-large {
-        color: var(--color-drd-neutral-950); /* Set color for the title */
-        font-size: clamp(
-            2.5rem,
-            6vw,
-            3.5rem
-        ); /* Font size adjusts responsively (clamped between 2.5rem and 4rem) */
-        font-weight: bolder; /* Apply extra-bold font weight */
-        line-height: 1.25; /* Set line-height for better readability */
-    }
-
     .title-large {
-        color: var(--color-drd-neutral-950); /* Set color for the title */
-        font-size: clamp(
-            2rem,
-            5vw,
-            3rem
-        ); /* Font size adjusts responsively (clamped between 2rem and 3.5rem) */
-        font-weight: bold; /* Apply bold font weight */
-        line-height: 1.375; /* Set line-height for readability */
+        @apply text-drd-neutral-950 text-3xl
+       sm:text-4xl md:text-5xl lg:text-6xl font-bold;
     }
 
     .title-medium {
-        color: var(--color-drd-neutral-950); /* Set color for the title */
-        font-size: clamp(
-            1.75rem,
-            4vw,
-            2.5rem
-        ); /* Font size adjusts responsively (clamped between 1.75rem and 3rem) */
-        font-weight: 600; /* Apply semi-bold font weight */
-        line-height: 1.375; /* Set line-height for readability */
+        @apply text-drd-neutral-950 text-2xl
+       sm:text-3xl md:text-4xl lg:text-4xl font-bold;
     }
 
     .title-small {
-        color: var(--color-drd-neutral-950); /* Set color for the title */
-        font-size: clamp(
-            1.5rem,
-            3vw,
-            2rem
-        ); /* Font size adjusts responsively (clamped between 1.5rem and 2.5rem) */
-        font-weight: 500; /* Apply semi-bold font weight */
-        line-height: 1.5; /* Set line-height for readability */
+        @apply text-drd-neutral-950 text-xl
+       sm:text-2xl md:text-2xl lg:text-3xl font-bold;
     }
 
-    .title-form {
+    .form-title {
         @apply text-drd-neutral-950 text-xl sm:text-2xl font-semibold;
     }
 
@@ -163,51 +135,22 @@ body {
     /* 🔹 Responsive Paragraphs */
     /* ========================= */
 
-    .text-p-extra-large {
-        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
-        font-size: clamp(
-            1.25rem,
-            3.5vw,
-            2rem
-        ); /* Font size adjusts responsively (clamped between 1.25rem and 2.5rem) */
-        font-weight: normal; /* Apply normal font weight */
-        line-height: 1.5; /* Set line-height for better readability */
-    }
-
     .text-p-large {
-        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
-        font-size: clamp(
-            1.125rem,
-            3vw,
-            1.5rem
-        ); /* Font size adjusts responsively (clamped between 1.125rem and 2rem) */
-        font-weight: normal; /* Apply normal font weight */
-        line-height: 1.75; /* Set line-height for better text readability */
+        @apply text-drd-neutral-600 text-lg
+        sm:text-xl md:text-2xl lg:text-3xl;
     }
 
     .text-p-medium {
-        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
-        font-size: clamp(
-            1rem,
-            2.5vw,
-            1.5rem
-        ); /* Font size adjusts responsively (clamped between 1rem and 1.5rem) */
-        font-weight: normal; /* Apply normal font weight */
-        line-height: 1.75; /* Set line-height for better text readability */
+        @apply text-drd-neutral-600 text-base
+        sm:text-lg md:text-xl lg:text-2xl;
     }
 
     .text-p-small {
-        color: var(--color-drd-neutral-600); /* Set color for the paragraph */
-        font-size: clamp(
-            0.875rem,
-            2vw,
-            1.25rem
-        ); /* Font size adjusts responsively (clamped between 0.875rem and 1.25rem) */
-        font-weight: normal; /* Apply normal font weight */
-        line-height: 1.75; /* Set line-height for better text readability */
+        @apply text-drd-neutral-600 text-base
+        sm:text-base md:text-lg lg:text-xl;
     }
 
-    .text-p-form {
+    .form-description {
         @apply text-drd-neutral-600 text-sm sm:text-base;
     }
 
