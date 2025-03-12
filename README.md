@@ -34,16 +34,16 @@ Create a `.env` file in the root directory to configure environment variables. E
 NEXT_PUBLIC_BASE_PATH=""
 
 # Gmail SMTP credentials
-EMAIL_PORT="587"
-EMAIL_USE_TLS="true"
+EMAIL_PORT="587" # Replace with your SMTP port
+EMAIL_USE_TLS="true" # Set to "true" for TLS
 
-EMAIL_SERVICE="gmail"
-EMAIL_HOST="smtp.gmail.com"
+EMAIL_SERVICE="gmail" # Replace with your preferred email service
+EMAIL_HOST="smtp.gmail.com" # Replace with your SMTP server
 
-EMAIL_HOST_USER=""
-EMAIL_HOST_PASSWORD=""
+EMAIL_HOST_USER="your_email@gmail.com" # Replace with your email address
+EMAIL_HOST_PASSWORD="your_password" # Replace with your password
 
-DEFAULT_FROM_EMAIL=""
+DEFAULT_ADMINS_EMAILS="admin@example.com" # Comma-separated list of admin emails
 ```
 
 Ensure the `.env` file is added to `.gitignore` to keep sensitive information private.
