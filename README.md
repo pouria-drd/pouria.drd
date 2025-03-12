@@ -46,8 +46,8 @@ EMAIL_HOST="smtp.gmail.com"
 EMAIL_HOST_USER="your_email@gmail.com"
 # Replace with your password
 EMAIL_HOST_PASSWORD="your_password"
-
-DEFAULT_ADMINS_EMAILS="admin@example.com" # Comma-separated list of admin emails
+# Comma-separated list of admin emails
+DEFAULT_ADMINS_EMAILS="admin@example.com"
 ```
 
 Ensure the `.env` file is added to `.gitignore` to keep sensitive information private.
