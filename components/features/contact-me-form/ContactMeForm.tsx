@@ -58,48 +58,50 @@ const ContactMeForm = (props: ContactMeFormProps) => {
 
             <FormBody action={formAction}>
                 <Input
-                    // required
+                    required
                     autoFocus
                     dir="rtl"
                     label="نام"
                     name="fullName"
-                    // minLength={2}
+                    minLength={2}
                     uniqueId="name"
                     error={state?.errors?.fullName}
                     placeholder="نام کامل خود را وارد کنید"
                 />
+
                 <Input
-                    // required
+                    required
                     dir="rtl"
                     name="email"
                     label="ایمیل"
-                    // minLength={5}
+                    minLength={5}
                     uniqueId="email"
                     error={state?.errors?.email}
                     placeholder="ایمیل خود را وارد کنید"
                 />
 
                 <Input
-                    // required
+                    required
                     dir="rtl"
                     name="subject"
                     label="موضوع"
-                    // minLength={3}
+                    minLength={3}
                     uniqueId="subject"
                     error={state?.errors?.subject}
                     placeholder="موضوع خود را وارد کنید"
                 />
 
                 <TextArea
-                    // required
+                    required
                     dir="rtl"
                     label="پیام"
                     name="message"
-                    // minLength={5}
+                    minLength={5}
                     uniqueId="message"
                     error={state?.errors?.message}
                     placeholder="پیام خود را وارد کنید"
                 />
+
                 <Button type="submit" fullWidth isBusy={isPending}>
                     ارسال
                 </Button>

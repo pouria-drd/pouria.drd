@@ -10,7 +10,7 @@ function validateEmailConfig(): boolean {
         "EMAIL_HOST_USER",
         "EMAIL_HOST_PASSWORD",
         "EMAIL_SERVICE",
-        "DEFAULT_FROM_EMAIL",
+        "DEFAULT_ADMINS_EMAILS",
     ];
 
     for (const envVar of requiredEnvVars) {

@@ -25,15 +25,15 @@ class EmailServiceFactory {
         const user = process.env.EMAIL_HOST_USER!;
         const password = process.env.EMAIL_HOST_PASSWORD!;
         const service = process.env.EMAIL_SERVICE!;
-        const adminsEmails = process.env.DEFAULT_FROM_EMAIL!;
+        const adminsEmails = process.env.DEFAULT_ADMINS_EMAILS!;
 
         const transporter = nodemailer.createTransport({
-            service,
-            host,
-            port,
+            service: service,
+            host: host,
+            port: port,
             secure: useTLS,
             auth: {
-                user,
+                user: user,
                 pass: password,
             },
         });

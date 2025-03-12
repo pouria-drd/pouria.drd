@@ -63,8 +63,7 @@ async function contactMeAction(
         }
 
         return {
-            serverError:
-                "خطای غیرمنتظره‌ای رخ داده است، با پشتیبانی به ما تماس بگیرید.",
+            serverError: "خطای غیرمنتظره‌ای رخ داده است!",
         };
     }
 }
