@@ -33,15 +33,19 @@ Create a `.env` file in the root directory to configure environment variables. E
 # Set the base path for the application
 NEXT_PUBLIC_BASE_PATH=""
 
-# Gmail SMTP credentials
-EMAIL_PORT="587" # Replace with your SMTP port
-EMAIL_USE_TLS="true" # Set to "true" for TLS
-
-EMAIL_SERVICE="gmail" # Replace with your preferred email service
-EMAIL_HOST="smtp.gmail.com" # Replace with your SMTP server
-
-EMAIL_HOST_USER="your_email@gmail.com" # Replace with your email address
-EMAIL_HOST_PASSWORD="your_password" # Replace with your password
+# ---- Email Configuration ----
+# Replace with your SMTP port
+EMAIL_PORT="587"
+# Set to "true" for TLS
+EMAIL_USE_TLS="true"
+# Replace with your preferred email service
+EMAIL_SERVICE="gmail"
+# Replace with your SMTP server
+EMAIL_HOST="smtp.gmail.com"
+# Replace with your email address
+EMAIL_HOST_USER="your_email@gmail.com"
+# Replace with your password
+EMAIL_HOST_PASSWORD="your_password"
 
 DEFAULT_ADMINS_EMAILS="admin@example.com" # Comma-separated list of admin emails
 ```
