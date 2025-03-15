@@ -22,9 +22,9 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
             </NavLink>
 
             <NavLink
-                href="/services"
-                isActive={isLinkActive(pathname, "/services")}>
-                خدمات
+                href="/projects"
+                isActive={isLinkActive(pathname, "/projects")}>
+                پروژه‌ها
             </NavLink>
 
             <NavLink

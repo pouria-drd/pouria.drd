@@ -46,10 +46,10 @@ const SLinkGroup = (props: NavigationLinksProps) => {
             </SLink>
 
             <SLink
-                href="/services"
+                href="/projects"
                 onClick={handleClick}
-                isActive={isLinkActive(pathname, "/services")}>
-                خدمات
+                isActive={isLinkActive(pathname, "/projects")}>
+                پروژه‌ها
             </SLink>
 
             <SLink
