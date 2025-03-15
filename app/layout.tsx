@@ -105,6 +105,7 @@ const keywords: string[] = [
     "پورتفولیو",
     "فریلنس",
 ];
+
 export const metadata: Metadata = {
     applicationName: "Pouria Darandi",
 

@@ -85,7 +85,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
             id,
             message,
             duration,
-            position: position || "bottom-right",
+            position: position || "top-right",
             type,
         };
 

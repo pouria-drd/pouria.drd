@@ -125,7 +125,7 @@ function GeneralLayout(props: Readonly<RootLayoutProps>) {
             <ToastProvider>
                 <Navigation />
                 <main className="grow app-px">{props.children}</main>
-                <Footer />
+                <Footer className="app-px" />
             </ToastProvider>
         </div>
     );
