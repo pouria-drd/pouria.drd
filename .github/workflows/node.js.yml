@@ -1,4 +1,4 @@
-name: pouria.drd website CI
+name: Pouria.drd Website CI
 
 on:
     push:
@@ -22,11 +22,28 @@ jobs:
             DEFAULT_ADMINS_EMAILS: ${{ secrets.DEFAULT_ADMINS_EMAILS }}
 
         steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
-            - run: npm ci
-            - run: npm run build --if-present
+
+            - name: Install Project Dependencies
+              run: npm ci
+
+            - name: Build the Project
+              run: npm run build --if-present
+
+            - name: Navigate to Project Directory
+              run: cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+
+            - name: Restart Application using PM2
+              run: pm2 restart pouria.drd
+
+            - name: Test if the App is Running
+              run: |
+                  # Check if the app is running on the expected port (e.g., 3000)
+                  curl --silent --fail http://localhost:3000 || exit 1
