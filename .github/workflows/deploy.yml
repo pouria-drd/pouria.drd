@@ -1,4 +1,4 @@
-name: Deploy pouria.drd website to server
+name: 🚀 Deploy pouria.drd Website
 
 on:
     push:
@@ -7,22 +7,46 @@ on:
 
 jobs:
     deploy:
+        name: 🖥 Deploy to Server
         runs-on: ubuntu-latest
 
         steps:
+            # 📥 Step 1: Checkout the Repository
             - name: 📥 Checkout Repository
               uses: actions/checkout@v3
 
-            - name: 🔑 Set up SSH
+            # 🔑 Step 2: Set Up SSH Connection Securely
+            - name: 🔑 Set Up SSH
               run: |
                   mkdir -p ~/.ssh
                   echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
                   chmod 600 ~/.ssh/id_rsa
                   ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
+            # ✅ Step 3: Validate Secrets & Variables (Fixed)
+            - name: ✅ Validate Secrets & Variables
+              env:
+                  EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+                  EMAIL_USE_TLS: ${{ secrets.EMAIL_USE_TLS }}
+                  EMAIL_SERVICE: ${{ secrets.EMAIL_SERVICE }}
+                  EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+                  EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
+                  EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
+                  DEFAULT_ADMINS_EMAILS: ${{ secrets.DEFAULT_ADMINS_EMAILS }}
+              run: |
+                  required_vars=("EMAIL_PORT" "EMAIL_USE_TLS" "EMAIL_SERVICE" "EMAIL_HOST" "EMAIL_HOST_USER" "EMAIL_HOST_PASSWORD" "DEFAULT_ADMINS_EMAILS")
+                  for var in "${required_vars[@]}"; do
+                    if [ -z "${!var}" ]; then
+                      echo "❌ ERROR: Missing required secret: $var"
+                      exit 1
+                    fi
+                  done
+                  echo "✅ All required secrets are set."
+
+            # 🛠 Step 4: Create .env File on Server (Fixed)
             - name: 🛠 Create .env File
               run: |
-                  echo "EMAIL_PORT=${{ secrets.EMAIL_PORT }}" >> .env
+                  echo "EMAIL_PORT=${{ secrets.EMAIL_PORT }}" > .env
                   echo "EMAIL_USE_TLS=${{ secrets.EMAIL_USE_TLS }}" >> .env
                   echo "EMAIL_SERVICE=${{ secrets.EMAIL_SERVICE }}" >> .env
                   echo "EMAIL_HOST=${{ secrets.EMAIL_HOST }}" >> .env
@@ -30,12 +54,37 @@ jobs:
                   echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
                   echo "DEFAULT_ADMINS_EMAILS=${{ secrets.DEFAULT_ADMINS_EMAILS }}" >> .env
 
+            # 🔄 Step 5: Deploy Code & Restart Server
             - name: 🚀 Deploy via SSH
+              env:
+                  SSH_USER: ${{ secrets.SSH_USER }}
+                  SERVER_IP: ${{ secrets.SERVER_IP }}
               run: |
-                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-                    cd ~/frontend/pouria.drd  # Change to your project directory
-                    git pull origin main
-                    npm install
-                    npm run build
-                    pm2 restart pouria.drd  # Restart PM2 (if used)
+                  ssh -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP << 'EOF'
+                    set -e  # Enable error handling
+                    echo "🚀 Starting deployment..."
+
+                    # 📂 Change to project directory
+                    cd ~/frontend/pouria.drd || { echo "❌ ERROR: Directory not found!"; exit 1; }
+
+                    # 🔄 Pull latest changes
+                    git pull origin main || { echo "❌ ERROR: Git pull failed!"; exit 1; }
+
+                    # 📦 Install dependencies (only if package.json changed)
+                    if git diff --quiet HEAD^ HEAD -- package.json package-lock.json; then
+                      echo "✅ No changes in dependencies."
+                    else
+                      echo "📦 Installing dependencies..."
+                      npm install || { echo "❌ ERROR: npm install failed!"; exit 1; }
+                    fi
+
+                    # 🔧 Build the project
+                    echo "🛠 Building the Next.js app..."
+                    npm run build || { echo "❌ ERROR: Build failed!"; exit 1; }
+
+                    # 🚀 Restart with PM2 (ensure PM2 is installed)
+                    echo "🔄 Restarting the app with PM2..."
+                    pm2 restart pouria.drd || pm2 start npm --name "pouria.drd" -- start
+
+                    echo "✅ Deployment successful!"
                   EOF
