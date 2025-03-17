@@ -1,5 +1,5 @@
 function Homepage() {
-    return <div>سلام و درود فراوان github action working</div>;
+    return <div>سلام و درود فراوان</div>;
 }
 
 export default Homepage;
