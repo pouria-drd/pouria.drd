@@ -1,33 +1,32 @@
-name: Node.js CI
+name: pouria.drd website CI
 
 on:
-  push:
-    branches: [ "main" ]
+    push:
+        branches: ["main"]
 
 jobs:
-  build:
+    build:
+        runs-on: self-hosted
 
-    runs-on: self-hosted
+        strategy:
+            matrix:
+                node-version: [22.x]
 
-    strategy:
-      matrix:
-        node-version: [22.x]
-    
-    env:
-      EMAIL_PORT=${{secrets.EMAIL_PORT}}
-      EMAIL_USE_TLS=${{secrets.EMAIL_USE_TLS}}
-      EMAIL_SERVICE=${{secrets.EMAIL_SERVICE}}
-      EMAIL_HOST=${{secrets.EMAIL_HOST}}
-      EMAIL_HOST_USER=${{secrets.EMAIL_HOST_USER}}
-      EMAIL_HOST_PASSWORD=${{secrets.EMAIL_HOST_PASSWORD}}
-      DEFAULT_ADMINS_EMAILS=${{secrets.DEFAULT_ADMINS_EMAILS}}
-    
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
+        env:
+            EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+            EMAIL_USE_TLS: ${{ secrets.EMAIL_USE_TLS }}
+            EMAIL_SERVICE: ${{ secrets.EMAIL_SERVICE }}
+            EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+            EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
+            EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
+            DEFAULT_ADMINS_EMAILS: ${{ secrets.DEFAULT_ADMINS_EMAILS }}
+
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: "npm"
+            - run: npm ci
+            - run: npm run build --if-present
