@@ -1,0 +1,31 @@
+name: Deploy pouria.drd website to server
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 📥 Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: 🔑 Set up SSH
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+            - name: 🚀 Deploy via SSH
+              run: |
+                  ssh ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+                    cd ~/frontend/pouria.drd  # Change to your project directory
+                    git pull origin main
+                    npm install
+                    npm run build
+                    pm2 restart pouria.drd  # Restart PM2 (if used)
+                  EOF
