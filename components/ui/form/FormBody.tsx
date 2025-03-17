@@ -1,6 +1,8 @@
 import { cn } from "@/utils";
 
-interface FormBodyProps extends React.FormHTMLAttributes<HTMLFormElement> {}
+interface FormBodyProps extends React.FormHTMLAttributes<HTMLFormElement> {
+    className?: string;
+}
 
 const FormBody = (props: FormBodyProps) => {
     return (

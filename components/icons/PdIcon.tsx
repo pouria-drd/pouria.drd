@@ -15,12 +15,13 @@ const PdIcon = (props: PdIconProps) => {
     const animation = props.animation ?? true;
 
     const controls = useAnimation();
-    const playAnimation = async () => {
-        await controls.start("hidden");
-        await controls.start("visible");
-    };
 
     useEffect(() => {
+        const playAnimation = async () => {
+            await controls.start("hidden");
+            await controls.start("visible");
+        };
+
         if (animation) {
             playAnimation(); // Play animation immediately if animation is true
             const interval = setInterval(() => {
@@ -29,7 +30,7 @@ const PdIcon = (props: PdIconProps) => {
 
             return () => clearInterval(interval); // Cleanup on unmount
         }
-    }, [controls, animation]);
+    }, [controls, animation, repeat]);
 
     const logoVariants = {
         hidden: { opacity: 0, scale: 0.8, rotate: -10 },

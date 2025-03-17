@@ -28,13 +28,16 @@ const ContactMeForm = (props: ContactMeFormProps) => {
         undefined
     );
 
-    const showToast = (message: string, type: "success" | "error" | "info") => {
-        addToast(message, type, {
-            duration: 5000, // Auto-dismiss after 3 seconds
-        });
-    };
-
     useEffect(() => {
+        const showToast = (
+            message: string,
+            type: "success" | "error" | "info"
+        ) => {
+            addToast(message, type, {
+                duration: 5000, // Auto-dismiss after 3 seconds
+            });
+        };
+
         if (state?.success) {
             showToast(state.success, "success");
         }
