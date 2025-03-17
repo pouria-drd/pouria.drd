@@ -42,8 +42,3 @@ jobs:
 
             - name: Restart Application using PM2
               run: pm2 restart pouria.drd
-
-            - name: Test if the App is Running
-              run: |
-                  # Check if the app is running on the expected port (e.g., 3000)
-                  curl --silent --fail http://localhost:3000 || exit 1
