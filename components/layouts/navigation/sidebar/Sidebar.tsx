@@ -67,8 +67,8 @@ const Sidebar = (props: SidebarProps) => {
                         exit="exit"
                         className={`fixed top-0
                         flex flex-col items-center gap-10
-                        bg-gradient-to-b bg-drd-primary-50 from-drd-primary-50 from-40% to-white
-                        px-4 py-5 z-50 h-svh
+                        bg-gradient-to-b bg-drd-primary-75 from-drd-primary-75 from-10% to-white
+                        px-4 py-5 z-50 h-dvh
 
                         ${side === "left" ? "left-0" : "right-0"}  ${
                             props.fullWidth ? "w-full" : "min-w-72 w-[60dvw]"

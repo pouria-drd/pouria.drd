@@ -26,7 +26,7 @@ const Navbar = (props: NavbarProps) => {
             transition={{
                 damping: 25,
                 stiffness: 300,
-                type: "spring",
+                type: "ease",
             }}
             className={`bg-drd-primary-75/95
             sticky top-0 z-10 glass-effect app-px

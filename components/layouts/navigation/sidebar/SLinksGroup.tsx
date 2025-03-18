@@ -27,7 +27,7 @@ const SLinkGroup = (props: NavigationLinksProps) => {
             transition: {
                 type: "ease",
                 delayChildren: 0.35,
-                staggerChildren: 0.2,
+                staggerChildren: 0.15,
             },
         },
     };
