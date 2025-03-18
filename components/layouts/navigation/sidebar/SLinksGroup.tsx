@@ -1,9 +1,9 @@
 "use client";
 
 import SLink from "./SLink";
-import { motion } from "framer-motion";
 import { cn, isLinkActive } from "@/utils";
 import { usePathname } from "next/navigation";
+import { motion, Variants } from "framer-motion";
 
 interface NavigationLinksProps {
     className?: string;
@@ -17,11 +17,18 @@ const SLinkGroup = (props: NavigationLinksProps) => {
         props.onClick?.();
     };
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
+    const containerVariants: Variants = {
+        hidden: {
+            opacity: 0,
+        },
+
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.2 },
+            transition: {
+                type: "ease",
+                delayChildren: 0.35,
+                staggerChildren: 0.2,
+            },
         },
     };
 

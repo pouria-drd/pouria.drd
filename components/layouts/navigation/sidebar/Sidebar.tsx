@@ -25,12 +25,13 @@ const Sidebar = (props: SidebarProps) => {
             x: props.side === "left" ? "-100%" : "100%",
             opacity: 0,
         },
+
         visible: {
             x: 0,
             opacity: 1,
             transition: {
                 type: "ease",
-                duration: 0.25,
+                duration: 0.35,
                 delayChildren: 0.2,
                 staggerChildren: 0.15,
             },
@@ -39,7 +40,8 @@ const Sidebar = (props: SidebarProps) => {
             x: props.side === "left" ? "-100%" : "100%",
             opacity: 0,
             transition: {
-                duration: 0.25,
+                type: "ease",
+                duration: 0.35,
             },
         },
     };

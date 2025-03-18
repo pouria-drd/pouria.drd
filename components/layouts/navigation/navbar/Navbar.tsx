@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 const Navbar = (props: NavbarProps) => {
-    const isScrollingDown = useScrollingDown(50);
+    const isScrollingDown = useScrollingDown(75);
 
     function handleSidebarButtonClick() {
         props.onOpenSidebar();

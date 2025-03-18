@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface NavLinkProps {
     href: string;
@@ -11,9 +11,22 @@ interface NavLinkProps {
 }
 
 const SLink = (props: NavLinkProps) => {
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+    const itemVariants: Variants = {
+        hidden: {
+            y: 30,
+            opacity: 0,
+        },
+
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                damping: 20,
+                type: "spring",
+                stiffness: 200,
+                duration: 0.15,
+            },
+        },
     };
 
     return (
@@ -25,8 +38,9 @@ const SLink = (props: NavLinkProps) => {
                 onClick={props.onClick}
                 className={`text-right w-full ${
                     props.isActive
-                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-75"
-                        : `text-drd-neutral-500 hover:bg-drd-primary-75`
+                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-100"
+                        : `text-drd-neutral-500 hover:text-drd-primary-500
+                        hover:bg-drd-primary-100 hover:border-r-2`
                 } rounded-l p-1.5`}>
                 {props.children}
             </Link>
