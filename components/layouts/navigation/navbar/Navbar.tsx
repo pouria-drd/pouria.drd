@@ -1,7 +1,7 @@
 "use client";
 
-import { useScroll } from "@/hooks";
 import { motion } from "framer-motion";
+import { useScrollingDown } from "@/hooks";
 import NavlinksGroup from "./NavlinksGroup";
 import { SidebarButton } from "@/components/ui";
 import { PouriaLogo } from "@/components/icons";
@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 const Navbar = (props: NavbarProps) => {
-    const [isScrollingDown] = useScroll(50, 50);
+    const isScrollingDown = useScrollingDown(40);
 
     function handleSidebarButtonClick() {
         props.onOpenSidebar();
