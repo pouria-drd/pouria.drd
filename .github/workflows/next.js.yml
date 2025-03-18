@@ -1,0 +1,57 @@
+name: Pouria.drd Website CI
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: self-hosted
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22.x
+
+            # Cache Node Modules
+            - name: Cache Node Modules
+              uses: actions/cache@v4
+              with:
+                  path: node_modules
+                  key: node-modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+                  restore-keys: |
+                      node-modules-${{ runner.os }}-
+
+            # Cache Next.js Build Cache
+            - name: Cache Next.js Build Cache
+              uses: actions/cache@v4
+              with:
+                  path: .next/cache
+                  key: nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+                  restore-keys: |
+                      nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+
+            - name: Install Dependencies
+              run: npm ci # Faster and deterministic install
+
+            - name: Build the Project
+              run: npm run build
+
+            - name: Create .env File
+              run: |
+                  echo "EMAIL_PORT=${{ secrets.EMAIL_PORT }}" >> .env
+                  echo "EMAIL_USE_TLS=${{ secrets.EMAIL_USE_TLS }}" >> .env
+                  echo "EMAIL_SERVICE=${{ secrets.EMAIL_SERVICE }}" >> .env
+                  echo "EMAIL_HOST=${{ secrets.EMAIL_HOST }}" >> .env
+                  echo "EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}" >> .env
+                  echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
+                  echo "DEFAULT_ADMINS_EMAILS=${{ secrets.DEFAULT_ADMINS_EMAILS }}" >> .env
+
+            - name: Restart Application using PM2
+              run: |
+                  cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+                  pm2 restart pouria.drd
