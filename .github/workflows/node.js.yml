@@ -7,19 +7,9 @@ on:
 jobs:
     build:
         runs-on: self-hosted
-
         strategy:
             matrix:
                 node-version: [22.x]
-
-        env:
-            EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
-            EMAIL_USE_TLS: ${{ secrets.EMAIL_USE_TLS }}
-            EMAIL_SERVICE: ${{ secrets.EMAIL_SERVICE }}
-            EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
-            EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
-            EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
-            DEFAULT_ADMINS_EMAILS: ${{ secrets.DEFAULT_ADMINS_EMAILS }}
 
         steps:
             - name: Checkout Repository
@@ -31,14 +21,68 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
 
-            - name: Navigate to Project Directory
-              run: cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+            - name: Restore Dependencies Cache
+              uses: actions/cache@v4
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
 
-            - name: Install Project Dependencies
+            - name: Restore Next.js Cache
+              uses: actions/cache@v4
+              with:
+                  path: .next/cache
+                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+                  restore-keys: |
+                      ${{ runner.os }}-nextjs-
+
+            - name: Create .env File
+              run: |
+                  echo "EMAIL_PORT=${{ secrets.EMAIL_PORT }}" >> .env
+                  echo "EMAIL_USE_TLS=${{ secrets.EMAIL_USE_TLS }}" >> .env
+                  echo "EMAIL_SERVICE=${{ secrets.EMAIL_SERVICE }}" >> .env
+                  echo "EMAIL_HOST=${{ secrets.EMAIL_HOST }}" >> .env
+                  echo "EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}" >> .env
+                  echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
+                  echo "DEFAULT_ADMINS_EMAILS=${{ secrets.DEFAULT_ADMINS_EMAILS }}" >> .env
+
+            - name: Install Dependencies
               run: npm install
 
-            - name: Build the Project
+            - name: Build Project
               run: npm run build
 
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: build-output
+                  path: |
+                      .next
+                      package.json
+                      node_modules
+                      .env
+
+    deploy:
+        runs-on: self-hosted
+        needs: build # Ensure deploy only runs if build is successful
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Download Build Artifacts
+              uses: actions/download-artifact@v4
+              with:
+                  name: build-output
+                  path: /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+
+            - name: Load Environment Variables
+              run: |
+                  cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+                  export $(cat .env | xargs)
+
             - name: Restart Application using PM2
-              run: pm2 restart pouria.drd
+              run: |
+                  cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
+                  pm2 restart pouria.drd
