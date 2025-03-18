@@ -136,7 +136,8 @@ body {
 
     .drd-form-card {
         @apply bg-white flex flex-col items-center gap-4
-        rounded-lg shadow-md w-full max-w-full sm:max-w-80 px-6 py-8;
+        rounded-xl border border-drd-neutral-100
+        w-full max-w-full sm:max-w-80 px-6 py-8;
     }
 
     /* ========================= */

@@ -1,10 +1,10 @@
 function Homepage() {
     return (
         <div
-            className="bg-white rounded-lg p-4
-            flex flex-col items-center justify-center">
+            className="bg-white flex flex-col items-center justify-center
+            shadow-lg rounded-lg p-4 w-fit">
             <h1>سلام و درود فراوان</h1>
-            <p>pouria.drd v6.5</p>
+            <p>pouria.drd version: 1.0.1</p>
         </div>
     );
 }
