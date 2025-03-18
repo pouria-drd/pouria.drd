@@ -64,12 +64,6 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v4
 
-            - name: Download Build Artifacts
-              uses: actions/download-artifact@v4
-              with:
-                  name: build-output
-                  path: /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
-
             - name: Load Environment Variables
               run: |
                   cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
