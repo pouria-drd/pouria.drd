@@ -30,7 +30,7 @@ const ContactMeForm = (props: ContactMeFormProps) => {
 
     const showToast = (message: string, type: "success" | "error" | "info") => {
         addToast(message, type, {
-            duration: 70000, // Auto-dismiss after 7 seconds
+            duration: 7000, // Auto-dismiss after 7 seconds
         });
     };
 
