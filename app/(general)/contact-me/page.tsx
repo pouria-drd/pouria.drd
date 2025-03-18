@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { ContactInfoLink } from "@/components/shared";
 import { ContactMeForm } from "@/components/features";
-import {
-    InstagramIcon,
-    TelegramIcon2 /*, TwitterIcon */,
-} from "@/components/icons";
+import { InstagramIcon, TelegramIcon2, TwitterIcon } from "@/components/icons";
 
 function ContactMePage() {
     return (
@@ -40,17 +37,17 @@ function ContactMePage() {
                                 pouria_drd@
                             </span>
                         </ContactInfoLink>
-                        {/* <ContactInfoLink
+                        <ContactInfoLink
                             href="https://twitter.com/pouria_drd/"
                             icon={<TwitterIcon className="w-full" />}
                             label="آدرس توییتر:">
                             <span className="font-bold text-base md:text-lg">
                                 pouria_drd@
                             </span>
-                        </ContactInfoLink> */}
+                        </ContactInfoLink>
                     </div>
 
-                    <div className="hidden sm:block w-full">
+                    <div className="w-full mt-8 sm:mt-0">
                         <Image
                             width={570}
                             height={428}

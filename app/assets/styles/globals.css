@@ -33,7 +33,7 @@
 
 body {
     font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b bg-drd-primary-50 from-drd-primary-50 to-white;
+    @apply bg-gradient-to-b bg-drd-primary-75 from-drd-primary-75 from-5% to-white;
 }
 
 .r2l {
@@ -135,8 +135,8 @@ body {
     /* ========================= */
 
     .drd-form-card {
-        @apply bg-white flex flex-col items-center gap-4
-        rounded-xl border border-drd-neutral-100
+        @apply bg-drd-primary-75/10 flex flex-col items-center gap-4
+        rounded-xl outline outline-drd-neutral-200/50 shadow
         w-full max-w-full sm:max-w-80 px-6 py-8;
     }
 
@@ -145,48 +145,48 @@ body {
     /* ========================= */
 
     .drd-input {
-        @apply outline-none transition-all 
+        @apply transition-all 
         text-drd-neutral-800 text-sm bg-white
         placeholder:text-xs placeholder:text-drd-neutral-400
-        border rounded px-2 w-full h-9 min-h-9;
+        outline rounded px-2 w-full h-9 min-h-9;
     }
 
     .drd-input-normal {
-        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
     }
 
     .drd-input-error {
-        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
     }
 
     .drd-float-input {
         @apply outline-none transition-all
         text-sm text-drd-neutral-800 bg-white
         placeholder:text-transparent placeholder:text-xs
-        border rounded px-2 w-full h-9 min-h-9;
+        outline rounded px-2 w-full h-9 min-h-9;
     }
 
     .drd-float-input-normal {
-        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
     }
 
     .drd-float-input-error {
-        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
     }
 
     .drd-textarea {
-        @apply outline-none transition-all 
+        @apply transition-all 
         text-drd-neutral-800 text-sm bg-white
         placeholder:text-xs placeholder:text-drd-neutral-400
-        border rounded p-2 w-full min-h-24;
+        outline rounded p-2 w-full min-h-24;
     }
 
     .drd-textarea-normal {
-        @apply border-drd-primary-300 focus:border-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
     }
 
     .drd-textarea-error {
-        @apply border-red-400 focus:border-red-600 selection:bg-red-200;
+        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
     }
 
     /* ========================= */

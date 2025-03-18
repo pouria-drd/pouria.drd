@@ -24,11 +24,11 @@ const Navbar = (props: NavbarProps) => {
                 y: isScrollingDown ? "-100%" : 0,
             }}
             transition={{
-                type: "ease-in-out",
-                stiffness: 300,
                 damping: 25,
+                stiffness: 300,
+                type: "spring",
             }}
-            className={`bg-drd-primary-50/90
+            className={`bg-drd-primary-75/95
             sticky top-0 z-10 glass-effect app-px
             flex items-center justify-between p-4`}>
             {/* Logo */}
