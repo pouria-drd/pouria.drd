@@ -5,6 +5,7 @@ on:
         branches: ["main"]
 
 jobs:
+    # Build job
     build:
         runs-on: self-hosted
         strategy:
@@ -21,21 +22,19 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
 
-            - name: Restore Dependencies Cache
-              uses: actions/cache@v4
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
-
-            - name: Restore Next.js Cache
+            - name: Restore Next.js Build Cache
               uses: actions/cache@v4
               with:
                   path: .next/cache
-                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+                  key: nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
                   restore-keys: |
-                      ${{ runner.os }}-nextjs-
+                      nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+
+            - name: Install Project Dependencies
+              run: npm install
+
+            - name: Build the Project
+              run: npm run build
 
             - name: Create .env File
               run: |
@@ -47,12 +46,6 @@ jobs:
                   echo "EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
                   echo "DEFAULT_ADMINS_EMAILS=${{ secrets.DEFAULT_ADMINS_EMAILS }}" >> .env
 
-            - name: Install Dependencies
-              run: npm install
-
-            - name: Build Project
-              run: npm run build
-
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v4
               with:
@@ -63,10 +56,10 @@ jobs:
                       node_modules
                       .env
 
+    # Deploy job
     deploy:
         runs-on: self-hosted
-        needs: build # Ensure deploy only runs if build is successful
-
+        needs: build
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v4
