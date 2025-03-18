@@ -34,7 +34,7 @@ const ContactMeForm = (props: ContactMeFormProps) => {
             type: "success" | "error" | "info"
         ) => {
             addToast(message, type, {
-                duration: 5000, // Auto-dismiss after 3 seconds
+                duration: 5000, // Auto-dismiss after 5 seconds
             });
         };
 
@@ -45,7 +45,7 @@ const ContactMeForm = (props: ContactMeFormProps) => {
         if (state?.serverError) {
             showToast(state.serverError, "error");
         }
-    }, [state]);
+    }, [state, addToast]);
 
     return (
         <FormCard className={props.className}>

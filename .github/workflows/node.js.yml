@@ -56,19 +56,11 @@ jobs:
                       node_modules
                       .env
 
-    # Deploy job
-    deploy:
+    # Restart job
+    restart:
         runs-on: self-hosted
         needs: build
         steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v4
-
-            - name: Load Environment Variables
-              run: |
-                  cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
-                  export $(cat .env | xargs)
-
             - name: Restart Application using PM2
               run: |
                   cd /home/pouria/actions-runner/_work/pouria.drd/pouria.drd
