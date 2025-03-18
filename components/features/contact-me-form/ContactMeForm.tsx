@@ -28,16 +28,13 @@ const ContactMeForm = (props: ContactMeFormProps) => {
         undefined
     );
 
-    useEffect(() => {
-        const showToast = (
-            message: string,
-            type: "success" | "error" | "info"
-        ) => {
-            addToast(message, type, {
-                duration: 5000, // Auto-dismiss after 5 seconds
-            });
-        };
+    const showToast = (message: string, type: "success" | "error" | "info") => {
+        addToast(message, type, {
+            duration: 70000, // Auto-dismiss after 7 seconds
+        });
+    };
 
+    useEffect(() => {
         if (state?.success) {
             showToast(state.success, "success");
         }
@@ -45,7 +42,7 @@ const ContactMeForm = (props: ContactMeFormProps) => {
         if (state?.serverError) {
             showToast(state.serverError, "error");
         }
-    }, [state, addToast]);
+    }, [state]);
 
     return (
         <FormCard className={props.className}>
