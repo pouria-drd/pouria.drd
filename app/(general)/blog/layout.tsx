@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     applicationName: "Pouria Darandi | Blog",
-    metadataBase: new URL("https://pouria-drd.ir/blog"),
 
     title: {
         default: "Blog",
