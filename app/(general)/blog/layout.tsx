@@ -84,9 +84,12 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "https://pouria-drd.ir/images/og/blog-opengraph-image.png",
                 width: 600,
                 height: 315,
+                alt: "Pouria Darandi's Blog",
+                url: "/images/og/blog-opengraph-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/og/blog-opengraph-image.png",
             },
         ],
     },
@@ -102,9 +105,12 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "https://pouria-drd.ir/images/tw/blog-twitter-image.png",
                 width: 600,
                 height: 315,
+                alt: "Pouria Darandi's Blog",
+                url: "/images/tw/blog-twitter-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/tw/blog-twitter-image.png",
             },
         ],
     },

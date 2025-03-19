@@ -84,9 +84,12 @@ export const metadata: Metadata = {
 
         images: [
             {
-                url: "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
                 width: 600,
                 height: 315,
+                alt: "Pouria Darandi's projects",
+                url: "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
             },
         ],
     },
@@ -101,9 +104,12 @@ export const metadata: Metadata = {
             "Explore a collection of professional web development projects by Pouria Darandi, featuring full-stack applications, Next.js, React, Django, and modern software engineering solutions.",
         images: [
             {
-                url: "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
                 width: 600,
                 height: 315,
+                alt: "Pouria Darandi's projects",
+                url: "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
             },
         ],
     },

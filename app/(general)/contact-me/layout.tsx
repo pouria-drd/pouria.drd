@@ -51,14 +51,20 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
                 width: 600,
                 height: 315,
+                alt: "Contact Pouria Darandi",
+                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
             },
             {
-                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image2.png",
                 width: 600,
                 height: 315,
+                alt: "Contact Pouria Darandi",
+                url: "/images/og/contact-me-opengraph-image2.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/og/contact-me-opengraph-image2.png",
             },
         ],
     },
@@ -71,14 +77,20 @@ export const metadata: Metadata = {
         site: "@pouriaDRD",
         images: [
             {
-                url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
                 width: 600,
                 height: 315,
+                alt: "Contact Pouria Darandi",
+                url: "/images/tw/contact-me-twitter-image.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
             },
             {
-                url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image2.png",
                 width: 600,
                 height: 315,
+                alt: "Contact Pouria Darandi",
+                url: "/images/tw/contact-me-twitter-image2.png",
+                secureUrl:
+                    "https://pouria-drd.ir/images/tw/contact-me-twitter-image2.png",
             },
         ],
     },
