@@ -17,26 +17,8 @@ jobs:
               with:
                   node-version: 22.x
 
-            # Cache Node Modules
-            - name: Cache Node Modules
-              uses: actions/cache@v4
-              with:
-                  path: node_modules
-                  key: node-modules-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
-                  restore-keys: |
-                      node-modules-${{ runner.os }}-
-
-            # Cache Next.js Build Cache
-            - name: Cache Next.js Build Cache
-              uses: actions/cache@v4
-              with:
-                  path: .next/cache
-                  key: nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-                  restore-keys: |
-                      nextjs-build-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-
             - name: Install Dependencies
-              run: npm ci # Faster and deterministic install
+              run: npm ci
 
             - name: Build the Project
               run: npm run build
