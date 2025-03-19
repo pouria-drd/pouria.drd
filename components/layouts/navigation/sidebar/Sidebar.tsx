@@ -41,7 +41,7 @@ const Sidebar = (props: SidebarProps) => {
             opacity: 0,
             transition: {
                 type: "ease",
-                duration: 0.35,
+                duration: 0.4,
             },
         },
     };
