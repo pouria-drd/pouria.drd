@@ -38,10 +38,10 @@ const SLink = (props: NavLinkProps) => {
                 onClick={props.onClick}
                 className={`text-right w-full ${
                     props.isActive
-                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-100"
+                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-75"
                         : `text-drd-neutral-500 hover:text-drd-primary-500
                         hover:bg-drd-primary-100 hover:border-r-2`
-                } rounded-l p-1.5`}>
+                } rounded-lg rounded-r-none px-1 py-2`}>
                 {props.children}
             </Link>
         </motion.div>

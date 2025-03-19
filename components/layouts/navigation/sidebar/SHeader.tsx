@@ -23,8 +23,8 @@ const SHeader = (props: SHeaderProps) => {
 
             <CloseButton
                 onClick={props.onCloseSidebar}
-                className={`bg-drd-primary-100 hover:bg-drd-primary-200 transition-all cursor-pointer
-                    text-drd-primary-400 hover:text-drd-primary-500 rounded-lg p-1`}
+                className={`bg-drd-primary-75 hover:bg-drd-primary-100 transition-all cursor-pointer
+                    text-drd-primary-500 rounded-lg p-1`}
             />
         </motion.div>
     );

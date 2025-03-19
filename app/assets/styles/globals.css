@@ -34,7 +34,7 @@
 
 body {
     font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b from-drd-primary-25 from-10% to-white;
+    @apply bg-gradient-to-b bg-drd-primary-25  from-drd-primary-25 from-10% to-white;
 }
 
 .r2l {
@@ -136,7 +136,7 @@ body {
     /* ========================= */
 
     .drd-form-card {
-        @apply bg-drd-primary-25 flex flex-col items-center gap-4
+        @apply bg-white flex flex-col items-center gap-4
         rounded-xl shadow w-full max-w-full sm:max-w-80 px-6 py-8;
     }
 

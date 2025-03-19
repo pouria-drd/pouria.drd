@@ -40,8 +40,8 @@ const Sidebar = (props: SidebarProps) => {
             x: props.side === "left" ? "-100%" : "100%",
             opacity: 0,
             transition: {
-                type: "ease",
-                duration: 0.4,
+                duration: 0.35,
+                type: "ease-in-out",
             },
         },
     };
@@ -66,10 +66,9 @@ const Sidebar = (props: SidebarProps) => {
                         animate="visible"
                         exit="exit"
                         className={`fixed top-0
-                        flex flex-col items-center gap-10
-                        bg-gradient-to-b bg-drd-primary-75 from-drd-primary-75 from-10% to-white
-                        px-4 py-5 z-50 h-dvh
-
+                        flex flex-col items-center gap-10 p-4 z-50 h-dvh
+                        bg-gradient-to-b bg-drd-primary-25 from-drd-primary-25 from-10% to-white
+                        
                         ${side === "left" ? "left-0" : "right-0"}  ${
                             props.fullWidth ? "w-full" : "min-w-72 w-[60dvw]"
                         }`}>
