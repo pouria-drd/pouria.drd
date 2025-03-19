@@ -5,6 +5,7 @@
     --font-geist-sans: var(--font-geist-sans);
     --font-geist-mono: var(--font-geist-mono);
 
+    --color-drd-primary-25: #f0f8ff;
     --color-drd-primary-50: #eff4ff;
     --color-drd-primary-75: #e6f0fc;
     --color-drd-primary-100: #dbe6fe;
@@ -33,7 +34,7 @@
 
 body {
     font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b bg-drd-primary-75 from-drd-primary-75 from-5% to-white;
+    @apply bg-gradient-to-b from-drd-primary-25 from-10% to-white;
 }
 
 .r2l {
@@ -135,9 +136,8 @@ body {
     /* ========================= */
 
     .drd-form-card {
-        @apply bg-drd-primary-75/10 flex flex-col items-center gap-4
-        rounded-xl outline outline-drd-neutral-200/50 shadow
-        w-full max-w-full sm:max-w-80 px-6 py-8;
+        @apply bg-drd-primary-25 flex flex-col items-center gap-4
+        rounded-xl shadow w-full max-w-full sm:max-w-80 px-6 py-8;
     }
 
     /* ========================= */

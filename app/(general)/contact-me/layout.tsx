@@ -2,44 +2,73 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Pouria Darandi | Get in Touch",
+    applicationName: "Pouria Darandi | Contact Me",
+    metadataBase: new URL("https://pouria-drd.ir/contact-me"),
+
+    title: {
+        default: "Contact Me",
+        template: "%s | Contact",
+    },
 
     description:
-        "Want to contact Pouria Darandi? Here's how you can reach out for collaborations, inquiries, and more.",
+        "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
 
-    keywords:
-        "contact Pouria Darandi, reach Pouria, get in touch with Pouria, Pouria Darandi contact details, connect with Pouria, تماس با پوریا دارندی, راه‌های ارتباطی پوریا دارندی, ارتباط با پوریا, تماس با پوریا",
+    keywords: [
+        // English Keywords
+        "contact Pouria Darandi",
+        "get in touch with Pouria Darandi",
+        "reach Pouria Darandi",
+        "Pouria Darandi contact info",
+        "email Pouria Darandi",
+        "message Pouria Darandi",
+        "talk to Pouria Darandi",
+        "how to contact Pouria Darandi",
+        "inquire about a project",
+        "developer contact",
+        "business inquiry",
+        "freelancer contact",
+        "hire a developer",
+        "software engineer contact",
+
+        // Persian Keywords
+        "تماس با پوریا دارندی",
+        "ارتباط با پوریا دارندی",
+        "راه‌های تماس با پوریا دارندی",
+        "ایمیل پوریا دارندی",
+        "پیام به پوریا دارندی",
+        "ارتباط با توسعه دهنده",
+        "درخواست همکاری",
+        "پشتیبانی نرم‌افزار",
+        "مشاوره برنامه‌نویسی",
+        "همکاری در پروژه",
+    ],
 
     openGraph: {
-        title: "Contact Pouria Darandi | Get in Touch",
+        title: "Contact Pouria Darandi",
         description:
-            "Want to contact Pouria Darandi? Here's how you can reach out for collaborations, inquiries, and more.",
+            "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
         url: "https://pouria-drd.ir/contact-me",
         siteName: "Pouria Darandi",
         type: "website",
-        images: [
-            {
-                url: "https://pouria-drd.ir/images/opengraph-image",
-                width: 1200,
-                height: 630,
-                alt: "Contact Pouria Darandi",
-            },
-        ],
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "Contact Pouria Darandi | Get in Touch",
+        title: "Contact Pouria Darandi",
         description:
-            "Want to contact Pouria Darandi? Here's how you can reach out for collaborations, inquiries, and more.",
-        images: ["https://pouria-drd.ir/images/twitter-image.png"],
+            "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
+        site: "@pouriaDRD",
     },
 
     alternates: {
         canonical: "https://pouria-drd.ir/contact-me",
     },
 
-    // Structured Data (JSON-LD) for SEO
+    robots: {
+        index: true,
+        follow: true,
+    },
+
     other: {
         "ld+json": JSON.stringify({
             "@context": "https://schema.org",
@@ -47,12 +76,19 @@ export const metadata: Metadata = {
             name: "Pouria Darandi",
             url: "https://pouria-drd.ir",
             jobTitle: "Full-Stack Developer",
+            email: "pouriadrd@gmail.com",
             sameAs: [
                 "https://github.com/pouria-drd/",
                 "https://twitter.com/pouria_drd/",
                 "https://t.me/pouria_drd/",
-                "https://www.instagram.com/pouria.drd?igsh=OTdmZndkajBhbzF2&utm_source=qr/",
+                "https://www.instagram.com/pouria.drd",
             ],
+            contactPoint: {
+                "@type": "ContactPoint",
+                email: "pouriadrd@gmail.com",
+                contactType: "customer support",
+                availableLanguage: ["Persian", "English"],
+            },
         }),
     },
 };

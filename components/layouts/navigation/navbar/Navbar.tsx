@@ -28,7 +28,7 @@ const Navbar = (props: NavbarProps) => {
                 stiffness: 300,
                 type: "ease",
             }}
-            className={`bg-drd-primary-75/95
+            className={`bg-drd-primary-25/95
             sticky top-0 z-10 glass-effect app-px
             flex items-center justify-between p-4`}>
             {/* Logo */}
