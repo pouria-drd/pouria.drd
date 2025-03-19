@@ -87,7 +87,7 @@ export const metadata: Metadata = {
                 width: 600,
                 height: 315,
                 alt: "Pouria Darandi's Blog",
-                url: "/images/og/blog-opengraph-image.png",
+                url: "https://pouria-drd.ir/images/og/blog-opengraph-image.png",
                 secureUrl:
                     "https://pouria-drd.ir/images/og/blog-opengraph-image.png",
             },
