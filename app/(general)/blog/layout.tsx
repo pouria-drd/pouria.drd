@@ -108,7 +108,7 @@ export const metadata: Metadata = {
                 width: 600,
                 height: 315,
                 alt: "Pouria Darandi's Blog",
-                url: "/images/tw/blog-twitter-image.png",
+                url: "https://pouria-drd.ir/images/tw/blog-twitter-image.png",
                 secureUrl:
                     "https://pouria-drd.ir/images/tw/blog-twitter-image.png",
             },
