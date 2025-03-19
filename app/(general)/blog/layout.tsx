@@ -82,6 +82,14 @@ export const metadata: Metadata = {
         title: "Blog | Pouria Darandi",
         description:
             "Explore articles on web development, full-stack programming, React, Next.js, Django, and the latest tech trends by Pouria Darandi.",
+
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/og/blog-opengraph-image.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     twitter: {
@@ -92,6 +100,14 @@ export const metadata: Metadata = {
         title: "Blog | Pouria Darandi",
         description:
             "Explore articles on web development, full-stack programming, React, Next.js, Django, and the latest tech trends by Pouria Darandi.",
+
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/tw/blog-twitter-image.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     alternates: {

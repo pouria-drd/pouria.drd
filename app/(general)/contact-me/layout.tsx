@@ -50,6 +50,18 @@ export const metadata: Metadata = {
         url: "https://pouria-drd.ir/contact-me",
         siteName: "Pouria Darandi",
         type: "website",
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
+                width: 600,
+                height: 315,
+            },
+            {
+                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image2.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     twitter: {
@@ -58,6 +70,18 @@ export const metadata: Metadata = {
         description:
             "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
         site: "@pouriaDRD",
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
+                width: 600,
+                height: 315,
+            },
+            {
+                url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image2.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     alternates: {

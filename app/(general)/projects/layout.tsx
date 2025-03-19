@@ -82,6 +82,14 @@ export const metadata: Metadata = {
         title: "Projects | Pouria Darandi",
         description:
             "Explore a collection of professional web development projects by Pouria Darandi, featuring full-stack applications, Next.js, React, Django, and modern software engineering solutions.",
+
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     twitter: {
@@ -92,6 +100,13 @@ export const metadata: Metadata = {
         title: "Projects | Pouria Darandi",
         description:
             "Explore a collection of professional web development projects by Pouria Darandi, featuring full-stack applications, Next.js, React, Django, and modern software engineering solutions.",
+        images: [
+            {
+                url: "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
+                width: 600,
+                height: 315,
+            },
+        ],
     },
 
     alternates: {
