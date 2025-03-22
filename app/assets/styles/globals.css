@@ -34,7 +34,8 @@
 
 body {
     font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b bg-drd-primary-25  from-drd-primary-25 from-10% to-white;
+    @apply bg-gradient-to-b bg-drd-primary-25 
+    /* from-drd-primary-25 from-10% to-white; */;
 }
 
 .r2l {
