@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     applicationName: "Pouria Darandi | Contact Me",
 
     title: {
-        default: "Contact Me",
+        default: "Contact",
         template: "%s | Contact",
     },
 

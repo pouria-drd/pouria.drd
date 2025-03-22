@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 
     title: {
         default: "Pouria Darandi",
-        template: "%s | Pouria DRD",
+        template: "%s | Pouria Darandi",
     },
 
     description:
