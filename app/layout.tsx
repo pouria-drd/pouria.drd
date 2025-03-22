@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://pouria-drd.ir"),
 
     title: {
-        default: "Pouria Darandi | Full-Stack Developer & Programmer",
+        default: "Pouria Darandi",
         template: "%s | Pouria DRD",
     },
 
