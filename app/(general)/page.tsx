@@ -3,15 +3,11 @@ import { ImageChanger, SkillsWriter } from "@/components/shared";
 
 const Homepage = () => {
     const skills = ["Vue.js", "React", "Next.js", "Django", "Unity"];
-    const images = [
-        "/images/pouria/pouria.png",
-        "/images/pouria/pouria-2.png",
-        "/images/pouria/pouria-3.png",
-    ];
+    const images = ["/images/pouria/pouria.png", "/images/pouria/pouria-2.png"];
 
     return (
         <div className="flex flex-col items-center justify-center gap-4 w-full py-4">
-            <ImageChanger images={images} />
+            <ImageChanger images={images} interval={5000} />
 
             <div className="flex flex-col items-center text-center gap-2 w-full mt-4 r2l">
                 <h1

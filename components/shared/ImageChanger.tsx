@@ -49,10 +49,11 @@ const ImageChanger = (props: ImageChangerProps) => {
                     className="absolute inset-0 w-full">
                     <Image
                         fill
-                        priority
+                        loading="lazy"
+                        draggable={false}
                         src={images[index]}
                         alt="Pouria Darandi"
-                        className="object-cover w-full"
+                        className="filter grayscale hover:grayscale-0 object-cover w-full"
                     />
                 </motion.div>
             </AnimatePresence>
