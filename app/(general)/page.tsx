@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import { SkillsWriter } from "@/components/shared";
+import Link from "next/link";
 
 const Homepage = () => {
     const skills = ["Vue.js", "React", "Next.js", "Django", "Unity"];
@@ -8,7 +9,7 @@ const Homepage = () => {
     return (
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
             <div
-                className="bg-gradient-to-b from-white to-emerald-50/75
+                className="bg-gradient-to-b from-white to-emerald-50/50
                 relative rounded-[50%] overflow-hidden shadow-2xl
                 aspect-square size-68 sm:size-80 min-w-68 min-h-68">
                 <Image
@@ -28,15 +29,23 @@ const Homepage = () => {
                     پوریا دارندی
                 </h1>
                 <SkillsWriter skills={skills} />
-                <p className="relative text-p-medium text-center leading-relaxed max-w-2xl">
-                    متولد ۱۴ بهمن ۱۳۸۰، برنامه‌نویسی را از دی ۱۳۹۹ به صورت
-                    خودآموز با پایتون شروع کردم. سپس از تیر ۱۴۰۰ تا دی ۱۴۰۱ در
-                    مجتمع فنی تهران، دوره‌های الگوریتم‌های C++ و پایتون را با
-                    نمره ۱۰۰/۱۰۰ و جنگوی پیشرفته را با نمره ۹۵/۱۰۰ گذراندم. پس
-                    از آن، به یادگیری تکنولوژی‌های فرانت‌اند مثل Vue.js، Next.js
-                    و React پرداختم. از اسفند ۱۴۰۱ تا اردیبهشت ۱۴۰۳ در تیم
-                    فراییت با Django، React، Next.js و Vue.js کار کردم و از
-                    مرداد ۱۴۰۳ در شرکت عصر دانش‌افزار مشغول به کار هستم.
+                <p className="relative text-p-medium text-center leading-relaxed max-w-full sm:max-w-2xl">
+                    متولد ۱۴ بهمن ۱۳۸۰ 🎂🥳
+                    <br />
+                    در حال تولید باگ از دی ۱۳۹۹ 🐛💻
+                    <br />
+                    اولش به صورت خودآموز با پایتون شروع کردم و بعدش ++C و Django
+                    رو تو مجتمع فنی تهران یاد گرفتم 🔥🎯
+                    <br />
+                    از اسفند ۱۴۰۱ تا اردیبهشت ۱۴۰۳ توی فراییت با React، Vue،
+                    Next.js و Django کار کردم. حالا از مرداد ۱۴۰۳ در{" "}
+                    <Link
+                        target="_blank"
+                        href="https://asredanesh.com/"
+                        className="text-drd-primary-500">
+                        عصردانش‌افزار
+                    </Link>{" "}
+                    مشغولم!🚀
                 </p>
             </div>
 
