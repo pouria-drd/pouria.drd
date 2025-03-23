@@ -13,10 +13,10 @@ const Typewriter = (typewriterProps: TypewriterProps) => {
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: typewriterProps.texts,
-            typeSpeed: 100,
             loop: true,
+            typeSpeed: 100,
             cursorChar: "|",
+            strings: typewriterProps.texts,
         });
 
         return () => {
@@ -25,7 +25,7 @@ const Typewriter = (typewriterProps: TypewriterProps) => {
         };
     }, []);
 
-    return <span ref={el} className="truncate" />;
+    return <span ref={el} />;
 };
 
 export default Typewriter;

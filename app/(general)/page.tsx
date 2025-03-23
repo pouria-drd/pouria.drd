@@ -1,10 +1,10 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import { SkillsWriter } from "@/components/shared";
-import Link from "next/link";
 
 const Homepage = () => {
-    const skills = ["Vue.js", "React", "Next.js", "Django", "Unity"];
+    const skills = ["Vue.js", "React", "Next-js", "Django", "Unity"];
 
     return (
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
@@ -22,14 +22,14 @@ const Homepage = () => {
                 />
             </div>
 
-            <div className="flex flex-col items-center text-center gap-2 w-full mt-4 r2l">
+            <div className="flex flex-col items-center text-center gap-2 w-full mt-4">
                 <h1
                     className="text-drd-neutral-950 text-3xl
                     sm:text-3xl md:text-4xl lg:text-4xl font-bold">
                     پوریا دارندی
                 </h1>
                 <SkillsWriter skills={skills} />
-                <p className="relative text-p-medium text-center leading-relaxed max-w-full sm:max-w-2xl">
+                <p className="relative text-p-medium text-center leading-relaxed max-w-full sm:max-w-2xl r2l">
                     متولد ۱۴ بهمن ۱۳۸۰ 🎂🥳
                     <br />
                     در حال تولید باگ از دی ۱۳۹۹ 🐛💻
@@ -49,9 +49,12 @@ const Homepage = () => {
                 </p>
             </div>
 
-            <div className="mb-2.5 mt-1.5">
+            <div className="mb-2.5 mt-1.5 flex flex-col items-center gap-2">
                 <Button href="/contact-me" outline>
                     ارسال پیام
+                </Button>
+                <Button href="/files/pouria-darandi-resume.pdf" download>
+                    دانلود رزومه
                 </Button>
             </div>
         </div>
