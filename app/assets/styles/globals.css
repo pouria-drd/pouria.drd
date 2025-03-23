@@ -2,8 +2,7 @@
 
 @theme {
     --font-peyda: var(--font-peyda);
-    --font-geist-sans: var(--font-geist-sans);
-    --font-geist-mono: var(--font-geist-mono);
+    --font-iran-yekan-x: var(--font-iran-yekan-x);
 
     --color-drd-primary-25: #f0f8ff;
     --color-drd-primary-50: #eff4ff;
@@ -33,9 +32,8 @@
 }
 
 body {
-    font-family: var(--font-peyda), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b bg-drd-primary-25 
-    /* from-drd-primary-25 from-10% to-white; */;
+    font-family: var(--font-iran-yekan-x), Arial, Helvetica, sans-serif;
+    @apply bg-gradient-to-b bg-drd-primary-25;
 }
 
 .r2l {
@@ -44,6 +42,12 @@ body {
 
 .l2r {
     direction: ltr;
+}
+
+.ss02 {
+    font-feature-settings: "ss02";
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
 }
 
 /* ---------------------------------------------------------------------- */

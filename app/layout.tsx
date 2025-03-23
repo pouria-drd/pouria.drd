@@ -64,6 +64,22 @@ const peyda = localFont({
     variable: "--font-peyda",
 });
 
+const iranYekanX = localFont({
+    src: [
+        {
+            weight: "normal",
+            style: "normal",
+            path: "./assets/fonts/IRANYekanX/IRANYekanX-Regular.woff",
+        },
+        {
+            weight: "bold",
+            style: "normal",
+            path: "./assets/fonts/IRANYekanX/IRANYekanX-Bold.woff",
+        },
+    ],
+    variable: "--font-iran-yekan-x",
+});
+
 export const metadata: Metadata = {
     applicationName: "Pouria Darandi",
 
@@ -201,7 +217,9 @@ function RootLayout(props: Readonly<RootLayoutProps>) {
     return (
         <html lang="fa-IR">
             <body
-                className={`${peyda.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+                className={`${peyda.variable} ${iranYekanX.variable}
+                ${geistSans.variable} ${geistMono.variable}
+                antialiased ss02`}>
                 {props.children}
             </body>
         </html>

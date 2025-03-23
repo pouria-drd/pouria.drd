@@ -1,13 +1,25 @@
+import Image from "next/image";
 import { Button } from "@/components/ui";
-import { ImageChanger, SkillsWriter } from "@/components/shared";
+import { SkillsWriter } from "@/components/shared";
 
 const Homepage = () => {
     const skills = ["Vue.js", "React", "Next.js", "Django", "Unity"];
-    const images = ["/images/pouria/pouria.png", "/images/pouria/pouria-2.png"];
 
     return (
-        <div className="flex flex-col items-center justify-center gap-4 w-full py-4">
-            <ImageChanger images={images} interval={5000} />
+        <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
+            <div
+                className="bg-gradient-to-b from-white to-emerald-50/75
+                relative rounded-[50%] overflow-hidden shadow-2xl
+                aspect-square size-68 sm:size-80 min-w-68 min-h-68">
+                <Image
+                    fill
+                    loading="eager"
+                    draggable={false}
+                    alt="Pouria Darandi"
+                    src="/images/pouria/pouria.png"
+                    className="object-cover w-full"
+                />
+            </div>
 
             <div className="flex flex-col items-center text-center gap-2 w-full mt-4 r2l">
                 <h1
@@ -28,8 +40,10 @@ const Homepage = () => {
                 </p>
             </div>
 
-            <div className="mb-2">
-                <Button href="/contact-me">ارسال پیام</Button>
+            <div className="mb-2.5 mt-1.5">
+                <Button href="/contact-me" outline>
+                    ارسال پیام
+                </Button>
             </div>
         </div>
     );
