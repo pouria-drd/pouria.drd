@@ -10,7 +10,7 @@ const Homepage = () => {
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
             <div
                 className="bg-gradient-to-b from-white to-emerald-50/50
-                relative rounded-[50%] overflow-hidden shadow-2xl
+                relative rounded-[50%] overflow-hidden shadow-xl
                 aspect-square size-68 sm:size-80 min-w-68 min-h-68">
                 <Image
                     fill
@@ -53,10 +53,7 @@ const Homepage = () => {
                 <Button href="/contact-me" outline>
                     ارسال پیام
                 </Button>
-                <Button
-                    download
-                    target="_blank"
-                    href="/files/pouria-darandi-resume.pdf">
+                <Button target="_blank" href="/files/pouria-darandi-resume.pdf">
                     دانلود رزومه
                 </Button>
             </div>
