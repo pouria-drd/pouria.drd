@@ -10,8 +10,7 @@ const SkillsWriter = (props: SkillsWriterProps) => {
     return (
         <div
             className={cn(
-                `transition-all text-drd-primary-500 text-2xl sm:text-3xl 
-                bg-gray-200`,
+                `transition-all text-drd-primary-500 text-2xl sm:text-3xl`,
                 props.className
             )}>
             <Typewriter texts={props.skills} />
