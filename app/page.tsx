@@ -53,7 +53,7 @@ const Homepage = () => {
                 <Button href="/contact-me" outline>
                     ارسال پیام
                 </Button>
-                <Button target="_blank" href="/files/pouria-darandi-resume.pdf">
+                <Button download href="/files/pouria-darandi-resume.pdf">
                     دانلود رزومه
                 </Button>
             </div>
