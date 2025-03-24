@@ -18,7 +18,7 @@ function ProjectsPage() {
     });
 
     return (
-        <div className="min-h-dvh py-10">
+        <div className="min-h-dvh py-4 sm:py-8">
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-3xl font-bold text-center text-drd-primary-900">
                     پروژه‌های من
