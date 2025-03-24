@@ -5,7 +5,7 @@ function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: ["admin", "panel", "auth", "login", "logout", "register"],
+            disallow: ["admin", "panel"],
         },
         sitemap: "https://pouria-drd.ir/sitemap.xml",
     };
