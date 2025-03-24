@@ -2,6 +2,8 @@ import "./assets/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ToastProvider } from "@/context/ToastContext";
+import { Footer, Navigation } from "@/components/layouts";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -219,8 +221,12 @@ function RootLayout(props: Readonly<RootLayoutProps>) {
             <body
                 className={`${peyda.variable} ${iranYekanX.variable}
                 ${geistSans.variable} ${geistMono.variable}
-                antialiased ss02`}>
-                {props.children}
+                flex flex-col min-h-dvh antialiased ss02`}>
+                <ToastProvider>
+                    <Navigation />
+                    <main className="grow app-px">{props.children}</main>
+                    <Footer className="app-px" />
+                </ToastProvider>
             </body>
         </html>
     );
