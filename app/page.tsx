@@ -53,9 +53,9 @@ const Homepage = () => {
                 <Button href="/contact-me" outline>
                     ارسال پیام
                 </Button>
-                <Button download href="/files/pouria-darandi-resume.pdf">
+                {/* <Button download href="/files/pouria-darandi-resume.pdf">
                     دانلود رزومه
-                </Button>
+                </Button> */}
             </div>
         </div>
     );

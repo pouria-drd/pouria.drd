@@ -50,7 +50,7 @@ const projects: Project[] = [
     },
     {
         id: 6,
-        title: "پنل سایت جوب",
+        title: "پنل سایت چوب",
         description:
             "امکان ثبت سفارش با خدماتی همچون برش و پی وی سی به همراه باربری داخلی و خارجی و ارسال به آدرس مقصد در کوتاه ترین زمان ممکن..",
         image: "/images/projects/sitechoob-preview.png",
