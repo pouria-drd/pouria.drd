@@ -14,11 +14,11 @@ const NavLink = (props: NavLinkProps) => {
         <div className={cn("relative", props.className)}>
             <Link
                 href={props.href}
-                className={`${
+                className={`transition-colors ${
                     props.isActive
-                        ? "text-drd-primary-500"
-                        : `text-drd-neutral-500 
-                        hover:text-drd-neutral-600`
+                        ? "text-drd-primary"
+                        : `text-drd-neutral 
+                        hover:text-drd-neutral-700`
                 }`}>
                 {props.children}
             </Link>

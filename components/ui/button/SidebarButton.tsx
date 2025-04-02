@@ -13,8 +13,9 @@ const SidebarButton = (props: SidebarButtonProps) => {
         <button
             {...props}
             className={cn(
-                `ring ring-drd-neutral-200 hover:ring-drd-primary-100 hover:bg-drd-primary-100
-                transition-all text-drd-primary-500 cursor-pointer p-1 rounded-lg`,
+                `ring ring-drd-neutral-300 dark:ring-drd-neutral-950
+                hover:ring-0 hover:bg-drd-primary-100 hover:dark:bg-drd-neutral-950
+                text-drd-primary cursor-pointer p-1 rounded-lg`,
                 props.className
             )}>
             <SquaresIcon />

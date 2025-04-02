@@ -5,6 +5,7 @@ import { useScrollingDown } from "@/hooks";
 import NavlinksGroup from "./NavlinksGroup";
 import { SidebarButton } from "@/components/ui";
 import { PouriaLogo } from "@/components/icons";
+import { ThemeToggle } from "@/components/shared";
 
 interface NavbarProps {
     onOpenSidebar: () => void;
@@ -28,15 +29,20 @@ const Navbar = (props: NavbarProps) => {
                 stiffness: 300,
                 type: "ease",
             }}
-            className={`bg-drd-primary-25/95
+            className={`bg-drd-neutral-50/95 dark:bg-drd-dark-bg/95
             sticky top-0 z-10 glass-effect app-px
             flex items-center justify-between p-4`}>
-            {/* Logo */}
-            <PouriaLogo />
+            <div className="flex items-center gap-2">
+                {/* Logo */}
+                <PouriaLogo />
+                {/* Theme Toggle */}
+                <ThemeToggle />
+            </div>
 
             {/* Navigation Links */}
             <NavlinksGroup className="hidden sm:flex flex-row-reverse gap-6" />
 
+            {/* Sidebar Button */}
             <SidebarButton
                 className="sm:hidden"
                 onClick={handleSidebarButtonClick}

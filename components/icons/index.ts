@@ -1,4 +1,8 @@
 export * from "./socials";
+
+export { default as SunIcon } from "./SunIcon";
+export { default as MoonIcon } from "./MoonIcon";
+
 export { default as PdIcon } from "./PdIcon";
 export { default as MailIcon } from "./MailIcon";
 export { default as XMarkIcon } from "./XMarkIcon";

@@ -16,7 +16,7 @@ const Footer = (props: Props) => {
             <SocialGroup />
             <span
                 className="text-xs text-center
-                border-t border-drd-neutral-200 w-full py-4">
+                border-t border-drd-neutral-200 dark:border-drd-neutral-900 w-full py-4">
                 &#169; Copyright Pouria Darandi. All rights reserved 2025
             </span>
         </footer>

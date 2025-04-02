@@ -10,6 +10,7 @@ const Homepage = () => {
         <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
             <div
                 className="bg-gradient-to-b from-white to-emerald-50/50
+                dark:from-zinc-900 dark:to-emerald-50/15
                 relative rounded-[50%] overflow-hidden shadow-xl
                 aspect-square size-68 sm:size-80 min-w-68 min-h-68">
                 <Image
@@ -21,10 +22,9 @@ const Homepage = () => {
                     className="object-cover w-full"
                 />
             </div>
-
             <div className="flex flex-col items-center text-center gap-2 w-full mt-4">
                 <h1
-                    className="text-drd-neutral-950 text-3xl
+                    className="text-drd-neutral-950 dark:text-drd-neutral-300 text-3xl
                     sm:text-3xl md:text-4xl lg:text-4xl font-bold">
                     پوریا دارندی
                 </h1>
@@ -42,7 +42,7 @@ const Homepage = () => {
                     <Link
                         target="_blank"
                         href="https://asredanesh.com/"
-                        className="text-drd-primary-500 hover:underline mx-1 z10">
+                        className="text-drd-primary hover:underline mx-1 z10">
                         عصردانش‌افزار
                     </Link>
                     مشغولم!🚀
@@ -50,7 +50,7 @@ const Homepage = () => {
             </div>
 
             <div className="mb-2.5 mt-1.5 flex flex-col items-center gap-2">
-                <Button outlined>
+                <Button>
                     <Link href="/contact-me">ارسال پیام</Link>
                 </Button>
             </div>

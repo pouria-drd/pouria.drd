@@ -19,12 +19,13 @@ const SHeader = (props: SHeaderProps) => {
                 props.side === "right" ? "flex-row-reverse" : "flex-row"
             } items-center justify-between`}>
             {/* Logo Animation */}
-            <PdIcon className="text-drd-primary-500" repeat={7500} />
+            <PdIcon className="text-drd-primary" repeat={7500} />
 
             <CloseButton
                 onClick={props.onCloseSidebar}
-                className={`bg-drd-primary-75 hover:bg-drd-primary-100 transition-all cursor-pointer
-                    text-drd-primary-500 rounded-lg p-1`}
+                className={`bg-drd-primary-100 hover:bg-drd-primary-200
+                    dark:bg-drd-neutral-950/50 dark:hover:bg-drd-neutral-950
+                    transition-colors cursor-pointer text-drd-primary rounded-lg p-1`}
             />
         </motion.div>
     );

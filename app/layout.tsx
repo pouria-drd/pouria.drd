@@ -1,6 +1,7 @@
 import "./assets/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ThemeProvider from "@/context/ThemeContext";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ToastProvider } from "@/context/ToastContext";
 import { Footer, Navigation } from "@/components/layouts";
@@ -217,16 +218,21 @@ interface RootLayoutProps {
 
 function RootLayout(props: Readonly<RootLayoutProps>) {
     return (
-        <html lang="fa-IR">
+        <html lang="fa-IR" suppressHydrationWarning>
             <body
                 className={`${peyda.variable} ${iranYekanX.variable}
                 ${geistSans.variable} ${geistMono.variable}
                 flex flex-col min-h-dvh antialiased ss02`}>
-                <ToastProvider>
-                    <Navigation />
-                    <main className="grow app-px">{props.children}</main>
-                    <Footer className="app-px" />
-                </ToastProvider>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem>
+                    <ToastProvider>
+                        <Navigation />
+                        <main className="grow app-px">{props.children}</main>
+                        <Footer className="app-px" />
+                    </ToastProvider>
+                </ThemeProvider>
             </body>
         </html>
     );

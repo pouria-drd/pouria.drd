@@ -1,43 +1,44 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-peyda: var(--font-peyda);
     --font-iran-yekan-x: var(--font-iran-yekan-x);
 
-    --color-drd-primary: #3b76f6;
+    --color-drd-bg: #ffffff;
+    --color-drd-dark-bg: #111111;
 
-    --color-drd-primary-25: #f0f8ff;
-    --color-drd-primary-50: #eff4ff;
-    --color-drd-primary-75: #e6f0fc;
-    --color-drd-primary-100: #dbe6fe;
-    --color-drd-primary-200: #bfd3fe;
-    --color-drd-primary-300: #93b4fd;
-    --color-drd-primary-400: #6090fa;
-    --color-drd-primary-500: #3b76f6;
-    --color-drd-primary-600: #2563eb;
-    --color-drd-primary-700: #1d58d8;
-    --color-drd-primary-800: #1e4baf;
-    --color-drd-primary-900: #1e408a;
-    --color-drd-primary-950: #172a54;
+    --color-drd-primary: #3d63dd;
+    --color-drd-primary-50: #f0f5fe;
+    --color-drd-primary-100: #dee8fb;
+    --color-drd-primary-200: #c4d8f9;
+    --color-drd-primary-300: #9bbef5;
+    --color-drd-primary-400: #6c9cee;
+    --color-drd-primary-500: #3d63dd;
+    --color-drd-primary-600: #3d63dd;
+    --color-drd-primary-700: #2c49c9;
+    --color-drd-primary-800: #293da4;
+    --color-drd-primary-900: #263782;
+    --color-drd-primary-950: #1c244f;
 
-    --color-drd-neutral: #71717a;
-
-    --color-drd-neutral-50: #fafafa;
-    --color-drd-neutral-100: #f4f4f5;
-    --color-drd-neutral-200: #e4e4e7;
-    --color-drd-neutral-300: #d4d4d8;
-    --color-drd-neutral-400: #a1a1aa;
-    --color-drd-neutral-500: #71717a;
-    --color-drd-neutral-600: #52525b;
-    --color-drd-neutral-700: #3f3f46;
-    --color-drd-neutral-800: #27272a;
-    --color-drd-neutral-900: #18181b;
-    --color-drd-neutral-950: #09090b;
+    --color-drd-neutral: #8b8d98;
+    --color-drd-neutral-50: #f6f6f7;
+    --color-drd-neutral-100: #eef0f1;
+    --color-drd-neutral-200: #e0e2e5;
+    --color-drd-neutral-300: #cdcfd4;
+    --color-drd-neutral-400: #b8bbc1;
+    --color-drd-neutral-500: #ff0000;
+    --color-drd-neutral-600: #8b8d98;
+    --color-drd-neutral-700: #7b7d87;
+    --color-drd-neutral-800: #65666e;
+    --color-drd-neutral-900: #54555b;
+    --color-drd-neutral-950: #313235;
 }
 
 body {
     font-family: var(--font-iran-yekan-x), Arial, Helvetica, sans-serif;
-    @apply bg-gradient-to-b bg-drd-primary-25;
+    @apply bg-drd-neutral-50 dark:bg-drd-dark-bg;
+    transition: background-color 0.3s, color 0.1s;
 }
 
 .r2l {
@@ -99,22 +100,22 @@ body {
     /* ========================= */
 
     .title-large {
-        @apply text-drd-neutral-700 text-3xl
+        @apply text-drd-neutral-950 dark:text-drd-neutral-300 text-3xl
        sm:text-4xl md:text-5xl lg:text-6xl font-bold;
     }
 
     .title-medium {
-        @apply text-drd-neutral-700 text-2xl
+        @apply text-drd-neutral-950 dark:text-drd-neutral-300 text-2xl
        sm:text-3xl md:text-4xl lg:text-4xl font-bold;
     }
 
     .title-small {
-        @apply text-drd-neutral-700 text-xl
+        @apply text-drd-neutral-950 dark:text-drd-neutral-300 text-xl
        sm:text-2xl md:text-2xl lg:text-3xl font-bold;
     }
 
     .form-title {
-        @apply text-drd-neutral-700 text-xl sm:text-2xl font-semibold;
+        @apply text-drd-neutral-950 dark:text-drd-neutral-300 text-xl sm:text-2xl font-semibold;
     }
 
     /* ========================= */
@@ -145,7 +146,8 @@ body {
     /* ========================= */
 
     .drd-form-card {
-        @apply bg-white flex flex-col items-center gap-4
+        @apply bg-white dark:bg-drd-neutral-950
+        flex flex-col items-center gap-4
         rounded-xl shadow w-full max-w-full sm:max-w-72 px-6 py-8;
     }
 
@@ -163,20 +165,20 @@ body {
     /* ========================= */
 
     .drd-input {
-        @apply transition-colors 
-        text-drd-neutral-700 text-sm bg-transparent
+        @apply transition-colors bg-transparent
+        text-drd-neutral-950 dark:text-drd-neutral-300 text-sm 
         placeholder:text-xs placeholder:text-drd-neutral-400
         disabled:cursor-not-allowed disabled:opacity-50
         outline rounded-md px-3 py-1 w-full h-9;
     }
 
     .drd-input-normal {
-        @apply outline-drd-neutral-400 
-        focus:outline-drd-primary-500 selection:bg-drd-primary-100;
+        @apply outline-drd-neutral-400 dark:outline-drd-neutral 
+        focus:outline-drd-primary selection:bg-drd-primary-100;
     }
 
     .drd-input-error {
-        @apply outline-red-400 
+        @apply outline-red-500 
         focus:outline-red-600 selection:bg-red-200;
     }
 
@@ -185,20 +187,20 @@ body {
     /* ========================= */
 
     .drd-float-input {
-        @apply transition-colors
-        text-sm text-drd-neutral-800 bg-transparent
+        @apply transition-colors bg-transparent
+        text-drd-neutral-950 dark:text-drd-neutral-300 text-sm 
         placeholder:text-transparent placeholder:text-xs
         disabled:cursor-not-allowed disabled:opacity-50
         outline rounded-md px-3 py-1 w-full h-9;
     }
 
     .drd-float-input-normal {
-        @apply outline-drd-neutral-400 
+        @apply outline-drd-neutral-400 dark:outline-drd-neutral 
         focus:outline-drd-primary selection:bg-drd-primary-100;
     }
 
     .drd-float-input-error {
-        @apply outline-red-400 
+        @apply outline-red-500 
         focus:outline-red-600 selection:bg-red-200;
     }
 
@@ -207,20 +209,20 @@ body {
     /* ========================= */
 
     .drd-textarea {
-        @apply transition-colors 
-        text-drd-neutral-800 text-sm bg-transparent
+        @apply transition-colors bg-transparent
+        text-drd-neutral-950 dark:text-drd-neutral-300 text-sm 
         placeholder:text-xs placeholder:text-drd-neutral-400
         disabled:cursor-not-allowed disabled:opacity-50
         outline rounded-md p-2 w-full min-h-24;
     }
 
     .drd-textarea-normal {
-        @apply outline-drd-neutral-400
-        focus:outline-drd-primary-500 selection:bg-drd-primary-100;
+        @apply outline-drd-neutral-400 dark:outline-drd-neutral 
+        focus:outline-drd-primary selection:bg-drd-primary-100;
     }
 
     .drd-textarea-error {
-        @apply outline-red-400 
+        @apply outline-red-500 
         focus:outline-red-600 selection:bg-red-200;
     }
     /* ========================= */

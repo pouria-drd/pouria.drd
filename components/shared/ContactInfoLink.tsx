@@ -14,12 +14,12 @@ const ContactInfoLink = (props: ContactInfoLinkProps) => {
                 target="_blank"
                 href={props.href}
                 className="flex items-center justify-between w-full
-                text-drd-neutral hover:text-drd-primary-500 group">
+                text-drd-neutral hover:text-drd-primary group">
                 <div className="flex items-center gap-2">
                     <div
                         className="flex items-center justify-center
                     border border-drd-neutral-300 rounded-[50%]
-                    group-hover:border-drd-primary-500 size-10 aspect-square p-1.5">
+                    group-hover:border-drd-primary size-10 aspect-square p-1.5">
                         {props.icon}
                     </div>
                     {props.label}

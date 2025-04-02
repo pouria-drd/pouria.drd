@@ -45,7 +45,7 @@ const Input = (props: NormalInputProps) => {
                         ${
                             error
                                 ? `text-red-500`
-                                : `text-drd-neutral-500
+                                : `text-drd-neutral
                                 peer-focus:text-drd-primary-600
                                 peer-disabled:text-drd-neutral-400`
                         }`}>
