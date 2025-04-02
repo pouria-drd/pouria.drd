@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const NotFoundPage = () => {
@@ -10,8 +11,8 @@ const NotFoundPage = () => {
                 name changed, or is temporarily unavailable.
             </p>
             <div className="mt-6">
-                <Button btnType="primary" outline href="/">
-                    Back to Home
+                <Button btnType="primary" outlined>
+                    <Link href="/">Back to Home</Link>
                 </Button>
             </div>
         </div>
