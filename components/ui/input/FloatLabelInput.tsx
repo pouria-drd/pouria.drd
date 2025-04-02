@@ -67,7 +67,7 @@ const FloatLabelInput = ({
                                 ? `peer-placeholder-shown:top-[20px] border-red-200
                                 peer-focus:border-red-600 text-red-400 peer-focus:text-red-600`
                                 : `peer-focus:border-drd-primary
-                                border-drd-primary-100 text-drd-primary-300 peer-focus:text-drd-primary-500`
+                                border-drd-neutral-400 text-drd-neutral-500 peer-focus:text-drd-primary-600`
                         }
                                 
                         ${dir === "rtl" ? "right-2" : "left-2"}`

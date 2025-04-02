@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import TechTag from "./TechTag";
+import { Badge } from "../ui";
 import { ArrowTopRightOnSquareIcon } from "../icons";
 
 interface ProjectCardProps {
@@ -38,7 +38,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
-                            <TechTag key={tech} tech={tech} />
+                            <Badge key={tech} badgeType="info">
+                                {tech}
+                            </Badge>
                         ))}
                     </div>
                 </div>

@@ -36,11 +36,11 @@ const SLink = (props: NavLinkProps) => {
             <Link
                 href={props.href}
                 onClick={props.onClick}
-                className={`text-right w-full ${
+                className={`transition-colors text-right w-full ${
                     props.isActive
-                        ? "text-drd-primary-500 border-r-2 bg-drd-primary-75"
-                        : `text-drd-neutral-500 hover:text-drd-primary-500
-                        hover:bg-drd-primary-100 hover:border-r-2`
+                        ? "text-drd-primary border-r-2 bg-drd-primary-75"
+                        : `text-drd-neutral hover:text-drd-primary
+                        hover:bg-drd-primary-75 border-r-2 border-transparent`
                 } rounded-lg rounded-r-none px-1 py-2`}>
                 {props.children}
             </Link>

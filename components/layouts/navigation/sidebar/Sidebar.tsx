@@ -79,9 +79,9 @@ const Sidebar = (props: SidebarProps) => {
 
                         <SLinkGroup onClick={props.onCloseSidebar} />
 
-                        <div className="text-center absolute bottom-8 space-y-1">
+                        <div className="text-drd-neutral-400 text-center absolute bottom-8 space-y-1">
                             <SocialGroup />
-                            <p className="text-drd-neutral-600 text-x r2l">
+                            <p className="text-x r2l">
                                 در صفحات مجازی همراه من باشید!
                             </p>
                         </div>

@@ -59,11 +59,10 @@ const ContactMeForm = (props: ContactMeFormProps) => {
             <FormBody action={formAction}>
                 <Input
                     required
-                    autoFocus
                     dir="rtl"
                     label="نام"
-                    name="fullName"
                     minLength={2}
+                    name="fullName"
                     uniqueId="name"
                     error={state?.errors?.fullName}
                     placeholder="نام کامل خود را وارد کنید"
@@ -76,6 +75,7 @@ const ContactMeForm = (props: ContactMeFormProps) => {
                     label="ایمیل"
                     minLength={5}
                     uniqueId="email"
+                    className="mt-2.5"
                     error={state?.errors?.email}
                     placeholder="ایمیل خود را وارد کنید"
                 />
@@ -83,9 +83,10 @@ const ContactMeForm = (props: ContactMeFormProps) => {
                 <Input
                     required
                     dir="rtl"
-                    name="subject"
                     label="موضوع"
                     minLength={3}
+                    name="subject"
+                    className="mt-2.5"
                     uniqueId="subject"
                     error={state?.errors?.subject}
                     placeholder="موضوع خود را وارد کنید"
@@ -95,8 +96,9 @@ const ContactMeForm = (props: ContactMeFormProps) => {
                     required
                     dir="rtl"
                     label="پیام"
-                    name="message"
                     minLength={5}
+                    name="message"
+                    className="mt-2.5"
                     uniqueId="message"
                     error={state?.errors?.message}
                     placeholder="پیام خود را وارد کنید"

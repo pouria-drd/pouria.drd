@@ -42,20 +42,17 @@ const Homepage = () => {
                     <Link
                         target="_blank"
                         href="https://asredanesh.com/"
-                        className="text-drd-primary-500">
+                        className="text-drd-primary-500 hover:underline mx-1 z10">
                         عصردانش‌افزار
-                    </Link>{" "}
+                    </Link>
                     مشغولم!🚀
                 </p>
             </div>
 
             <div className="mb-2.5 mt-1.5 flex flex-col items-center gap-2">
-                <Button href="/contact-me" outline>
-                    ارسال پیام
+                <Button outlined>
+                    <Link href="/contact-me">ارسال پیام</Link>
                 </Button>
-                {/* <Button download href="/files/pouria-darandi-resume.pdf">
-                    دانلود رزومه
-                </Button> */}
             </div>
         </div>
     );

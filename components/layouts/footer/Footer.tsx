@@ -9,10 +9,13 @@ const Footer = (props: Props) => {
     return (
         <footer
             id="footer"
-            className={cn(`font-mono flex flex-col gap-4`, props.className)}>
+            className={cn(
+                `font-mono flex flex-col gap-4 text-drd-neutral`,
+                props.className
+            )}>
             <SocialGroup />
             <span
-                className="text-drd-neutral-600 text-xs text-center
+                className="text-xs text-center
                 border-t border-drd-neutral-200 w-full py-4">
                 &#169; Copyright Pouria Darandi. All rights reserved 2025
             </span>

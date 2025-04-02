@@ -14,7 +14,7 @@ const ContactInfoLink = (props: ContactInfoLinkProps) => {
                 target="_blank"
                 href={props.href}
                 className="flex items-center justify-between w-full
-            text-drd-neutral-600 hover:text-drd-primary-500 group">
+                text-drd-neutral hover:text-drd-primary-500 group">
                 <div className="flex items-center gap-2">
                     <div
                         className="flex items-center justify-center
@@ -35,7 +35,7 @@ const ContactInfoLink = (props: ContactInfoLinkProps) => {
             <div className="flex items-center gap-2">
                 <div
                     className="flex items-center justify-center aspect-square
-                border border-drd-neutral-300 rounded-[50%] size-10 p-1.5">
+                    border border-drd-neutral-300 rounded-[50%] size-10 p-1.5">
                     {props.icon}
                 </div>
                 {props.label}

@@ -1,4 +1,3 @@
-export { default as TechTag } from "./TechTag";
 export { default as Typewriter } from "./Typewriter";
 export { default as ProjectCard } from "./ProjectCard";
 export { default as SkillsWriter } from "./SkillsWriter";

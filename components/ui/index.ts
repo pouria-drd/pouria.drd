@@ -2,6 +2,7 @@ export * from "./form";
 export * from "./input";
 export * from "./toast";
 export * from "./modal";
+export * from "./badge";
 export * from "./button";
 export * from "./overlay";
 export * from "./spinner";

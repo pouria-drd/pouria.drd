@@ -4,6 +4,8 @@
     --font-peyda: var(--font-peyda);
     --font-iran-yekan-x: var(--font-iran-yekan-x);
 
+    --color-drd-primary: #3b76f6;
+
     --color-drd-primary-25: #f0f8ff;
     --color-drd-primary-50: #eff4ff;
     --color-drd-primary-75: #e6f0fc;
@@ -18,17 +20,19 @@
     --color-drd-primary-900: #1e408a;
     --color-drd-primary-950: #172a54;
 
-    --color-drd-neutral-50: #f6f7f8;
-    --color-drd-neutral-100: #eaecef;
-    --color-drd-neutral-200: #dbdee2;
-    --color-drd-neutral-300: #c2c9ce;
-    --color-drd-neutral-400: #adb5bd;
-    --color-drd-neutral-500: #8e97a3;
-    --color-drd-neutral-600: #7d8593;
-    --color-drd-neutral-700: #707685;
-    --color-drd-neutral-800: #5e636f;
-    --color-drd-neutral-900: #4e525a;
-    --color-drd-neutral-950: #323439;
+    --color-drd-neutral: #71717a;
+
+    --color-drd-neutral-50: #fafafa;
+    --color-drd-neutral-100: #f4f4f5;
+    --color-drd-neutral-200: #e4e4e7;
+    --color-drd-neutral-300: #d4d4d8;
+    --color-drd-neutral-400: #a1a1aa;
+    --color-drd-neutral-500: #71717a;
+    --color-drd-neutral-600: #52525b;
+    --color-drd-neutral-700: #3f3f46;
+    --color-drd-neutral-800: #27272a;
+    --color-drd-neutral-900: #18181b;
+    --color-drd-neutral-950: #09090b;
 }
 
 body {
@@ -95,22 +99,22 @@ body {
     /* ========================= */
 
     .title-large {
-        @apply text-drd-neutral-950 text-3xl
+        @apply text-drd-neutral-700 text-3xl
        sm:text-4xl md:text-5xl lg:text-6xl font-bold;
     }
 
     .title-medium {
-        @apply text-drd-neutral-950 text-2xl
+        @apply text-drd-neutral-700 text-2xl
        sm:text-3xl md:text-4xl lg:text-4xl font-bold;
     }
 
     .title-small {
-        @apply text-drd-neutral-950 text-xl
+        @apply text-drd-neutral-700 text-xl
        sm:text-2xl md:text-2xl lg:text-3xl font-bold;
     }
 
     .form-title {
-        @apply text-drd-neutral-950 text-xl sm:text-2xl font-semibold;
+        @apply text-drd-neutral-700 text-xl sm:text-2xl font-semibold;
     }
 
     /* ========================= */
@@ -118,22 +122,22 @@ body {
     /* ========================= */
 
     .text-p-large {
-        @apply text-drd-neutral-600 text-lg
+        @apply text-drd-neutral text-lg
         sm:text-xl md:text-2xl lg:text-3xl;
     }
 
     .text-p-medium {
-        @apply text-drd-neutral-600 text-base
+        @apply text-drd-neutral text-base
         sm:text-lg md:text-xl lg:text-2xl;
     }
 
     .text-p-small {
-        @apply text-drd-neutral-600 text-base
+        @apply text-drd-neutral text-base
         sm:text-base md:text-lg lg:text-xl;
     }
 
     .form-description {
-        @apply text-drd-neutral-600 text-sm sm:text-base;
+        @apply text-drd-neutral text-sm sm:text-base;
     }
 
     /* ========================= */
@@ -142,58 +146,83 @@ body {
 
     .drd-form-card {
         @apply bg-white flex flex-col items-center gap-4
-        rounded-xl shadow w-full max-w-full sm:max-w-80 px-6 py-8;
+        rounded-xl shadow w-full max-w-full sm:max-w-72 px-6 py-8;
     }
 
     /* ========================= */
-    /* 🔹 Inputs */
+    /* 🔹 Badge */
+    /* ========================= */
+
+    .drd-badge {
+        @apply inline-flex items-center justify-center gap-2 focus:outline-none
+        text-xs transition-colors rounded-md border-none px-2 py-1;
+    }
+
+    /* ========================= */
+    /* 🔹 Input */
     /* ========================= */
 
     .drd-input {
-        @apply transition-all 
-        text-drd-neutral-800 text-sm bg-white
+        @apply transition-colors 
+        text-drd-neutral-700 text-sm bg-transparent
         placeholder:text-xs placeholder:text-drd-neutral-400
-        outline rounded px-2 w-full h-9 min-h-9;
+        disabled:cursor-not-allowed disabled:opacity-50
+        outline rounded-md px-3 py-1 w-full h-9;
     }
 
     .drd-input-normal {
-        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-neutral-400 
+        focus:outline-drd-primary-500 selection:bg-drd-primary-100;
     }
 
     .drd-input-error {
-        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
+        @apply outline-red-400 
+        focus:outline-red-600 selection:bg-red-200;
     }
 
+    /* ========================= */
+    /* 🔹 Float Label Input */
+    /* ========================= */
+
     .drd-float-input {
-        @apply outline-none transition-all
-        text-sm text-drd-neutral-800 bg-white
+        @apply transition-colors
+        text-sm text-drd-neutral-800 bg-transparent
         placeholder:text-transparent placeholder:text-xs
-        outline rounded px-2 w-full h-9 min-h-9;
+        disabled:cursor-not-allowed disabled:opacity-50
+        outline rounded-md px-3 py-1 w-full h-9;
     }
 
     .drd-float-input-normal {
-        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-neutral-400 
+        focus:outline-drd-primary selection:bg-drd-primary-100;
     }
 
     .drd-float-input-error {
-        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
+        @apply outline-red-400 
+        focus:outline-red-600 selection:bg-red-200;
     }
 
+    /* ========================= */
+    /* 🔹 Text Area */
+    /* ========================= */
+
     .drd-textarea {
-        @apply transition-all 
-        text-drd-neutral-800 text-sm bg-white
+        @apply transition-colors 
+        text-drd-neutral-800 text-sm bg-transparent
         placeholder:text-xs placeholder:text-drd-neutral-400
-        outline rounded p-2 w-full min-h-24;
+        disabled:cursor-not-allowed disabled:opacity-50
+        outline rounded-md p-2 w-full min-h-24;
     }
 
     .drd-textarea-normal {
-        @apply outline-drd-primary-300 focus:outline-drd-primary-500 selection:bg-drd-primary-200;
+        @apply outline-drd-neutral-400
+        focus:outline-drd-primary-500 selection:bg-drd-primary-100;
     }
 
     .drd-textarea-error {
-        @apply outline-red-400 focus:outline-red-600 selection:bg-red-200;
+        @apply outline-red-400 
+        focus:outline-red-600 selection:bg-red-200;
     }
-
     /* ========================= */
     /* 🔹 Toast */
     /* ========================= */

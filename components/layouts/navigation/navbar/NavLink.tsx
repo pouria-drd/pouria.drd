@@ -19,15 +19,14 @@ const NavLink = (props: NavLinkProps) => {
                         ? "text-drd-primary-500"
                         : `text-drd-neutral-500 
                         hover:text-drd-neutral-600`
-                } font-semibold`}>
+                }`}>
                 {props.children}
             </Link>
 
             {props.isActive && (
                 <motion.span
                     layoutId="drd-navlink"
-                    className={`bg-drd-primary-500 absolute 
-                   block rounded-lg h-[2.5px] w-full top-[25px]`}
+                    className={`bg-drd-primary absolute block rounded-lg h-0.5 w-full top-6`}
                 />
             )}
         </div>

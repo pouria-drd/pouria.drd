@@ -8,7 +8,7 @@ const FormBody = (props: FormBodyProps) => {
     return (
         <form
             className={cn(
-                `flex flex-col items-center gap-4 w-full [&>*:last-child]:mt-1`,
+                `flex flex-col items-center gap-6 w-full mt-4`,
                 props.className
             )}
             {...props}>

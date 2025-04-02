@@ -21,33 +21,42 @@ const Input = (props: NormalInputProps) => {
 
     return (
         <div
-            className={`flex flex-col gap-px w-full relative ${
-                dir === "rtl" ? "text-right" : "text-left"
-            }`}>
+            className={cn(
+                `flex flex-col gap-px w-full relative ${
+                    dir === "rtl" ? "text-right" : "text-left"
+                }`,
+                className
+            )}>
+            <input
+                dir={dir} // Set the text direction of the input
+                id={uniqueId} // Explicitly set the id to uniqueId
+                {...inputProps} // Spread the other props but exclude uniqueId
+                className={`peer drd-input 
+                    ${error ? `drd-input-error` : `drd-input-normal`}`}
+            />
+
             {label && (
                 <label
                     htmlFor={uniqueId}
-                    className={cn(
-                        `text-sm px-1
-                        ${dir === "rtl" ? "text-right" : "text-left"}
-                        ${error ? `text-red-500` : `text-drd-neutral-700`}
-                        `
-                    )}>
+                    className={`absolute -top-3 -translate-y-1/2 text-xs 
+                        
+                        ${dir === "rtl" ? " right-0" : "left-0"}
+
+                        ${
+                            error
+                                ? `text-red-500`
+                                : `text-drd-neutral-500
+                                peer-focus:text-drd-primary-600
+                                peer-disabled:text-drd-neutral-400`
+                        }`}>
                     {label}
                 </label>
             )}
-            <input
-                {...inputProps} // Spread the other props but exclude uniqueId
-                id={uniqueId} // Explicitly set the id to uniqueId
-                dir={dir} // Set the text direction of the input
-                className={cn(
-                    `peer drd-input
-                    ${error ? `drd-input-error` : `drd-input-normal`}`,
-                    className
-                )}
-            />
+
             {error && (
-                <span className={`text-xs text-red-500 px-1`}>{error}</span>
+                <span className={`text-[11px] text-red-500 mt-0.5`}>
+                    {error}
+                </span>
             )}
         </div>
     );
