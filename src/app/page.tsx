@@ -38,7 +38,7 @@ async function RootPage() {
                         {t("title")}
                     </h1>
                     <SkillsWriter skills={skills} />
-                    <p className="relative text-center leading-relaxed max-w-full sm:max-w-2xl">
+                    <p className="relative text-center leading-relaxed max-w-full sm:max-w-2xl text-muted-foreground">
                         {t("birth")}
                         <br />
                         {t("start")}

@@ -34,7 +34,9 @@ function ProjectsPage() {
                     <h1 className="text-3xl font-bold text-center">
                         {tPage("title")}
                     </h1>
-                    <p className="text-center mt-2">{tPage("description")}</p>
+                    <p className="text-muted-foreground text-center mt-2">
+                        {tPage("description")}
+                    </p>
 
                     <div className="mt-4 mb-12">
                         <div className="relative flex items-center w-full max-w-full sm:max-w-lg mx-auto">

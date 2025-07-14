@@ -16,7 +16,7 @@ async function ContactMePage() {
                             {t("title")}
                         </h1>
 
-                        <p className="text-justify w-full max-w-full sm:max-w-sm">
+                        <p className="text-muted-foreground text-justify w-full max-w-full sm:max-w-sm">
                             {t("description")}
                         </p>
                     </div>
