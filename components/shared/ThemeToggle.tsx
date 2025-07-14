@@ -31,7 +31,7 @@ function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle Theme"
             className={`p-1 rounded-md size-7 flex items-center justify-center
-                bg-drd-neutral-200 text-drd-neutral-700
+                bg-drd-neutral-200 text-drd-neutral-700 cursor-pointer
                 dark:bg-drd-neutral-950 dark:text-white`}>
             <motion.div
                 key={theme}
