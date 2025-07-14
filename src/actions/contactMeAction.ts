@@ -17,10 +17,14 @@ interface ContactMePromise {
 }
 
 async function contactMeAction(
-    state: any,
+    state: unknown,
     formData: FormData,
     props?: Props
 ): Promise<ContactMePromise> {
+    if (props?.delay) {
+        await new Promise((resolve) => setTimeout(resolve, props.delay));
+    }
+
     const t = await getTranslations("Forms.ContactMe");
     const schema = contactMeFormSchema(t);
     const result = schema.safeParse(Object.fromEntries(formData));

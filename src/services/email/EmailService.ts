@@ -51,8 +51,8 @@ class EmailService {
         try {
             await this.transporter.sendMail(mailOptions);
             console.log("✅ Admin email sent successfully.");
-        } catch (error: any) {
-            console.error("❌ Failed to send admin email:", error.message);
+        } catch (error: unknown) {
+            console.error("❌ Failed to send admin email:", error);
             throw new Error("Failed to send admin email");
         }
     }
