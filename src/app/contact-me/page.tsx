@@ -26,8 +26,8 @@ async function ContactMePage() {
                             href="https://instagram.com/pouria.drd"
                             icon={<InstagramIcon className="w-full" />}
                             label={t("instagramLabel")}>
-                            <span className="font-bold text-base md:text-lg">
-                                pouria.drd@
+                            <span className="font-bold text-base md:text-lg l2r">
+                                @pouria.drd
                             </span>
                         </ContactInfoLink>
 
@@ -35,8 +35,8 @@ async function ContactMePage() {
                             href="https://t.me/pouria_drd"
                             icon={<TelegramIcon2 className="w-full" />}
                             label={t("telegramLabel")}>
-                            <span className="font-bold text-base md:text-lg">
-                                pouria_drd@
+                            <span className="font-bold text-base md:text-lg l2r">
+                                @pouria_drd
                             </span>
                         </ContactInfoLink>
 
@@ -44,8 +44,8 @@ async function ContactMePage() {
                             href="https://twitter.com/pouria_drd/"
                             icon={<TwitterIcon className="w-full" />}
                             label={t("twitterLabel")}>
-                            <span className="font-bold text-base md:text-lg">
-                                pouria_drd@
+                            <span className="font-bold text-base md:text-lg l2r">
+                                @pouria_drd
                             </span>
                         </ContactInfoLink>
                     </div>
