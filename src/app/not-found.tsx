@@ -8,7 +8,7 @@ async function NotFound() {
     const t = await getTranslations("Pages.NotFoundPage");
 
     return (
-        <div className="fixed min-h-screen bg-white w-full left-0 top-0 z-[1000]">
+        <div className="fixed min-h-screen bg-background w-full left-0 top-0 z-[1000]">
             <div className="relative flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden z-1">
                 <GridShape />
                 <div className="mx-auto w-full max-w-[242px] text-center sm:max-w-[472px]">

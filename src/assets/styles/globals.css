@@ -6,28 +6,10 @@
     --font-iran-yekan-x: var(--font-iran-yekan-x);
 }
 
-/* ---------------------------------------------------------------------- */
-/* Scroll area */
-
-::-webkit-scrollbar {
-    @apply w-2 h-2 bg-zinc-200;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-    @apply bg-zinc-300;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    @apply bg-zinc-300;
-}
-
 * {
     scroll-behavior: smooth;
     scroll-padding-top: 60px;
 }
-
-/* ---------------------------------------------------------------------- */
-/* Utilities area */
 
 @layer utilities {
     .glass-effect {

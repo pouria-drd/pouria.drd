@@ -13,11 +13,12 @@ function Footer(props: Props) {
         <footer
             id="footer"
             className={cn(
-                "flex flex-col gap-4 text-drd-neutral",
+                "flex flex-col gap-2 text-drd-neutral",
                 props.className
             )}>
             <SocialGroup />
-            <span className="text-xs text-center border-t border-border w-full py-4">
+            <hr className="w-sm mx-auto mt-0.5" />
+            <span className="text-xs text-center py-1.5">
                 {t("copyright", { year: new Date().getFullYear() })}
             </span>
         </footer>
