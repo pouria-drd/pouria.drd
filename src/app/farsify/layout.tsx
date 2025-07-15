@@ -1,44 +1,47 @@
-import { Fragment } from "react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("Pages.ProjectsPage.layout");
+    const t = await getTranslations("Pages.FarsifyPage.layout");
 
     return {
-        applicationName: "Pouria Darandi | Projects",
-
         title: {
             default: t("title"),
             template: `%s | ${t("title")}`,
         },
-
         description: t("description"),
-
         keywords: t("keywords")
             .split(",")
             .map((kw) => kw.trim()),
-
         creator: "Pouria Darandi",
         publisher: "Pouria Darandi",
-
+        alternates: {
+            canonical: "https://pouria-drd.ir/farsify",
+        },
+        robots: {
+            index: true,
+            follow: true,
+        },
         openGraph: {
             type: "website",
-            siteName: "Pouria DRD Projects",
-            url: "https://pouria-drd.ir/projects",
+            siteName: "Pouria DRD Farsify",
+            url: "https://pouria-drd.ir/farsify",
+
             title: {
                 default: t("title"),
                 template: `%s | ${t("title")}`,
             },
+
             description: t("description"),
+
             images: [
                 {
                     width: 600,
                     height: 315,
-                    alt: "Pouria Darandi's projects",
-                    url: "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
+                    alt: "Pouria DRD Farsify",
+                    url: "https://pouria-drd.ir/images/og/opengraph-image.png",
                     secureUrl:
-                        "https://pouria-drd.ir/images/og/projects-opengraph-image.png",
+                        "https://pouria-drd.ir/images/og/opengraph-image.png",
                 },
             ],
         },
@@ -57,30 +60,20 @@ export async function generateMetadata(): Promise<Metadata> {
                 {
                     width: 600,
                     height: 315,
-                    alt: "Pouria Darandi's projects",
-                    url: "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
+                    alt: "Pouria DRD Farsify",
+                    url: "https://pouria-drd.ir/images/tw/twitter-image.png",
                     secureUrl:
-                        "https://pouria-drd.ir/images/tw/projects-twitter-image.png",
+                        "https://pouria-drd.ir/images/tw/twitter-image.png",
                 },
             ],
         },
-
-        alternates: {
-            canonical: "https://pouria-drd.ir/projects",
-        },
-
-        robots: {
-            index: true,
-            follow: true,
-        },
-
         // Structured Data (JSON-LD) for SEO
         other: {
             "ld+json": JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "CollectionPage",
-                name: "Pouria Darandi Projects",
-                url: "https://pouria-drd.ir/projects",
+                name: "Pouria Darandi Farsify",
+                url: "https://pouria-drd.ir/farsify",
                 title: {
                     default: t("title"),
                     template: `%s | ${t("title")}`,
@@ -96,12 +89,12 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-interface ProjectsLayoutProps {
+interface FarsifyLayoutProps {
     children: React.ReactNode;
 }
 
-function ProjectsLayout({ children }: ProjectsLayoutProps) {
-    return <Fragment>{children}</Fragment>;
+function FarsifyLayout({ children }: FarsifyLayoutProps) {
+    return <>{children}</>;
 }
 
-export default ProjectsLayout;
+export default FarsifyLayout;

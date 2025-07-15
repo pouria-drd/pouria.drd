@@ -15,6 +15,12 @@ function siteMap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: "https://pouria-drd.ir/farsify",
+            lastModified: "07/15/2025",
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
             url: "https://pouria-drd.ir/contact-me",
             lastModified: "07/15/2025",
             changeFrequency: "monthly",

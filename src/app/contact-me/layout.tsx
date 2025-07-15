@@ -1,116 +1,92 @@
 import { Fragment } from "react";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-    applicationName: "Pouria Darandi | Contact Me",
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations("Pages.ContactMePage.layout");
 
-    title: {
-        default: "Contact",
-        template: "%s | Contact",
-    },
-
-    description:
-        "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
-
-    keywords: [
-        // English Keywords
-        "contact Pouria Darandi",
-        "get in touch with Pouria Darandi",
-        "reach Pouria Darandi",
-        "Pouria Darandi contact info",
-        "email Pouria Darandi",
-        "message Pouria Darandi",
-        "talk to Pouria Darandi",
-        "how to contact Pouria Darandi",
-        "inquire about a project",
-        "developer contact",
-        "business inquiry",
-        "freelancer contact",
-        "hire a developer",
-        "software engineer contact",
-
-        // Persian Keywords
-        "تماس با پوریا دارندی",
-        "ارتباط با پوریا دارندی",
-        "راه‌های تماس با پوریا دارندی",
-        "ایمیل پوریا دارندی",
-        "پیام به پوریا دارندی",
-        "ارتباط با توسعه دهنده",
-        "درخواست همکاری",
-        "پشتیبانی نرم‌افزار",
-        "مشاوره برنامه‌نویسی",
-        "همکاری در پروژه",
-    ],
-
-    openGraph: {
-        title: "Contact Pouria Darandi",
-        description:
-            "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
-        url: "https://pouria-drd.ir/contact-me",
-        siteName: "Pouria Darandi",
-        type: "website",
-        images: [
-            {
-                width: 600,
-                height: 315,
-                alt: "Contact Pouria Darandi",
-                url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
-                secureUrl:
-                    "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
+    return {
+        title: {
+            default: t("title"),
+            template: `%s | ${t("title")}`,
+        },
+        description: t("description"),
+        keywords: t("keywords")
+            .split(",")
+            .map((kw) => kw.trim()),
+        creator: "Pouria Darandi",
+        publisher: "Pouria Darandi",
+        alternates: {
+            canonical: "https://pouria-drd.ir/contact-me",
+        },
+        robots: {
+            index: true,
+            follow: true,
+        },
+        openGraph: {
+            title: {
+                default: t("title"),
+                template: `%s | ${t("title")}`,
             },
-        ],
-    },
-
-    twitter: {
-        card: "summary_large_image",
-        title: "Contact Pouria Darandi",
-        description:
-            "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
-        site: "@pouriaDRD",
-        images: [
-            {
-                width: 600,
-                height: 315,
-                alt: "Contact Pouria Darandi",
-                url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
-                secureUrl:
-                    "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
-            },
-        ],
-    },
-
-    alternates: {
-        canonical: "https://pouria-drd.ir/contact-me",
-    },
-
-    robots: {
-        index: true,
-        follow: true,
-    },
-
-    other: {
-        "ld+json": JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Pouria Darandi",
-            url: "https://pouria-drd.ir",
-            jobTitle: "Full-Stack Developer",
-            email: "pouriadrd@gmail.com",
-            sameAs: [
-                "https://github.com/pouria-drd/",
-                "https://twitter.com/pouria_drd/",
-                "https://t.me/pouria_drd/",
-                "https://www.instagram.com/pouria.drd",
+            description: t("description"),
+            url: "https://pouria-drd.ir/contact-me",
+            siteName: "Pouria Darandi",
+            type: "website",
+            images: [
+                {
+                    width: 600,
+                    height: 315,
+                    alt: "Contact Pouria Darandi",
+                    url: "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
+                    secureUrl:
+                        "https://pouria-drd.ir/images/og/contact-me-opengraph-image.png",
+                },
             ],
-            contactPoint: {
-                "@type": "ContactPoint",
-                email: "pouriadrd@gmail.com",
-                contactType: "customer support",
-                availableLanguage: ["Persian", "English"],
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: {
+                default: t("title"),
+                template: `%s | ${t("title")}`,
             },
-        }),
-    },
-};
+            description: t("description"),
+            site: "@pouriaDRD",
+            images: [
+                {
+                    width: 600,
+                    height: 315,
+                    alt: "Contact Pouria Darandi",
+                    url: "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
+                    secureUrl:
+                        "https://pouria-drd.ir/images/tw/contact-me-twitter-image.png",
+                },
+            ],
+        },
+        other: {
+            "ld+json": JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Pouria Darandi",
+                url: "https://pouria-drd.ir",
+                jobTitle: "Full-Stack Developer",
+                email: "pouriadrd@gmail.com",
+                sameAs: [
+                    "https://github.com/pouria-drd/",
+                    "https://twitter.com/pouria_drd/",
+                    "https://t.me/pouria_drd/",
+                    "https://www.instagram.com/pouria.drd",
+                ],
+                contactPoint: {
+                    "@type": "ContactPoint",
+                    email: "pouriadrd@gmail.com",
+                    contactType: "customer support",
+                    availableLanguage: ["Persian", "English"],
+                },
+            }),
+        },
+    };
+}
 
 interface ContactMeLayoutProps {
     children: React.ReactNode;

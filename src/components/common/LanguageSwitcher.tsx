@@ -62,7 +62,9 @@ const LanguageSwitcher = () => {
                             value={lang.code}>
                             <span
                                 className={`${
-                                    lang.code === "fa" && "font-iran-yekan-x"
+                                    lang.code === "fa"
+                                        ? "font-iran-yekan-x"
+                                        : "font-sans"
                                 }`}>
                                 {lang.label}
                             </span>

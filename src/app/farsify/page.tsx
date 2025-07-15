@@ -5,7 +5,7 @@ async function FarsifyPage() {
     const t = await getTranslations("Pages.FarsifyPage");
 
     return (
-        <main className="grow app-px flex flex-col items-center justify-center">
+        <main className="grow app-px flex flex-col items-center justify-center pt-8">
             {/* Hero Section */}
             <div className="text-center space-y-3">
                 <h1 className="text-3xl sm:text-4xl font-extrabold">
