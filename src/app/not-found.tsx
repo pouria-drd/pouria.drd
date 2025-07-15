@@ -42,7 +42,7 @@ async function NotFound() {
                 </div>
                 {/* <!-- Footer --> */}
                 <p className="font-mono absolute text-base -translate-x-1/2 bottom-6 left-1/2">
-                    &copy; {new Date().getFullYear()} - OMP
+                    &copy; {new Date().getFullYear()} - Pouria Darandi
                 </p>
             </div>
         </div>
