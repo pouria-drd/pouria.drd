@@ -28,6 +28,17 @@
             "instagramLabel": "Instagram address:",
             "telegramLabel": "Telegram address:",
             "twitterLabel": "Twitter address:"
+        },
+
+        "FarsifyPage": {
+            "title": "Farsify",
+            "description": "Securely compress and convert V2Ray, VLESS, and VMess configurations into Persian-only SMS and back. Ideal for strict censorship conditions.",
+
+            "layout": {
+                "title": "Farsify",
+                "description": "Securely compress and convert V2Ray, VLESS, and VMess configurations into Persian-only SMS and back. Ideal for strict censorship conditions.",
+                "keywords": "v2ray, vless, vmess, config to persian sms, v2ray sms converter, censorship bypass, compressed v2ray config"
+            }
         }
     },
 
@@ -68,6 +79,28 @@
                     "min": "Message must be at least 5 characters"
                 }
             }
+        },
+
+        "V2Farsify": {
+            "title": "V2Ray Config to Persian SMS Converter",
+            "tabs": {
+                "encode": "To SMS",
+                "decode": "To Config"
+            },
+            "inputLabel": {
+                "encode": "Config Input (Link or JSON)",
+                "decode": "Encoded SMS Input"
+            },
+            "placeholders": {
+                "input": "Enter your text here"
+            },
+            "convert": "Convert",
+            "clear": "Clear",
+            "copy": "Copy Output",
+            "copied": "Output copied!",
+            "error": "Conversion failed. Please check your input.",
+            "outputLabel": "Output",
+            "note": "⚠️ Note: Some mobile carriers may filter encoded SMS."
         }
     },
 
@@ -99,7 +132,8 @@
                 "home": "Home",
                 "blog": "Blog",
                 "projects": "Projects",
-                "contact": "Contact Me"
+                "contact": "Contact Me",
+                "farsify": "Farsify"
             }
         },
 

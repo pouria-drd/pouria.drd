@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { ContactMeForm } from "@/components/forms";
 import { getTranslations } from "next-intl/server";
 import { ContactInfoLink } from "@/components/common";
-import { ContactMeForm } from "@/components/features";
 import { InstagramIcon, TelegramIcon2, TwitterIcon } from "@/components/icons";
 
 async function ContactMePage() {

@@ -62,6 +62,13 @@ const SLinkGroup = (props: NavigationLinksProps) => {
             </SLink>
 
             <SLink
+                href="/farsify"
+                onClick={handleClick}
+                isActive={isLinkActive(pathname, "/farsify")}>
+                {t("farsify")}
+            </SLink>
+
+            <SLink
                 href="/contact-me"
                 onClick={handleClick}
                 isActive={isLinkActive(pathname, "/contact-me")}>

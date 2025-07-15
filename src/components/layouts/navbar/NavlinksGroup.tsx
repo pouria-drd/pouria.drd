@@ -30,6 +30,12 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
             </NavLink>
 
             <NavLink
+                href="/farsify"
+                isActive={isLinkActive(pathname, "/farsify")}>
+                {t("farsify")}
+            </NavLink>
+
+            <NavLink
                 href="/contact-me"
                 isActive={isLinkActive(pathname, "/contact-me")}>
                 {t("contact")}

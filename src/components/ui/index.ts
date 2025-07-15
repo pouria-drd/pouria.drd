@@ -1,5 +1,6 @@
-export * from "./badge";
+export * from "./tabs";
 export * from "./card";
+export * from "./badge";
 export * from "./label";
 export * from "./input";
 export * from "./button";
