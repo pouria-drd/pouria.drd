@@ -1,5 +1,4 @@
 import pako from "pako";
-import bs58 from "bs58";
 
 const faAlphabet = [
     "ا",

@@ -32,6 +32,7 @@ const FarsifyForm = () => {
         setInput("");
         setOutput("");
     }, [mode]);
+    /* eslint-disable @typescript-eslint/no-unused-vars */
 
     const handleConvert = () => {
         try {
@@ -44,6 +45,7 @@ const FarsifyForm = () => {
             alert(t("error"));
         }
     };
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     const handleCopy = () => {
         navigator.clipboard.writeText(output);
@@ -60,7 +62,9 @@ const FarsifyForm = () => {
                 <Tabs
                     className="w-full"
                     defaultValue="encode"
-                    onValueChange={(val) => setMode(val as any)}>
+                    onValueChange={(val) =>
+                        setMode(val as "encode" | "decode")
+                    }>
                     <TabsList
                         className={`grid grid-cols-2 w-full ${
                             locale === "fa" ? "r2l" : "l2r"
