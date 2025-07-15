@@ -81,7 +81,7 @@ const Sidebar = (props: SidebarProps) => {
 
                         <SLinkGroup onClick={props.onCloseSidebar} />
 
-                        <div className="text-center absolute flex flex-col gap-2 bottom-12">
+                        <div className="text-center absolute flex flex-col gap-2 bottom-8">
                             <span className="text-muted-foreground text-xs">
                                 {t("social")}
                             </span>

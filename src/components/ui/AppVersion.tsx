@@ -10,7 +10,7 @@ const AppVersion = (props: AppVersionProps) => {
     return (
         <span
             className={cn(
-                `text-muted-foreground text-sm font-mono text-center w-full`,
+                `text-muted-foreground font-sans text-xs text-center w-full`,
                 props.className
             )}>
             version {appVersion}
