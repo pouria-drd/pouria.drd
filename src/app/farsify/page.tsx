@@ -1,8 +1,10 @@
-import { FarsifyForm } from "@/components/forms";
-import { getTranslations } from "next-intl/server";
+"use client";
 
-async function FarsifyPage() {
-    const t = await getTranslations("Pages.FarsifyPage");
+import { useTranslations } from "next-intl";
+import { FarsifyForm } from "@/components/forms";
+
+function FarsifyPage() {
+    const t = useTranslations("Pages.FarsifyPage");
 
     return (
         <main className="grow app-px flex flex-col items-center justify-center pt-8">

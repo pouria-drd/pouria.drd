@@ -172,7 +172,7 @@ async function RootLayout({ children }: Readonly<RootLayoutProps>) {
     const dir = locale === "fa" ? "rtl" : "ltr";
 
     return (
-        <html lang={locale} suppressHydrationWarning dir={dir}>
+        <html lang={locale} suppressHydrationWarning dir={dir} data-scroll-behavior="smooth">
             <body
                 className={`${peyda.variable} ${iranYekanX.variable}
                     ${geistSans.variable} ${geistMono.variable} antialiased

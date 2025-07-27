@@ -53,6 +53,7 @@ async function ContactMePage() {
                     <div className="flex items-center justify-center w-full mt-8 sm:mt-0">
                         <Image
                             priority
+                            quality={20}
                             width={570}
                             height={428}
                             alt="ContactMeImage"
