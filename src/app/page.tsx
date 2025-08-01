@@ -59,7 +59,7 @@ async function RootPage() {
                 </div>
 
                 <div className="mb-2.5 mt-1.5 flex flex-col items-center gap-2">
-                    <Button variant={"outline"}>
+                    <Button variant={"default"}>
                         <Link href="/contact-me">{t("sendMessage")}</Link>
                     </Button>
                 </div>

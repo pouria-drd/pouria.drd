@@ -26,10 +26,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <CardHeader className="p-0">
                 <AspectRatio ratio={16 / 9}>
                     <Image
-                        priority
                         quality={20}
                         width={1920}
                         height={1080}
+                        loading="lazy"
                         src={project.image}
                         alt={t(`${project.id}.title`)}
                         className="object-cover w-full h-full transition-transform rounded-t-2xl"
@@ -52,8 +52,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                                     href={project.repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-xs hover:underline"
-                                >
+                                    className="text-xs hover:underline">
                                     {t(`${project.id}.sourceCode`)}
                                 </Link>
                             </div>
@@ -65,8 +64,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs hover:underline"
-                            >
+                                className="text-xs hover:underline">
                                 {t(`${project.id}.preview`)}
                             </Link>
                         </div>
@@ -82,8 +80,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                         <Badge
                             key={tech}
                             variant="secondary"
-                            className="font-mono text-xs"
-                        >
+                            className="font-mono text-xs">
                             {tech}
                         </Badge>
                     ))}
