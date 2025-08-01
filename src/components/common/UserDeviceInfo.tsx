@@ -38,7 +38,7 @@ function UserDeviceInfo() {
 
 	return (
 		<div className="flex items-center justify-center p-4">
-			<Card className="max-w-xs">
+			<Card className="w-80">
 				<CardHeader>
 					<CardTitle className="text-2xl font-bold text-center">
 						Device Information
@@ -57,10 +57,10 @@ function UserDeviceInfo() {
 										<div
 											key={key}
 											className="flex justify-between text-sm">
-											<span className="font-medium text-gray-600 capitalize">
+											<span className="font-medium text-muted-foreground capitalize">
 												{key.replace("_", " ")}
 											</span>
-											<span className="text-gray-800 truncate max-w-[60%]">
+											<span className="text-primary truncate max-w-[60%]">
 												{value}
 											</span>
 										</div>
