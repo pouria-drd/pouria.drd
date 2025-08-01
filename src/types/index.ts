@@ -21,7 +21,6 @@ type IEmailFormatStrategy = {
 		message: string,
 	): string;
 };
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 // Define interface for deviceInfo
 interface DeviceInfo {
@@ -35,3 +34,5 @@ interface DeviceInfo {
 	device_brand: string;
 	device_model: string;
 }
+
+/* eslint-enable @typescript-eslint/no-unused-vars */

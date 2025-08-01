@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 function UserDeviceInfo() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [deviceInfo, setDeviceInfo] = useState<DeviceInfo | null>(null);
-
+	/* eslint-disable @typescript-eslint/no-unused-vars */
 	useEffect(() => {
 		const fetchDeviceInfo = async () => {
 			try {
@@ -35,7 +35,7 @@ function UserDeviceInfo() {
 
 		fetchDeviceInfo();
 	}, []);
-
+	/* eslint-enable @typescript-eslint/no-unused-vars */
 	return (
 		<div className="flex items-center justify-center p-4">
 			<Card className="w-80">

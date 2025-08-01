@@ -4,29 +4,27 @@ import Typed from "typed.js";
 import { useRef, useEffect } from "react";
 
 interface TypewriterProps {
-    texts: string[];
-    className?: string;
+	texts: string[];
+	className?: string;
 }
 
-const Typewriter = (typewriterProps: TypewriterProps) => {
-    // Create reference to store the DOM element containing the animation
-    const el = useRef(null);
+const Typewriter = ({ texts, className }: TypewriterProps) => {
+	const el = useRef(null);
 
-    useEffect(() => {
-        const typed = new Typed(el.current, {
-            loop: true,
-            typeSpeed: 100,
-            cursorChar: "|",
-            strings: typewriterProps.texts,
-        });
+	useEffect(() => {
+		const typed = new Typed(el.current, {
+			loop: true,
+			typeSpeed: 100,
+			cursorChar: "|",
+			strings: texts,
+		});
 
-        return () => {
-            // Destroy Typed instance during cleanup to stop animation
-            typed.destroy();
-        };
-    }, []);
+		return () => {
+			typed.destroy();
+		};
+	}, [texts]);
 
-    return <span ref={el} className={typewriterProps.className} />;
+	return <span ref={el} className={className} />;
 };
 
 export default Typewriter;
