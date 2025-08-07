@@ -38,10 +38,7 @@ const LanguageSwitcher = () => {
 	return (
 		<DropdownMenu dir={currentLocale === "fa" ? "rtl" : "ltr"}>
 			<DropdownMenuTrigger asChild>
-				<Button
-					variant="outline"
-					size={"sm"}
-					className="cursor-pointer">
+				<Button variant="ghost" size={"sm"} className="cursor-pointer">
 					<LanguagesIcon />
 					{LANGUAGES.find((l) => l.code === selectedLocale)?.label}
 				</Button>

@@ -15,7 +15,7 @@ function ThemeToggle() {
 		<Button
 			size={"sm"}
 			onClick={toggleTheme}
-			variant={"outline"}
+			variant={"ghost"}
 			className="rounded-full size-8 cursor-pointer">
 			<SunIcon className="absolute rotate-90 scale-0 dark:rotate-0 dark:scale-100" />
 
