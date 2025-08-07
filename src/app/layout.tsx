@@ -3,9 +3,9 @@ import "../assets/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/ui";
+import { ThemeProvider } from "@/context";
 import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/context";
 import { Footer, Navigation } from "@/components/layouts";
 import { getLocale, getTranslations } from "next-intl/server";
 
