@@ -6,62 +6,63 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ImageChangerProps {
-    images: string[];
-    interval?: number; // Optional prop for flexibility
-    className?: string;
+	images: string[];
+	interval?: number; // Optional prop for flexibility
+	className?: string;
 }
 
 const ImageChanger = (props: ImageChangerProps) => {
-    const { images, interval = 5000 } = props;
-    const [index, setIndex] = useState(0);
+	const { images, interval = 5000 } = props;
+	const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-        if (images.length <= 1) return; // Prevent interval when only one image exists
+	useEffect(() => {
+		if (images.length <= 1) return; // Prevent interval when only one image exists
 
-        const imageInterval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, interval);
+		const imageInterval = setInterval(() => {
+			setIndex((prevIndex) => (prevIndex + 1) % images.length);
+		}, interval);
 
-        return () => clearInterval(imageInterval);
-    }, [images, interval]);
+		return () => clearInterval(imageInterval);
+	}, [images, interval]);
 
-    return (
-        <div
-            className={cn(
-                `bg-gradient-to-b from-white to-gray-100
+	return (
+		<div
+			className={cn(
+				`bg-gradient-to-b from-white to-gray-100
                     dark:from-zinc-700 dark:to-zinc-900
                 relative size-72 sm:size-80 min-w-72 min-h-72
                 rounded-[50%] overflow-hidden shadow-2xl aspect-square`,
-                props.className
-            )}>
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8, x: 50, rotate: -10 }}
-                    animate={{ opacity: 1, scale: 1, x: 0, rotate: 0 }}
-                    exit={{ opacity: 0, scale: 1.1, x: -50, rotate: 10 }}
-                    transition={{
-                        duration: 0.5,
-                        damping: 15,
-                        type: "spring",
-                        stiffness: 100,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute inset-0 w-full">
-                    <Image
-                        priority
-                        width={512}
-                        height={512}
-                        // loading="lazy"
-                        draggable={false}
-                        src={images[index]}
-                        alt="Pouria Darandi"
-                        className="filter grayscale hover:grayscale-0 object-cover w-full"
-                    />
-                </motion.div>
-            </AnimatePresence>
-        </div>
-    );
+				props.className,
+			)}>
+			<AnimatePresence mode="wait">
+				<motion.div
+					key={index}
+					initial={{ opacity: 0, scale: 0.8, x: 50, rotate: -10 }}
+					animate={{ opacity: 1, scale: 1, x: 0, rotate: 0 }}
+					exit={{ opacity: 0, scale: 1.1, x: -50, rotate: 10 }}
+					transition={{
+						duration: 0.5,
+						damping: 15,
+						type: "spring",
+						stiffness: 100,
+						ease: "easeInOut",
+					}}
+					className="absolute inset-0 w-full">
+					<Image
+						priority
+						width={512}
+						height={512}
+						quality={50}
+						// loading="lazy"
+						draggable={false}
+						src={images[index]}
+						alt="Pouria Darandi"
+						className="filter grayscale hover:grayscale-0 object-cover w-full"
+					/>
+				</motion.div>
+			</AnimatePresence>
+		</div>
+	);
 };
 
 export default ImageChanger;
