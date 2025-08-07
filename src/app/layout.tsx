@@ -2,9 +2,10 @@ import "../assets/styles/globals.css";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "@/components/ui";
 import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/providers";
+import { ThemeProvider } from "@/context";
 import { Footer, Navigation } from "@/components/layouts";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -189,6 +190,7 @@ async function RootLayout({ children }: Readonly<RootLayoutProps>) {
 				<NextIntlClientProvider locale={locale}>
 					<ThemeProvider attribute="class" defaultTheme="system">
 						<Navigation />
+						<Toaster position="top-center" />
 						{children}
 						<Footer />
 					</ThemeProvider>
