@@ -12,7 +12,10 @@ function Footer(props: Props) {
 	return (
 		<footer
 			id="footer"
-			className={cn("flex flex-col gap-2", props.className)}>
+			className={cn(
+				"flex flex-col gap-2 text-muted-foreground",
+				props.className,
+			)}>
 			<SocialGroup />
 			<hr className="w-sm mx-auto mt-0.5" />
 			<span className="text-xs text-center py-1.5">

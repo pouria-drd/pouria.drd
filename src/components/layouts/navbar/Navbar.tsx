@@ -8,47 +8,47 @@ import { PouriaLogo } from "@/components/icons";
 import { LanguageSwitcher, ThemeToggle } from "@/components/common";
 
 interface NavbarProps {
-    onOpenSidebar: () => void;
+	onOpenSidebar: () => void;
 }
 
 const Navbar = (props: NavbarProps) => {
-    const isScrollingDown = useScrollingDown(75);
+	const isScrollingDown = useScrollingDown(75);
 
-    function handleSidebarButtonClick() {
-        props.onOpenSidebar();
-    }
+	function handleSidebarButtonClick() {
+		props.onOpenSidebar();
+	}
 
-    return (
-        <motion.nav
-            initial={{ y: 0 }}
-            animate={{
-                y: isScrollingDown ? "-100%" : 0,
-            }}
-            transition={{
-                damping: 25,
-                stiffness: 300,
-            }}
-            className={`bg-background/95
+	return (
+		<motion.nav
+			initial={{ y: 0 }}
+			animate={{
+				y: isScrollingDown ? "-100%" : 0,
+			}}
+			transition={{
+				damping: 25,
+				stiffness: 300,
+			}}
+			className={`bg-background/95
             sticky top-0 z-10 backdrop-blur-xl app-px l2r
             flex items-center justify-between p-4`}>
-            <div className="flex items-center gap-2 sm:gap-4">
-                {/* Logo */}
-                <PouriaLogo />
-                <div className="flex items-center gap-2">
-                    {/* Theme Toggle */}
-                    <ThemeToggle />
-                    {/* Language Toggle */}
-                    <LanguageSwitcher />
-                </div>
-            </div>
+			<div className="flex items-center gap-1">
+				{/* Logo */}
+				<PouriaLogo />
+				<div className="flex items-center">
+					{/* Language Toggle */}
+					<LanguageSwitcher />
+					{/* Theme Toggle */}
+					<ThemeToggle />
+				</div>
+			</div>
 
-            {/* Navigation Links */}
-            <NavlinksGroup className="hidden sm:flex flex-row-reverse gap-6" />
+			{/* Navigation Links */}
+			<NavlinksGroup className="hidden sm:flex flex-row-reverse gap-6" />
 
-            {/* Sidebar Button */}
-            <SidebarButton onClick={handleSidebarButtonClick} />
-        </motion.nav>
-    );
+			{/* Sidebar Button */}
+			<SidebarButton onClick={handleSidebarButtonClick} />
+		</motion.nav>
+	);
 };
 
 export default Navbar;
