@@ -18,7 +18,7 @@ function FarsifyPage() {
 				</p>
 			</div>
 
-			<div className="container max-w-sm mx-auto px-4 py-8">
+			<div className="container max-w-full sm:max-w-sm mx-auto px-4 py-8">
 				<FarsifyForm />
 			</div>
 		</main>
