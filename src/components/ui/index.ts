@@ -9,3 +9,4 @@ export * from "./textarea";
 export * from "./aspect-ratio";
 export * from "./dropdown-menu";
 export { default as AppVersion } from "./AppVersion";
+export { default as NavbarDropdown } from "./NavbarDropdown";

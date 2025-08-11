@@ -32,7 +32,7 @@ const Navbar = (props: NavbarProps) => {
             sticky top-0 z-10 backdrop-blur-2xl app-px
             flex items-center justify-between p-4`}>
 			{/* Navigation Links */}
-			<NavlinksGroup className="hidden sm:flex flex-row gap-4" />
+			<NavlinksGroup className="hidden sm:flex flex-row gap-5" />
 
 			<div className="flex flex-row-reverse sm:flex-row items-center gap-1">
 				<div className="flex items-center">

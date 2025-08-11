@@ -4,6 +4,7 @@ import NavLink from "./NavLink";
 import { cn, isLinkActive } from "@/utils";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { NavbarDropdown } from "@/components/ui";
 
 interface NavigationLinksProps {
 	className?: string;
@@ -30,16 +31,16 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
 			</NavLink>
 
 			<NavLink
-				href="/farsify"
-				isActive={isLinkActive(pathname, "/farsify")}>
-				{t("farsify")}
-			</NavLink>
-
-			<NavLink
 				href="/contact-me"
 				isActive={isLinkActive(pathname, "/contact-me")}>
 				{t("contact")}
 			</NavLink>
+
+			{/* Pass NavLinks as children to dropdown */}
+			<NavbarDropdown
+				label={t("tools")}
+				options={[{ value: "/farsify", label: t("farsify") }]}
+			/>
 		</div>
 	);
 };
