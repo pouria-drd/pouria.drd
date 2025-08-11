@@ -34,7 +34,7 @@ const Navbar = (props: NavbarProps) => {
 			{/* Navigation Links */}
 			<NavlinksGroup className="hidden sm:flex flex-row gap-5" />
 
-			<div className="flex flex-row-reverse sm:flex-row items-center gap-1">
+			<div className="flex flex-row-reverse sm:flex-row items-center gap-1.5">
 				<div className="flex items-center">
 					{/* Theme Toggle */}
 					<ThemeToggle />
