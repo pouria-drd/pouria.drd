@@ -28,8 +28,8 @@ const Navbar = (props: NavbarProps) => {
 				damping: 25,
 				stiffness: 300,
 			}}
-			className={`bg-background/95
-            sticky top-0 z-10 backdrop-blur-xl app-px
+			className={`bg-background/90
+            sticky top-0 z-10 backdrop-blur-2xl app-px
             flex items-center justify-between p-4`}>
 			{/* Navigation Links */}
 			<NavlinksGroup className="hidden sm:flex flex-row gap-4" />
