@@ -19,12 +19,13 @@ async function RootPage() {
 		<main className="grow app-px flex flex-col items-center justify-center">
 			<div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
 				<div
-					className="bg-gradient-to-b from-white to-emerald-50/50
-                    dark:from-zinc-900 dark:to-emerald-50/15
-                    relative rounded-[50%] overflow-hidden shadow-xl
+					className="bg-accent/20 backdrop-blur-xl
+                    relative rounded-full overflow-hidden shadow-xl
                     aspect-square size-68 sm:size-80 min-w-68 min-h-68">
 					<Image
-						fill
+						priority
+						width={1024}
+						height={1024}
 						loading="eager"
 						draggable={false}
 						alt="Pouria Darandi"

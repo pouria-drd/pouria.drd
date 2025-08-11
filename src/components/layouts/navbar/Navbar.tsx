@@ -29,21 +29,23 @@ const Navbar = (props: NavbarProps) => {
 				stiffness: 300,
 			}}
 			className={`bg-background/95
-            sticky top-0 z-10 backdrop-blur-xl app-px l2r
+            sticky top-0 z-10 backdrop-blur-xl app-px
             flex items-center justify-between p-4`}>
-			<div className="flex items-center gap-1">
-				{/* Logo */}
-				<PouriaLogo />
+			{/* Navigation Links */}
+			<NavlinksGroup className="hidden sm:flex flex-row gap-4" />
+
+			<div className="flex flex-row-reverse sm:flex-row items-center gap-1">
 				<div className="flex items-center">
-					{/* Language Toggle */}
-					<LanguageSwitcher />
 					{/* Theme Toggle */}
 					<ThemeToggle />
-				</div>
-			</div>
 
-			{/* Navigation Links */}
-			<NavlinksGroup className="hidden sm:flex flex-row-reverse gap-6" />
+					{/* Language Toggle */}
+					<LanguageSwitcher />
+				</div>
+
+				{/* Logo */}
+				<PouriaLogo />
+			</div>
 
 			{/* Sidebar Button */}
 			<SidebarButton onClick={handleSidebarButtonClick} />
