@@ -26,10 +26,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 			<CardHeader className="p-0">
 				<AspectRatio ratio={16 / 9}>
 					<Image
+						priority
 						quality={20}
 						width={1920}
 						height={1080}
-						loading="lazy"
+						loading="eager"
 						src={project.image}
 						alt={t(`${project.id}.title`)}
 						className="object-cover w-full h-full transition-transform rounded-t-2xl"
