@@ -66,6 +66,7 @@ type Instrument = {
 	name: string;
 	faName: string;
 	symbol: string;
+	timestamp: string;
 	category: InstrumentCategory;
 	latestPriceTick: LatestPrice;
 };

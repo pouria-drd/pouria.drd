@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { formatDate } from "@/utils";
 import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/card";
 import { Coins, Bitcoin, DollarSign, ExternalLink } from "lucide-react";
@@ -19,7 +20,7 @@ const categoryIcons = {
 
 function InstrumentItem({ item, locale }: InstrumentItemProps) {
 	const t = useTranslations("ArzWatch");
-	const { name, faName, symbol, latestPriceTick, category } = item;
+	const { name, faName, symbol, latestPriceTick, category, timestamp } = item;
 	const { price, currency, meta } = latestPriceTick;
 
 	const formattedPrice = new Intl.NumberFormat(
@@ -31,6 +32,13 @@ function InstrumentItem({ item, locale }: InstrumentItemProps) {
 			style: "currency",
 		},
 	).format(price);
+
+	// Format the timestamp using formatDate utility
+	const cleanTimestamp = item.latestPriceTick.timestamp.split(".")[0] + "Z";
+	const { formattedDate, formattedTime } = formatDate(cleanTimestamp, {
+		isPersian: locale === "fa",
+		showTime: true,
+	});
 
 	return (
 		<Card
@@ -72,6 +80,12 @@ function InstrumentItem({ item, locale }: InstrumentItemProps) {
 						<ExternalLink className="size-4 shrink-0" />
 					</Link>
 				)}
+
+				{/* Timestamp */}
+				<div className="text-xs text-muted-foreground font-medium mt-1">
+					{locale === "fa" ? "آخرین بروزرسانی" : "Last updated"}:{" "}
+					{formattedDate} {formattedTime}
+				</div>
 			</div>
 		</Card>
 	);
