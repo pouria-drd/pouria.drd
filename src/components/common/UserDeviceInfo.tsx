@@ -20,7 +20,7 @@ function UserDeviceInfo() {
 				setDeviceInfo({
 					ip_address: "Error",
 					user_agent: "Error",
-					device_type: "Error",
+					device_type: "Unknown",
 					os: "Error",
 					os_version: "Error",
 					browser: "Error",

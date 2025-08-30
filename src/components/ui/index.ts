@@ -5,6 +5,7 @@ export * from "./label";
 export * from "./input";
 export * from "./button";
 export * from "./sonner";
+export * from "./select";
 export * from "./textarea";
 export * from "./aspect-ratio";
 export * from "./dropdown-menu";

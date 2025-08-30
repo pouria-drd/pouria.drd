@@ -39,7 +39,10 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
 			{/* Pass NavLinks as children to dropdown */}
 			<NavbarDropdown
 				label={t("tools")}
-				options={[{ value: "/farsify", label: t("farsify") }]}
+				options={[
+					{ value: "/farsify", label: t("farsify") },
+					{ value: "/arzwatch", label: t("arzwatch") },
+				]}
 			/>
 		</div>
 	);

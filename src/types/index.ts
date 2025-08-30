@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 type IconProps = {
 	className?: string;
 };
@@ -13,16 +14,15 @@ type Project = {
 	description: string;
 };
 
-type IEmailFormatStrategy = {
+interface IEmailFormatStrategy {
 	formatMessage(
 		fullName: string,
 		email: string,
 		subject: string,
 		message: string,
 	): string;
-};
+}
 
-// Define interface for deviceInfo
 interface DeviceInfo {
 	ip_address: string;
 	user_agent: string;
@@ -34,4 +34,40 @@ interface DeviceInfo {
 	device_brand: string;
 	device_model: string;
 }
+
+interface ApiData<T> {
+	count: number;
+	next: string | null;
+	previous: string | null;
+	results: T[];
+}
+
+interface ApiResponse<T> {
+	error?: string;
+	success: boolean;
+	data?: ApiData<T>;
+}
+
+type InstrumentCategory = "gold" | "coin" | "crypto" | "currency";
+type InstrumentCurrency = "USD" | "EUR" | "IRR" | "USDT";
+
+type LatestPrice = {
+	price: number;
+	currency: InstrumentCurrency;
+	timestamp: string;
+	isFallback: boolean;
+	meta: {
+		source_url: string;
+		[key: string]: any;
+	};
+};
+
+type Instrument = {
+	name: string;
+	faName: string;
+	symbol: string;
+	category: InstrumentCategory;
+	latestPriceTick: LatestPrice;
+};
+
 /* eslint-enable @typescript-eslint/no-unused-vars */
