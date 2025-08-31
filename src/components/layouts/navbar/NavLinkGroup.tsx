@@ -10,7 +10,7 @@ interface NavigationLinksProps {
 	className?: string;
 }
 
-const NavlinksGroup = (props: NavigationLinksProps) => {
+const NavLinkGroup = (props: NavigationLinksProps) => {
 	const pathname = usePathname();
 	const t = useTranslations("Layouts.Navigation.NavigationLinks");
 
@@ -19,10 +19,6 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
 			<NavLink href="/" isActive={isLinkActive(pathname, "/")}>
 				{t("home")}
 			</NavLink>
-
-			{/* <NavLink href="/blog" isActive={isLinkActive(pathname, "/blog")}>
-                بلاگ
-            </NavLink> */}
 
 			<NavLink
 				href="/projects"
@@ -48,4 +44,4 @@ const NavlinksGroup = (props: NavigationLinksProps) => {
 	);
 };
 
-export default NavlinksGroup;
+export default NavLinkGroup;

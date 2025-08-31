@@ -13,7 +13,7 @@ const NavLink = (props: NavLinkProps) => {
 	return (
 		<div className={cn("relative", props.className)}>
 			<Link
-				href={props.href}
+				href={props.href as any}
 				className={`transition-colors hover:text-primary ${
 					props.isActive
 						? "text-primary font-bold"

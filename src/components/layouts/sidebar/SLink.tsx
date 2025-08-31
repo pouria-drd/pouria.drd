@@ -44,7 +44,7 @@ const SLink = (props: NavLinkProps) => {
 			variants={itemVariants}
 			className="flex items-center w-full">
 			<Link
-				href={props.href}
+				href={props.href as any}
 				onClick={props.onClick}
 				className={`rounded-md transition-colors w-full py-2 ${activeClass}`}>
 				{props.children}

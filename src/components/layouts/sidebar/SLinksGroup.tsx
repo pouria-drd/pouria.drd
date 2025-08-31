@@ -47,13 +47,6 @@ const SLinkGroup = (props: NavigationLinksProps) => {
 				{t("home")}
 			</SLink>
 
-			{/* <SLink
-                href="/blog"
-                onClick={handleClick}
-                isActive={isLinkActive(pathname, "/blog")}>
-                {t("blog")}
-            </SLink> */}
-
 			<SLink
 				href="/projects"
 				onClick={handleClick}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useScrollingDown } from "@/hooks";
-import NavlinksGroup from "./NavlinksGroup";
+import NavLinkGroup from "./NavLinkGroup";
 import SidebarButton from "./SidebarButton";
 import { PouriaLogo } from "@/components/icons";
 import { LanguageSwitcher, ThemeToggle } from "@/components/common";
@@ -32,7 +32,7 @@ const Navbar = (props: NavbarProps) => {
             sticky top-0 z-10 backdrop-blur-2xl app-px
             flex items-center justify-between p-4`}>
 			{/* Navigation Links */}
-			<NavlinksGroup className="hidden sm:flex flex-row gap-5" />
+			<NavLinkGroup className="hidden sm:flex flex-row gap-5" />
 
 			<div className="flex flex-row-reverse sm:flex-row items-center gap-1.5">
 				<div className="flex items-center">
