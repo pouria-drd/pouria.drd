@@ -33,6 +33,8 @@ const nextConfig: NextConfig = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
+
+	typedRoutes: true,
 };
 
 const withNextIntl = createNextIntlPlugin();
