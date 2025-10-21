@@ -87,6 +87,8 @@ const iranYekanX = localFont({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
+	const locale = await getLocale();
+	const ogLocale = locale === "fa" ? "fa_IR" : "en_US";
 	const t = await getTranslations("Pages.RootPage.layout");
 
 	return {
@@ -109,6 +111,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			},
 		],
 		openGraph: {
+			locale: ogLocale,
 			type: "website",
 			siteName: "Pouria DRD",
 			url: "https://pouria-drd.ir",

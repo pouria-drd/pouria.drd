@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
+	const locale = await getLocale();
+	const ogLocale = locale === "fa" ? "fa_IR" : "en_US";
 	const t = await getTranslations("Pages.ArzWatchPage.layout");
 
 	return {
@@ -23,6 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			follow: true,
 		},
 		openGraph: {
+			locale: ogLocale,
 			type: "website",
 			siteName: "Pouria DRD ArzWatch",
 			url: "https://pouria-drd.ir/arzwatch",
