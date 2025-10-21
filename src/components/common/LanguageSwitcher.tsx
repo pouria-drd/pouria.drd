@@ -1,10 +1,11 @@
 "use client";
 
+import { cn } from "@/utils";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { changeLang } from "@/actions";
 import { LanguagesIcon } from "lucide-react";
-import { localeChangeAction } from "@/actions";
 import { useLocale, useTranslations } from "next-intl";
+
 import {
 	Button,
 	DropdownMenu,
@@ -16,53 +17,88 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui";
 
-const LANGUAGES = [
-	{ code: "fa", label: "فارسی" },
-	{ code: "en", label: "English" },
+interface Language {
+	code: LanguageType;
+	label: string;
+	direction: "rtl" | "ltr";
+}
+
+const LANGUAGES: Language[] = [
+	{ code: "fa", label: "فارسی", direction: "rtl" },
+	{ code: "en", label: "English", direction: "ltr" },
 ];
 
-const LanguageSwitcher = () => {
-	const router = useRouter();
-	const currentLocale = useLocale();
+interface Props {
+	className?: string;
+	withAnimation?: boolean;
+}
+
+function LanguageSwitcher({ className, withAnimation = true }: Props) {
+	const currentLocale = useLocale() as LanguageType;
 	const t = useTranslations("Components.LanguageSwitcher");
-	const [selectedLocale, setSelectedLocale] = useState(currentLocale);
+	const [selectedLocale, setSelectedLocale] =
+		useState<LanguageType>(currentLocale);
 
-	const handleLocaleChange = async (locale: string) => {
-		if (locale === currentLocale) return;
-
+	const handleChangeLang = async (locale: LanguageType) => {
+		if (locale === selectedLocale) return;
 		setSelectedLocale(locale);
-		await localeChangeAction(locale); // sets NEXT_LOCALE cookie server-side
-		router.refresh(); // reloads page with new locale
+		await changeLang(locale);
 	};
 
+	const currentLang = LANGUAGES.find((l) => l.code === selectedLocale);
+
 	return (
-		<DropdownMenu dir={currentLocale === "fa" ? "rtl" : "ltr"}>
+		<DropdownMenu dir={currentLang?.direction}>
 			<DropdownMenuTrigger asChild>
-				<Button variant="ghost" size={"sm"} className="cursor-pointer">
-					<LanguagesIcon />
-					{LANGUAGES.find((l) => l.code === selectedLocale)?.label}
+				<Button
+					size="icon"
+					variant="outline"
+					className={cn(
+						"group flex items-center gap-2 aspect-square size-[34px] overflow-hidden rounded-full border border-border text-sm font-medium justify-start text-primary px-2 py-1.5",
+						withAnimation
+							? "hover:w-[68px] transition-all duration-300 ease-in-out hover:border-primary/30 hover:bg-primary/10"
+							: "w-[34px]",
+						className,
+					)}>
+					<LanguagesIcon
+						className={cn(
+							"size-4 shrink-0",
+							withAnimation &&
+								"transition-transform duration-300",
+						)}
+					/>
+					{withAnimation && (
+						<span className="text-sm font-medium tracking-wide hidden whitespace-nowrap transition-all duration-200 group-hover:block">
+							{currentLang?.code.toUpperCase()}
+						</span>
+					)}
 				</Button>
 			</DropdownMenuTrigger>
-			{/* <DropdownMenuContent className={`${currentLocale === "fa" ? "r2l" : "l2r"} w-44`}> */}
-			<DropdownMenuContent className="w-44">
-				<DropdownMenuLabel className="text-center">
+
+			<DropdownMenuContent side="bottom" align="end" className="w-44">
+				<DropdownMenuLabel className="text-center tracking-wide text-muted-foreground">
 					{t("title")}
 				</DropdownMenuLabel>
 				<DropdownMenuSeparator />
+
 				<DropdownMenuRadioGroup
 					value={selectedLocale}
-					onValueChange={handleLocaleChange}>
+					onValueChange={(v) => handleChangeLang(v as LanguageType)}>
 					{LANGUAGES.map((lang) => (
 						<DropdownMenuRadioItem
-							className="cursor-pointer"
 							key={lang.code}
-							value={lang.code}>
+							value={lang.code}
+							className={cn(
+								"cursor-pointer transition-colors duration-150",
+								"hover:bg-accent text-muted-foreground hover:text-accent-foreground",
+							)}>
 							<span
-								className={`${
+								className={cn(
+									"text-sm",
 									lang.code === "fa"
 										? "font-iran-yekan-x"
-										: "font-sans"
-								}`}>
+										: "font-sans",
+								)}>
 								{lang.label}
 							</span>
 						</DropdownMenuRadioItem>
@@ -71,6 +107,6 @@ const LanguageSwitcher = () => {
 			</DropdownMenuContent>
 		</DropdownMenu>
 	);
-};
+}
 
 export default LanguageSwitcher;

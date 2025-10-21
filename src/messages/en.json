@@ -134,8 +134,8 @@
 			"title": "Change Language"
 		},
 
-		"ThemeSwitch": {
-			"text": "Dark Mode"
+		"ThemeSwitcher": {
+			"text": "Theme"
 		},
 
 		"SkillsWriter": {

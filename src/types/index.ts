@@ -71,4 +71,11 @@ type Instrument = {
 	latestPriceTick: LatestPrice;
 };
 
+const LanguageCodes = {
+	fa: "fa",
+	en: "en",
+} as const;
+
+type LanguageType = keyof typeof LanguageCodes;
+
 /* eslint-enable @typescript-eslint/no-unused-vars */

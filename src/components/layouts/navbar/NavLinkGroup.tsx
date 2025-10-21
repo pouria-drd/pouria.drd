@@ -37,7 +37,7 @@ const NavLinkGroup = (props: NavigationLinksProps) => {
 				label={t("tools")}
 				options={[
 					{ value: "/farsify", label: t("farsify") },
-					{ value: "/arzwatch", label: t("arzwatch") },
+					// { value: "/arzwatch", label: t("arzwatch") },
 				]}
 			/>
 		</div>

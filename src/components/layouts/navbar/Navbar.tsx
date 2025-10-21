@@ -5,7 +5,7 @@ import { useScrollingDown } from "@/hooks";
 import NavLinkGroup from "./NavLinkGroup";
 import SidebarButton from "./SidebarButton";
 import { PouriaLogo } from "@/components/icons";
-import { LanguageSwitcher, ThemeToggle } from "@/components/common";
+import { LanguageSwitcher, ThemeSwitcher } from "@/components/common";
 
 interface NavbarProps {
 	onOpenSidebar: () => void;
@@ -34,10 +34,10 @@ const Navbar = (props: NavbarProps) => {
 			{/* Navigation Links */}
 			<NavLinkGroup className="hidden sm:flex flex-row gap-5" />
 
-			<div className="flex flex-row-reverse sm:flex-row items-center gap-1.5">
-				<div className="flex items-center">
+			<div className="flex flex-row-reverse sm:flex-row items-center gap-4">
+				<div className="flex items-center gap-2">
 					{/* Theme Toggle */}
-					<ThemeToggle />
+					<ThemeSwitcher />
 
 					{/* Language Toggle */}
 					<LanguageSwitcher />
