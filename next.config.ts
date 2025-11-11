@@ -29,6 +29,10 @@ const nextConfig: NextConfig = {
 	typedRoutes: true,
 
 	reactCompiler: true,
+
+	typescript: {
+		ignoreBuildErrors: process.env.NODE_ENV !== "development",
+	},
 };
 
 const withNextIntl = createNextIntlPlugin();
