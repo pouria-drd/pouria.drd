@@ -1,0 +1,224 @@
+{
+	"Pages": {
+		"NotFoundPage": {
+			"title": "Error",
+			"description": "We can’t seem to find the page you are looking for!",
+			"button": "Back to Home Page",
+			"copyright": "© Copyright Pouria Darandi. All rights reserved {year}"
+		},
+		"RootPage": {
+			"title": "Pouria Darandi",
+			"birth": "Born on February 2, 2002🎂🥳",
+			"start": "Debugging life since December 2020🐛💻",
+			"education": "I started self-taught with Python, then learned C++ and Django at Tehran Technical Complex",
+			"work": "From March 2023 to May 2024 I worked at Farayat with React, Vue, Next.js, and Django. Since August 2024, I'm working at <company>Asr Danesh Afzar</company>!🚀",
+			"sendMessage": "Send Message",
+
+			"layout": {
+				"title": "Pouria Darandi",
+				"description": "Pouria Darandi is a full-stack developer with a passion for building high-quality, scalable, and secure web applications. He is a self-taught developer who has worked with various technologies, including React, Vue, Next.js, and Django. He has experience in both frontend and backend development, and is proficient in both JavaScript and TypeScript. He is also a freelancer and has worked on various projects, including a web development portfolio, a game development platform, and a mobile app development platform. If you are interested in learning more about Pouria Darandi, his projects, or his experience, you can find more information on his website.",
+				"keywords": "Pouria Darandi, pouria drd, Darandi, Full-Stack Developer, Full Stack Developer, Web Developer, Front-End Developer, Back-End Developer, Software Engineer, Programmer, Django Developer, React Developer, Next.js Developer, Vue.js Developer, Django REST, REST API, Next.js, Vue.js, React, Django, Unity, Portfolio, Freelance Developer, Hire Developer, Freelancer, Remote Developer, Custom Web Development, Web Application Developer"
+			}
+		},
+		"ProjectsPage": {
+			"title": "My Projects",
+			"description": "The latest projects I've worked on or am currently developing.",
+			"searchPlaceholder": "Search by title or technology: Banket, React",
+			"noResults": "No projects found.",
+
+			"layout": {
+				"title": "Projects",
+				"description": "Explore a collection of professional web development projects by Pouria Darandi, featuring full-stack applications, Next.js, React, Django, and modern software engineering solutions.",
+				"keywords": "Pouria Darandi Projects, Web Development Projects, Full-Stack Development, Next.js Projects, React Projects, Django Projects, Software Development Portfolio, Frontend Development Projects, Backend Development Projects, JavaScript Projects, TypeScript Projects, Open Source Contributions, Freelance Web Development, Cloud Computing Projects, REST API Development, GraphQL Projects, SEO Optimization Projects, Mobile App Development, Machine Learning Projects, Cybersecurity Projects, Game Development, Unity Projects, Software Engineering Portfolio, E-commerce Website Development, Portfolio Website, Full-Stack Portfolio, Freelance Developer Portfolio"
+			}
+		},
+		"ContactMePage": {
+			"title": "Get in touch with me!",
+			"description": "If you have any questions or want to know more about the projects I'm working on, I'm here to chat! Contact me through the form below or my social media profiles—I'll try to get back to you quickly!",
+			"instagramLabel": "Instagram address:",
+			"telegramLabel": "Telegram address:",
+			"twitterLabel": "Twitter address:",
+			"githubLabel": "GitHub address:",
+
+			"layout": {
+				"title": "Contact Me",
+				"description": "Want to connect with Pouria Darandi? Reach out for collaborations, inquiries, or project discussions. Get in touch via email or social media.",
+				"keywords": "contact Pouria Darandi, get in touch with Pouria Darandi, reach Pouria Darandi, Pouria Darandi contact info, email Pouria Darandi, message Pouria Darandi, talk to Pouria Darandi, how to contact Pouria Darandi, inquire about a project, developer contact, business inquiry, freelancer contact, hire a developer, software engineer contact"
+			}
+		},
+		"FarsifyPage": {
+			"title": "Farsify",
+			"description": "Securely compress and convert V2Ray, VLESS, and VMess configurations into Persian-only SMS and back. Ideal for strict censorship conditions.",
+
+			"layout": {
+				"title": "Farsify",
+				"description": "Securely compress and convert V2Ray, VLESS, and VMess configurations into Persian-only SMS and back. Ideal for strict censorship conditions.",
+				"keywords": "v2ray, vless, vmess, config to persian sms, v2ray sms converter, censorship bypass, compressed v2ray config"
+			}
+		},
+		"ArzWatchPage": {
+			"title": "ArzWatch",
+			"description": "A real-time price tracking service for gold, dollar, cryptocurrencies, and more.",
+			"link": "Telegram bot",
+
+			"layout": {
+				"title": "ArzWatch",
+				"description": "A real-time price tracking service for gold, dollar, coins, cryptocurrencies, and international currencies with instant updates. ArzWatch helps you monitor live market prices, get alerts, and access accurate data through a simple web interface and Telegram bot.",
+				"keywords": "ArzWatch, arz watch, real-time prices, live prices, gold price, silver price, platinum price, coin prices, dollar price, euro price, pound price, iran rial exchange rate, currency rates, live exchange rates, crypto prices, bitcoin price, ethereum price, tether price, bnb price, xrp price, shiba inu price, litecoin price, dogecoin price, solana price, polygon price, telegram bot prices, price tracker bot, forex prices, currency market, iran gold price, dollar to toman, crypto tracker iran, live crypto iran, online price checker, arz iran"
+			}
+		}
+	},
+	"Components": {
+		"LanguageSwitcher": {
+			"title": "Change Language"
+		},
+		"ThemeSwitcher": {
+			"title": "Theme",
+			"light": "Light",
+			"dark": "Dark",
+			"system": "System"
+		},
+		"SkillsWriter": {
+			"text": "Developer"
+		},
+		"AppVersion": {
+			"version": "version {version}"
+		},
+		"Navigation": {
+			"Sidebar": {
+				"social": "Follow me on"
+			},
+			"NavigationLinks": {
+				"home": "Home",
+				"blog": "Blog",
+				"tools": "Tools",
+				"projects": "Projects",
+				"contact": "Contact Me",
+				"farsify": "Farsify"
+			}
+		},
+		"Footer": {
+			"copyright": "© Copyright Pouria Darandi. All rights reserved {year}"
+		}
+	},
+	"Forms": {
+		"ContactMeForm": {
+			"title": "Contact Me",
+			"description": "Fill out the form below and I will get back to you.",
+			"fields": {
+				"name": {
+					"label": "Name",
+					"placeholder": "Your full name"
+				},
+				"email": {
+					"label": "Email",
+					"placeholder": "you@example.com"
+				},
+				"subject": {
+					"label": "Subject",
+					"placeholder": "Subject of your message"
+				},
+				"message": {
+					"label": "Message",
+					"placeholder": "Write your message here"
+				}
+			},
+			"button": "Send Message",
+			"messages": {
+				"error": "An error occurred. Please try again later.",
+				"success": "Your message has been sent successfully."
+			}
+		},
+		"FarsifyForm": {
+			"title": "V2Ray Config to Persian SMS Converter",
+			"tabs": {
+				"encode": "To SMS",
+				"decode": "To Config"
+			},
+			"inputLabel": {
+				"encode": "Config Input (Link or JSON)",
+				"decode": "Encoded SMS Input"
+			},
+			"placeholders": {
+				"input": "Enter your text here"
+			},
+			"convert": "Convert",
+			"clear": "Clear",
+			"copy": "Copy Output",
+			"copied": "Output copied!",
+			"error": "Conversion failed. Please check your input.",
+			"outputLabel": "Output",
+			"note": "⚠️ Note: Some mobile carriers may filter encoded SMS."
+		}
+	},
+	"Validations": {
+		"ContactMeSchema": {
+			"name": {
+				"min": "Name is too short",
+				"max": "Name cannot exceed {max} characters"
+			},
+			"email": {
+				"invalid": "Invalid email address"
+			},
+			"subject": {
+				"min": "Subject is too short",
+				"max": "Subject cannot exceed {max} characters"
+			},
+			"message": {
+				"min": "Message is too short",
+				"max": "Message cannot exceed {max} characters"
+			}
+		}
+	},
+	"SeverActions": {
+		"ContactMeAction": {
+			"messages": {
+				"success": "Your message has been sent successfully.",
+				"error": "An error occurred. Please try again later.",
+				"internal": "Internal server error occurred."
+			}
+		}
+	},
+	"Projects": {
+		"1": {
+			"title": "ArzWatch Bot",
+			"description": "A Telegram bot to fetch real-time prices for gold, dollar, crypto and more.",
+			"preview": "Preview",
+			"sourceCode": "Code"
+		},
+		"2": {
+			"title": "Banket",
+			"description": "A digital banking platform by Mehr Iran for modern financial services.",
+			"preview": "Preview"
+		},
+		"3": {
+			"title": "Bazargan Holding",
+			"description": "Real estate investment in North Cyprus with a smart search and support system.",
+			"preview": "Preview",
+			"sourceCode": "Code"
+		},
+		"4": {
+			"title": "Zoom Clone",
+			"description": "Chat with friends in public/private rooms, record, or schedule events!",
+			"preview": "Preview",
+			"sourceCode": "Code"
+		},
+		"5": {
+			"title": "Cafe Vand",
+			"description": "Online menu with price history and admin panel for Cafe Vand.",
+			"preview": "Preview",
+			"sourceCode": "Code"
+		},
+		"6": {
+			"title": "Varna Kasb",
+			"description": "An online business platform for Varamin with account and shop management.",
+			"preview": "Preview",
+			"sourceCode": "Code"
+		},
+		"7": {
+			"title": "Sitechoob Panel",
+			"description": "Order cutting, PVC, and delivery services with domestic & international shipping.",
+			"preview": "Preview"
+		}
+	}
+}

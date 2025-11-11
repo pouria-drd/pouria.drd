@@ -26,15 +26,9 @@ const nextConfig: NextConfig = {
 		],
 	},
 
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
-
-	typescript: {
-		ignoreBuildErrors: true,
-	},
-
 	typedRoutes: true,
+
+	reactCompiler: true,
 };
 
 const withNextIntl = createNextIntlPlugin();
