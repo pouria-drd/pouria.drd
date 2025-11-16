@@ -4,10 +4,15 @@ import createNextIntlPlugin from "next-intl/plugin";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
-	output: "standalone",
-	reactStrictMode: process.env.NODE_ENV === "development",
-
 	basePath: basePath,
+
+	output: "standalone",
+
+	typedRoutes: true,
+
+	reactCompiler: true,
+
+	reactStrictMode: process.env.NODE_ENV === "development",
 
 	images: {
 		remotePatterns: [
@@ -24,14 +29,6 @@ const nextConfig: NextConfig = {
 				hostname: "pouria-drd.ir",
 			},
 		],
-	},
-
-	typedRoutes: true,
-
-	reactCompiler: true,
-
-	typescript: {
-		ignoreBuildErrors: process.env.NODE_ENV !== "development",
 	},
 };
 

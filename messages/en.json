@@ -6,6 +6,12 @@
 			"button": "Back to Home Page",
 			"copyright": "© Copyright Pouria Darandi. All rights reserved {year}"
 		},
+		"GlobalError": {
+			"title": "Error",
+			"description": "Something went wrong!",
+			"button": "Back to Home Page",
+			"copyright": "© Copyright Pouria Darandi. All rights reserved {year}"
+		},
 		"RootPage": {
 			"title": "Pouria Darandi",
 			"birth": "Born on February 2, 2002🎂🥳",

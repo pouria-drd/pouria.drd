@@ -11,7 +11,7 @@ async function RootPage() {
 	const t = await getTranslations("Pages.RootPage");
 
 	return (
-		<main className="grow app-px flex flex-col items-center justify-center relative">
+		<main className="grow w-full flex items-center justify-center app-px py-12 relative">
 			<GridShape />
 			<div className="flex flex-col items-center justify-center gap-1 sm:gap-2 w-full py-4">
 				<div

@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
 
+import { LocaleType } from "@/types";
 import { Toaster } from "@/components/ui";
 import { ThemeProvider } from "@/context";
 import { Navbar, Footer } from "@/components/layouts";
@@ -88,7 +89,7 @@ const iranYekanX = localFont({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-	const locale = await getLocale();
+	const locale = (await getLocale()) as LocaleType;
 	const ogLocale = locale === "fa" ? "fa_IR" : "en_US";
 	const t = await getTranslations("Pages.RootPage.layout");
 
@@ -173,7 +174,7 @@ interface RootLayoutProps {
 }
 
 async function RootLayout({ children }: Readonly<RootLayoutProps>) {
-	const locale = await getLocale();
+	const locale = (await getLocale()) as LocaleType;
 	const dir = locale === "fa" ? "rtl" : "ltr";
 
 	return (

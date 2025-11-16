@@ -8,7 +8,7 @@ import { MenuIcon, XIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { LocaleType } from "@/types";
-import { PdIcon } from "@/components/icons";
+import { PdImage } from "@/components/icons";
 import { PUBLIC_NAV_LINKS } from "@/constants";
 import { cn, isLinkActive } from "@/lib/utils";
 import { AppVersion, SocialLinks } from "@/components/common";
@@ -40,7 +40,10 @@ function Sidebar() {
 			<SheetContent side={locale === "fa" ? "right" : "left"}>
 				{/* Header */}
 				<SheetHeader className="flex flex-row items-center justify-between">
-					<PdIcon className="text-primary" />
+					{/* <PdIcon className="text-primary" /> */}
+					<Link href={"/"} className="size-8">
+						<PdImage />
+					</Link>
 					<SheetClose className="cursor-pointer hover:bg-accent size-7 p-0.5 rounded">
 						<XIcon className="text-muted-foreground size-full" />
 					</SheetClose>
@@ -102,18 +105,20 @@ interface SidebarLinkProps {
 
 export const SidebarLink = (props: SidebarLinkProps) => {
 	return (
-		<Link
-			href={props.href as "/"}
-			className={cn(
-				`flex items-center gap-3 px-3 py-2 rounded-md
+		<SheetTrigger asChild>
+			<Link
+				href={props.href as "/"}
+				className={cn(
+					`flex items-center gap-3 px-3 py-2 rounded-md
 				hover:bg-accent transition-colors
 				dark:text-accent-foreground
 				text-muted-foreground hover:text-primary w-full
 				${props.isActive ? "bg-accent text-primary" : ""}
 				`,
-			)}>
-			{props.icon && <props.icon className="size-5 text-current" />}
-			{props.children}
-		</Link>
+				)}>
+				{props.icon && <props.icon className="size-5 text-current" />}
+				{props.children}
+			</Link>
+		</SheetTrigger>
 	);
 };

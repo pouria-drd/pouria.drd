@@ -2,6 +2,7 @@
 
 import { useContactMeForm } from "@/hooks";
 
+import { PdImage } from "../icons";
 import {
 	Button,
 	Card,
@@ -25,7 +26,8 @@ function ContactMeForm() {
 
 	return (
 		<Card className="w-full h-full">
-			<CardHeader>
+			<CardHeader className="text-center">
+				<PdImage className="size-14 mx-auto" />
 				<CardTitle className="text-xl sm:text-2xl">
 					{t("title")}
 				</CardTitle>

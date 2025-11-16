@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 import Sidebar from "./Sidebar";
-import { PdIcon } from "@/components/icons";
+import { PdImage } from "@/components/icons";
 import { cn, isLinkActive } from "@/lib/utils";
 import { PUBLIC_NAV_LINKS } from "@/constants";
 import { LanguageSwitcher, ThemeSwitcher } from "@/components/preferences";
@@ -38,8 +38,9 @@ function Navbar() {
 				</div>
 
 				{/* Logo */}
-				<Link href={"/"}>
-					<PdIcon className="text-primary size-9" />
+				<Link href={"/"} className="size-8">
+					{/* <PdIcon className="text-primary size-8" /> */}
+					<PdImage />
 				</Link>
 			</div>
 		</nav>

@@ -3,14 +3,15 @@
 import { useLocale } from "next-intl";
 import { Copy, RefreshCcw, Trash2 } from "lucide-react";
 
+import { LocaleType } from "@/types";
 import { useFarsifyForm } from "@/hooks";
 import {
 	Button,
 	Card,
-	CardHeader,
+	// CardHeader,
 	CardContent,
 	CardFooter,
-	CardTitle,
+	// CardTitle,
 	Textarea,
 	Label,
 	Tabs,
@@ -20,7 +21,7 @@ import {
 } from "@/components/ui";
 
 const FarsifyForm = () => {
-	const locale = useLocale();
+	const locale = useLocale() as LocaleType;
 	const {
 		t,
 		mode,
@@ -37,9 +38,9 @@ const FarsifyForm = () => {
 
 	return (
 		<Card>
-			<CardHeader>
-				<CardTitle>{t("title")}</CardTitle>
-			</CardHeader>
+			{/* <CardHeader>
+				<CardTitle className="text-center">{t("title")}</CardTitle>
+			</CardHeader> */}
 
 			<CardContent>
 				<Tabs
@@ -107,15 +108,17 @@ const FarsifyForm = () => {
 							</Button>
 						</div>
 
-						<div className="grid gap-2">
-							<Label htmlFor="output">{t("outputLabel")}</Label>
-							<Textarea
-								readOnly
-								name="output"
-								value={output}
-								className="resize-none min-h-[100px]"
-							/>
-							{output && (
+						{output && (
+							<div className="grid gap-2">
+								<Label htmlFor="output">
+									{t("outputLabel")}
+								</Label>
+								<Textarea
+									readOnly
+									name="output"
+									value={output}
+									className="resize-none min-h-[100px]"
+								/>
 								<Button
 									variant="outline"
 									size="sm"
@@ -124,8 +127,8 @@ const FarsifyForm = () => {
 									<Copy className="w-4 h-4 mr-1" />
 									{t("copy")}
 								</Button>
-							)}
-						</div>
+							</div>
+						)}
 					</TabsContent>
 				</Tabs>
 			</CardContent>

@@ -1,8 +1,11 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 
+import { LocaleType } from "@/types";
+
 export async function generateMetadata(): Promise<Metadata> {
-	const locale = await getLocale();
+	const locale = (await getLocale()) as LocaleType;
 	const ogLocale = locale === "fa" ? "fa_IR" : "en_US";
 	const t = await getTranslations("Pages.FarsifyPage.layout");
 
@@ -97,7 +100,7 @@ interface FarsifyLayoutProps {
 }
 
 function FarsifyLayout({ children }: FarsifyLayoutProps) {
-	return <>{children}</>;
+	return <Fragment>{children}</Fragment>;
 }
 
 export default FarsifyLayout;

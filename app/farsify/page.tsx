@@ -1,11 +1,10 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
 import { GridShape } from "@/components/common";
 import { FarsifyForm } from "@/components/forms";
 
-function FarsifyPage() {
-	const t = useTranslations("Pages.FarsifyPage");
+async function FarsifyPage() {
+	const t = await getTranslations("Pages.FarsifyPage");
 
 	return (
 		<main className="grow app-px flex flex-col items-center justify-center py-12 relative">
