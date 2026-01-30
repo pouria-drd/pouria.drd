@@ -2,6 +2,7 @@ import "./assets/styles/globals.css";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import NextTopLoader from "nextjs-toploader";
 import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -194,6 +195,14 @@ async function RootLayout({ children }: Readonly<RootLayoutProps>) {
 					} `}>
 				<NextIntlClientProvider locale={locale}>
 					<ThemeProvider attribute="class" defaultTheme="system">
+						<NextTopLoader
+							height={3}
+							speed={200}
+							easing="ease"
+							color="#3d63dd"
+							showSpinner={false}
+							shadow="0 0 10px #29d,0 0 5px #29d"
+						/>
 						<Toaster position="top-center" />
 						<Navbar />
 						{children}
